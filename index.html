@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="./src/css/style.css" rel="stylesheet">
+    <title>Menu hamburguesa</title>
 </head>
 <body>
-    
+    <header>
+        <img  class="header__logo" src="./logos/logo-DOM.png" />        
+        <button class="header__button header__button--open-menu" id="open"><i class="bi bi-list" id="icon__open"></i></button>        
+        <nav class="header__nav"  id="nav">
+            <button class="header__nav__button header__nav__button--close-menu" id="close"><i class="bi bi-x-lg" id="icon__close"></i></button>
+            <ul class="header__nav__list">                
+                <li class="header__nav__item"><a href="#" class="header__nav__link">Sobre nosotras&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-people-fill"></i></a></li>
+                <li class="header__nav__item"><a href="#" class="header__nav__link">Instrumentos&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-music-note-beamed"></i></a></li>
+                <li class="header__nav__item"><a href="#" class="header__nav__link">Contacto&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-envelope"></i></a></li>
+                <li class="header__nav__item header__nav__item--home"><a href="#" class="header__nav__link">Home&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-house"></i></a></li>             
+            </ul>
+        </nav>
+    </header>
+<script src="./src/js/instrument.js"></script>  
 </body>
 </html>
