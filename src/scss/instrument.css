@@ -1,0 +1,211 @@
+/* ------------------- VIBRATION ANIMATION ------------------- */
+@keyframes vibration {
+  0% {
+    transform: translate(1px, 1px);
+  }
+  25% {
+    transform: translate(-1px, -1px);
+  }
+  50% {
+    transform: translate(1px, -1px);
+  }
+  75% {
+    transform: translate(-1px, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+/* ------------------- HEADER AND FOOTER STYLES ------------------- */
+header,
+footer {
+  background-color: #262525;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* ------------------- BASE STYLES FOR BODY ------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* ------------------- MAIN SECTION LAYOUT ------------------- */
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------- XYLOPHONE SECTION STYLES ------------------- */
+.xylophone {
+  background-position: center;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------- XYLOPHONE CONTAINER ------------------- */
+.xylophone__container {
+  aspect-ratio: 3/1;
+  width: 100%;
+  max-width: 900px;
+  min-height: 450px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------- BASE IMAGE FOR XYLOPHONE ------------------- */
+.base {
+  position: absolute;
+  width: 115%;
+  height: 125%;
+  z-index: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* ------------------- KEYS CONTAINER FOR XYLOPHONE ------------------- */
+.xylophone__keys {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* ------------------- INDIVIDUAL KEY STYLES ------------------- */
+.xylophone__key {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+.xylophone__key:active {
+  transform: translateY(2px);
+  animation: vibration 0.2s ease-in-out;
+  animation-iteration-count: 2;
+}
+
+/* ------------------- KEY IMAGES ------------------- */
+.xylophone__key img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease;
+}
+
+/* ------------------- VIBRATION EFFECT ON KEY PRESS ------------------- */
+.xylophone__key:active img {
+  animation: vibration 0.2s ease-in-out;
+  animation-iteration-count: 2;
+}
+
+/* ------------------- MODIFIER CLASSES FOR KEY HEIGHTS ------------------- */
+.xylophone__key[data-key=C] {
+  top: -8%;
+  height: 114%;
+}
+
+.xylophone__key[data-key=D] {
+  top: -6%;
+  height: 108%;
+}
+
+.xylophone__key[data-key=E] {
+  top: -5%;
+  height: 104%;
+}
+
+.xylophone__key[data-key=F] {
+  top: -4%;
+  height: 100%;
+}
+
+.xylophone__key[data-key=G] {
+  top: -3%;
+  height: 96%;
+}
+
+.xylophone__key[data-key=A] {
+  top: -2%;
+  height: 92%;
+}
+
+.xylophone__key[data-key=B] {
+  top: -1%;
+  height: 88%;
+}
+
+.xylophone__key[data-key=C2] {
+  top: 0%;
+  height: 84%;
+}
+
+.xylophone__key[data-key=D2] {
+  top: 1%;
+  height: 79%;
+}
+
+.xylophone__key[data-key=F2] {
+  top: 2%;
+  height: 74%;
+}
+
+.xylophone__key[data-key=G2] {
+  top: 3.5%;
+  height: 70%;
+}
+
+.xylophone__key[data-key=A2] {
+  top: 4%;
+  height: 65.5%;
+}
+
+/* ------------------- RESPONSIVE STYLES FOR MOBILE DEVICES ------------------- */
+@media (max-width: 768px) {
+  .xylophone__container {
+    max-width: 100%;
+    min-height: 250px;
+  }
+  .base {
+    width: 110%;
+    height: 120%;
+  }
+  .xylophone__keys {
+    gap: 8px;
+  }
+  .xylophone__key:active {
+    transform: translateY(1px);
+  }
+  .xylophone__key img {
+    width: 90%;
+    height: 90%;
+  }
+}/*# sourceMappingURL=instrument.css.map */
