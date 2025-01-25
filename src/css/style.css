@@ -1,1 +1,53 @@
 /* AQUÍ VA EL CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", serif;
+}
+
+
+.header {
+    display: flex;
+    padding: 45px;
+    background-color: #222222;
+    justify-content: space-between;
+}
+.logo-pagina {
+    width: 180px;
+    height: auto;
+}
+
+ 
+
+ nav{
+    display: flex;
+    align-items: center;
+ }   
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin-right: 80px;
+    
+}
+nav ul li a{
+    display: flex;
+    text-decoration: none;
+    color: white;
+    
+}
+    
+.content{
+    background-color: white;
+    height: 70vb;
+
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #222222;
+    color: white;
+    padding: 45px;
+}
