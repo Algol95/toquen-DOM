@@ -21,111 +21,168 @@
   }
 }
 
-/* ------------------- HEADER AND FOOTER STYLES ------------------- */
-header,
-footer {
-  background-color: #262525;
-  text-align: center;
-  padding: 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
 /* ------------------- BASE STYLES FOR BODY ------------------- */
 body {
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
+  background-image: url('https://images.pexels.com/photos/34221/violin-musical-instrument-music-sound.jpg?');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-/* ------------------- MAIN SECTION LAYOUT ------------------- */
-.main {
-  min-height: 100vh;
+/* ------------------- HEADER AND FOOTER STYLES ------------------- */
+nav,
+footer {
+  color: white;
+  background-color: #262525;
+  text-align: center;
+  max-width: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+/* ------------------- MAIN CONTENT FLEX STYLES ------------------- */
+main {
   display: flex;
+  flex-direction: column;
   flex: 1;
-  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* ------------------- GRID - TOP ROW STYLES ------------------- */
+.container {
+  display: grid;
+  grid-template-areas:
+    "instructions youtube-embed"
+    "xylophone xylophone";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  margin: 0 auto;
+  background-size: contain;
+  box-sizing: border-box;
+}
+
+/* ------------------- INDIVIDUAL SECTION STYLES ------------------- */
+.instructions, .youtube-embed {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1%;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
   align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  backdrop-filter: blur(5px);
+}
+
+.instructions {
+  grid-area: instructions;
+  text-align: center;
+}
+
+.instructions h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.youtube-embed {
+  grid-area: youtube-embed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.instructions h2, .youtube-embed h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.youtube-embed iframe {
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 }
 
-/* ------------------- XYLOPHONE SECTION STYLES ------------------- */
+/* ------------------- BOTTOM ROW - XYLOPHONE ------------------- */
 .xylophone {
-  background-position: center;
-  max-width: 100%;
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  justify-content: center;
+  grid-area: xylophone;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1%;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
   align-items: center;
+  justify-content: center;
+  z-index: 1;
+  display: flex;
+  box-sizing: border-box;
+  backdrop-filter: blur(5px);
 }
 
-/* ------------------- XYLOPHONE CONTAINER ------------------- */
-.xylophone__container {
-  aspect-ratio: 3 / 1;
-  width: 100%;
-  max-width: 900px;
-  min-height: 450px;
+.xylophone {
+  overflow: hidden;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* ------------------- BASE IMAGE FOR XYLOPHONE ------------------- */
 .base {
-  position: absolute;
-  width: 115%;
-  height: 125%;
-  z-index: 0;
-  object-fit: cover;
+  position: relative;
+  z-index: 2;
 }
 
-/* ------------------- KEYS CONTAINER FOR XYLOPHONE ------------------- */
+.base {
+  width: 65%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  box-sizing: border-box;
+}
+
+
+/* ------------------- KEY CONTAINER ------------------- */
 .xylophone__keys {
+  z-index: 3;
   position: absolute;
   display: flex;
-  justify-content: space-around;
-  gap: 12px;
+  pointer-events: auto;
+  box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  height: auto;
+  justify-content: center;
 }
 
 /* ------------------- INDIVIDUAL KEY STYLES ------------------- */
 .xylophone__key {
+  display: inline-block;
   position: relative;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
   user-select: none;
   transition: transform 0.2s ease, background-color 0.3s ease;
-
-  &:active {
-    transform: translateY(2px);
-    animation: vibration 0.2s ease-in-out;
-    animation-iteration-count: 2;
-  }
 }
 
 /* ------------------- KEY IMAGES ------------------- */
 .xylophone__key img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: auto;
   transition: transform 0.2s ease;
+  box-sizing: border-box;
+  display: block;
 }
 
 /* ------------------- VIBRATION EFFECT ON KEY PRESS ------------------- */
-.xylophone__key:active img {
+.xylophone__key.vibrating img {
   animation: vibration 0.2s ease-in-out;
   animation-iteration-count: 2;
 }
@@ -133,11 +190,12 @@ body {
 /* ------------------- MODIFIER CLASSES FOR KEY HEIGHTS ------------------- */
 .xylophone__key[data-key="C"] {
   top: -8%;
-  height: 114%;
+  height: 566% !important;
 }
 
+
 .xylophone__key[data-key="D"] {
-  top: -6%;
+  top: -7%;
   height: 108%;
 }
 
@@ -187,34 +245,77 @@ body {
 }
 
 .xylophone__key[data-key="A2"] {
-  top: 4%;
+  top: 8%;
   height: 65.5%;
 }
-
-/* ------------------- RESPONSIVE STYLES FOR MOBILE DEVICES ------------------- */
+/* ------------------- RESPONSIVE STYLES FOR SMALL SCREENS ------------------- */
 @media (max-width: 768px) {
-  .xylophone__container {
-    max-width: 100%;
-    min-height: 250px;
+  .main {
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Items will stack vertically */
+    gap: 1rem; /* Adds spacing between items */
+    padding: 0 10px; /* Adds padding for responsive layout */
   }
 
+  .xylophone {
+    width: 100%; /* Ensures the xylophone takes full width */
+    margin: 0 auto; /* Centers the xylophone */
+  }
+  
   .base {
-    width: 110%;
-    height: 120%;
+    width: 95%; /* Makes the base element responsive */
   }
-
+  
   .xylophone__keys {
-    gap: 8px;
+    max-width: 78%; /* Adjusts the keys' width */
   }
 
-  .xylophone__key {
-    &:active {
-      transform: translateY(1px);
-    }
+  .instructions h2 {
+    font-size: 1rem; /* Adjusts heading size */
   }
 
-  .xylophone__key img {
+  .instructions strong {
+    font-weight: bold;
+    font-size: small; /* Adjusts strong text size */
+  }
+
+  .instructions p {
+    font-size: smaller; /* Adjusts paragraph text size */
+  }
+}
+
+/* ------------------- RESPONSIVE STYLES FOR MEDIUM SCREENS ------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 10px;
+  }
+
+  .xylophone {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .base {
     width: 90%;
-    height: 90%;
+  }
+  
+  .xylophone__keys {
+    max-width: 78%;
+  }
+
+  .instructions h2 {
+    font-size: 1rem;
+  }
+
+  .instructions strong {
+    font-weight: bold;
+    font-size: small;
+  }
+
+  .instructions p {
+    font-size: smaller;
   }
 }

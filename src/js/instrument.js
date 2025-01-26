@@ -1,15 +1,12 @@
-/* ---------------------------------- KEY VIBRATION ----------------------------------*/
-document.addEventListener('DOMContentLoaded', function() {
-  const keys = document.querySelectorAll('.xylophone__key');
+document.querySelectorAll('.xylophone__key').forEach(key => {
+  key.addEventListener('click', function() {
+    const keyImg = key.querySelector('img');
+    
+    key.classList.add('vibrating');
+    
+    setTimeout(() => {
+      key.classList.remove('vibrating');
+    }, 400);
 
-  keys.forEach(key => {
-    key.addEventListener('click', function() {
-      const keyImg = key.querySelector('img');
-      keyImg.classList.add('vibrating');
-      setTimeout(() => {
-        keyImg.classList.remove('vibrating');
-      }, 200);
-    });
   });
 });
-/* ---------------------------------- END OF CODE ----------------------------------*/
