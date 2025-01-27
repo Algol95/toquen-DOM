@@ -8,22 +8,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
         <header class="header">
-            <img src="images/logo.png" class="logo-pagina">
-            <nav>   
-                    <ul>
-                        <li><a href="pages/about-us.html">SOBRE NOSOTRAS</a></li>
-                        <li><a href="pages/instrument.html">INSTRUMENTOS</a></li>
-                        <li><a href="pages/contact.html">CONTACTO</a></li>
+            <img src="images/logo.png" class="logo-pagina header__logo">
+            <button class="header__button header__button--open-menu" id="open"><i class="bi bi-list" id="icon__open"></i></button>
+            <nav class="header__nav"  id="nav">
+                <button class="header__nav__button header__nav__button--close-menu" id="close"><i class="bi bi-x-lg" id="icon__close"></i></button>   
+                    <ul class="header__nav__list">
+                        <li class="header__nav__item"><a class="header__nav__link" href="pages/about-us.html">SOBRE NOSOTRAS <i class="bi bi-people-fill"></i></a></li>
+                        <li class="header__nav__item"><a class="header__nav__link" href="pages/instrument.html">INSTRUMENTOS<i class="bi bi-music-note-beamed"></i></a></li>
+                        <li class="header__nav__item"><a class="header__nav__link" href="pages/contact.html">CONTACTO<i class="bi bi-envelope"></i></a></li>
+                        <li class="header__nav__item header__nav__item--home"><a href="#" class="header__nav__link">HOME<i class="bi bi-house"></i></a></li>
                     </ul>
             </nav>
         </header>
             <section class="content">
 
             </section>
-           
+            <script src="./src/js/instrument.js"></script>     
         <footer class="footer">
             <h3> &copy; Todos los derechos reservados</h3>
             <img src="images/logo f5 blanco.png">
