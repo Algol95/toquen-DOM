@@ -12,6 +12,10 @@ header {
     background-color: rgba(38, 37, 37, 1);
 }
 
+.header__nav__link i {
+    padding-left: 5px;
+}
+
 .header__logo {
     max-width: 14rem;
     margin-left: 2rem;
