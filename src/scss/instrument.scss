@@ -74,7 +74,8 @@ main {
 }
 
 /* ------------------- INDIVIDUAL SECTION STYLES ------------------- */
-.instructions, .youtube-embed {
+.instructions,
+.youtube-embed {
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 1%;
   padding: 1rem;
@@ -104,7 +105,8 @@ main {
   justify-content: flex-start;
 }
 
-.instructions h2, .youtube-embed h2 {
+.instructions h2,
+.youtube-embed h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
 }
@@ -248,45 +250,19 @@ main {
   top: 8%;
   height: 65.5%;
 }
+
 /* ------------------- RESPONSIVE STYLES FOR SMALL SCREENS ------------------- */
 @media (max-width: 768px) {
-  .main {
-    display: flex; /* Enables flexbox */
-    flex-direction: column; /* Items will stack vertically */
-    gap: 1rem; /* Adds spacing between items */
-    padding: 0 10px; /* Adds padding for responsive layout */
+  .container {
+    grid-template-areas:
+      "instructions"
+      "youtube-embed"
+      "xylophone";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
   }
 
-  .xylophone {
-    width: 100%; /* Ensures the xylophone takes full width */
-    margin: 0 auto; /* Centers the xylophone */
-  }
-  
-  .base {
-    width: 95%; /* Makes the base element responsive */
-  }
-  
-  .xylophone__keys {
-    max-width: 78%; /* Adjusts the keys' width */
-  }
-
-  .instructions h2 {
-    font-size: 1rem; /* Adjusts heading size */
-  }
-
-  .instructions strong {
-    font-weight: bold;
-    font-size: small; /* Adjusts strong text size */
-  }
-
-  .instructions p {
-    font-size: smaller; /* Adjusts paragraph text size */
-  }
-}
-
-/* ------------------- RESPONSIVE STYLES FOR MEDIUM SCREENS ------------------- */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .main {
+  main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -297,11 +273,47 @@ main {
     width: 100%;
     margin: 0 auto;
   }
-  
+
+  .base {
+    width: 95%;
+  }
+
+  .xylophone__keys {
+    max-width: 78%;
+  }
+
+  .instructions h2 {
+    font-size: 1rem;
+  }
+
+  .instructions strong {
+    font-weight: bold;
+    font-size: small;
+  }
+
+  .instructions p {
+    font-size: smaller;
+  }
+}
+
+/* ------------------- RESPONSIVE STYLES FOR MEDIUM SCREENS ------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 10px;
+  }
+
+  .xylophone {
+    width: 100%;
+    margin: 0 auto;
+  }
+
   .base {
     width: 90%;
   }
-  
+
   .xylophone__keys {
     max-width: 78%;
   }

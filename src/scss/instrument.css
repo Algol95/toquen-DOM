@@ -27,9 +27,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: url("https://images.pexels.com/photos/34221/violin-musical-instrument-music-sound.jpg?"); /* Replace with the path to your background image */
-  background-size: cover; /* Ensures the image covers the entire screen */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-image: url("https://images.pexels.com/photos/34221/violin-musical-instrument-music-sound.jpg?");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
@@ -67,7 +67,8 @@ main {
 }
 
 /* ------------------- INDIVIDUAL SECTION STYLES ------------------- */
-.instructions, .youtube-embed {
+.instructions,
+.youtube-embed {
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 1%;
   padding: 1rem;
@@ -98,7 +99,8 @@ main {
   justify-content: flex-start;
 }
 
-.instructions h2, .youtube-embed h2 {
+.instructions h2,
+.youtube-embed h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
 }
@@ -126,10 +128,10 @@ main {
 }
 
 .xylophone {
-  overflow: hidden; /* Prevent children from going outside the container */
-  position: relative; /* Needed for absolutely positioned child elements */
-  max-width: 100%; /* Prevent the xylophone from exceeding its parent */
-  max-height: 100%; /* Prevent excessive height */
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* ------------------- BASE IMAGE FOR XYLOPHONE ------------------- */
@@ -139,11 +141,11 @@ main {
 }
 
 .base {
-  width: 65%; /* Make the base image take up the full width of the xylophone */
-  height: auto; /* Maintain aspect ratio */
+  width: 65%;
+  height: auto;
   -o-object-fit: contain;
-     object-fit: contain; /* Ensure the image scales without overflowing */
-  display: block; /* Remove inline spacing issues */
+     object-fit: contain;
+  display: block;
   box-sizing: border-box;
 }
 
@@ -154,8 +156,8 @@ main {
   display: flex;
   pointer-events: auto;
   box-sizing: border-box;
-  width: 100%; /* Match the width of the base */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%;
+  height: auto;
   justify-content: center;
 }
 
@@ -247,36 +249,41 @@ main {
 
 /* ------------------- RESPONSIVE STYLES FOR SMALL SCREENS ------------------- */
 @media (max-width: 768px) {
-  .main {
-    display: flex; /* Enables flexbox */
-    flex-direction: column; /* Items will stack vertically */
-    gap: 1rem; /* Adds spacing between items */
-    padding: 0 10px; /* Adds padding for responsive layout */
+  .container {
+    grid-template-areas: "instructions" "youtube-embed" "xylophone";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 10px;
   }
   .xylophone {
-    width: 100%; /* Ensures the xylophone takes full width */
-    margin: 0 auto; /* Centers the xylophone */
+    width: 100%;
+    margin: 0 auto;
   }
   .base {
-    width: 95%; /* Makes the base element responsive */
+    width: 95%;
   }
   .xylophone__keys {
-    max-width: 78%; /* Adjusts the keys' width */
+    max-width: 78%;
   }
   .instructions h2 {
-    font-size: 1rem; /* Adjusts heading size */
+    font-size: 1rem;
   }
   .instructions strong {
     font-weight: bold;
-    font-size: small; /* Adjusts strong text size */
+    font-size: small;
   }
   .instructions p {
-    font-size: smaller; /* Adjusts paragraph text size */
+    font-size: smaller;
   }
 }
 /* ------------------- RESPONSIVE STYLES FOR MEDIUM SCREENS ------------------- */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .main {
+  main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
