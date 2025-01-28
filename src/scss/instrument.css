@@ -180,6 +180,20 @@ main {
   display: block;
 }
 
+/* ------------------- KEY NAMES ------------------- */
+.xylophone__key::before {
+  content: attr(data-key);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+  pointer-events: none;
+}
+
 /* ------------------- VIBRATION EFFECT ON KEY PRESS ------------------- */
 .xylophone__key.vibrating img {
   animation: vibration 0.2s ease-in-out;
