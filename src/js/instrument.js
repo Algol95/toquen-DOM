@@ -2,40 +2,54 @@ document.addEventListener('DOMContentLoaded', () => {
   const keys = Array.from(document.querySelectorAll('.xylophone__key'));
 
   const keyMap = {
-    'C': 'C', 'D': 'D', 'E': 'E', 'F': 'F', 'G': 'G', 'A': 'A', 'B': 'B',
-    'C2': 'Shift+C', 'D2': 'Shift+D', 'F2': 'Shift+F', 'G2': 'Shift+G', 'A2': 'Shift+A',
+    'C': 'C',
+    'D': 'D',
+    'E': 'E',
+    'F': 'F',
+    'G': 'G',
+    'A': 'A',
+    'B': 'B',
+    'Space+A': 'C2',
+    'Space+D': 'D2',
+    'Space+F': 'F2',
+    'Space+G': 'G2',
+    'Space+A2': 'A2',
   };
 
-  function vibrateKey(keyElement) {
-    keyElement.classList.add('vibrating');
-    setTimeout(() => {
-      keyElement.classList.remove('vibrating');
-    }, 400);
+  function playNote(note) {
+    const keyElement = document.querySelector(`.xylophone__key[data-key="${note}"]`);
+    if (keyElement) {
+      keyElement.classList.add('vibrating');
+      setTimeout(() => keyElement.classList.remove('vibrating'), 200);
+
+      const audio = new Audio(`../sounds/${note}.mp3`);
+      audio.play();
+    }
   }
 
-  window.addEventListener('keydown', (e) => {
-    const keyPressed = e.key;
-    const isShiftPressed = e.shiftKey;
+  function getKeyCombo(event) {
+    let combo = '';
+    if (event.ctrlKey) combo += 'Control+';
+    if (event.shiftKey) combo += 'Shift+';
+    if (event.altKey) combo += 'Alt+';
+    if (event.code === 'Space') combo += 'Space+';
+    combo += event.key.toUpperCase();
+    return combo;
+  }
 
-    if (!isShiftPressed && keyMap[keyPressed]) {
-      const key = document.querySelector(`.xylophone__key[data-key="${keyMap[keyPressed]}"]`);
-      if (key) {
-        vibrateKey(key);
-      }
-    }
-
-    if (isShiftPressed && keyPressed.toUpperCase() in keyMap) {
-      const shiftedKey = keyPressed.toUpperCase();
-      const key = document.querySelector(`.xylophone__key[data-key="${keyMap[shiftedKey]}"]`);
-      if (key) {
-        vibrateKey(key);
-      }
+  document.addEventListener('keydown', (event) => {
+    const combo = getKeyCombo(event);
+    const note = keyMap[combo];
+    if (note) {
+      playNote(note);
+      event.preventDefault();
     }
   });
 
   keys.forEach((key) => {
     key.addEventListener('click', () => {
-      vibrateKey(key);
+      const note = key.dataset.key;
+      playNote(note);
     });
   });
 });
