@@ -1,3 +1,7 @@
+:root {
+    --background-image: url("../../public/img/foto_xilo.jpeg");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -51,7 +55,13 @@ header {
      display: none;    
 }
 
-@media only screen and (min-width: 576px) and (max-width: 767px){
+body {
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 800px){
 
     .header__button--open-menu, .header__nav__button--close-menu {        
         display: block;              
@@ -200,14 +210,11 @@ header {
 
     .header__nav__item--home {
         display: block;        
-    }
-    
+    }    
 }
 
-.content{
-    background-color: white;
+.content{    
     height: 70vb;
-
 }
 
 footer{
