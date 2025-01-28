@@ -12,22 +12,24 @@
 <body>
     <main>
         <header class="header">
-            <img src="../images/logo.png">
-            <nav>   
-                    <ul>
-                        <li><a href="about-us.html">SOBRE NOSOTRAS</a></li>
-                        <li><a href="contact.html">CONTACTO</a></li>
-                        <li><a href="../index.html">HOME</a></li>
+            <img src="../public/img/logo_xylophone.png" class="logo-pagina header__logo">
+            <button class="header__button header__button--open-menu" id="open"><i class="bi bi-list" id="icon__open"></i></button>
+            <nav class="header__nav"  id="nav">
+                <button class="header__nav__button header__nav__button--close-menu" id="close"><i class="bi bi-x-lg" id="icon__close"></i></button>   
+                    <ul class="header__nav__list">
+                        <li class="header__nav__item"><a class="header__nav__link" href="about-us.html">SOBRE NOSOTRAS <i class="bi bi-people-fill"></i></a></li>
+                        <li class="header__nav__item"><a class="header__nav__link" href="contact.html">CONTACTO<i class="bi bi-envelope"></i></a></li>
+                        <li class="header__nav__item"><a href="../index.html" class="header__nav__link">HOME<i class="bi bi-house"></i></a></li>
                     </ul>
-            </nav>
         </header>
             <section class="content">
 
             </section>
            
         <footer class="footer">
+            <img src="../public/img/logo_f5_blanco.png">
             <h3> &copy; Todos los derechos reservados</h3>
-            <img src="../images/logo f5 blanco.png">
+            
         </footer>
     </main> 
 </body>

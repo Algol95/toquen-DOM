@@ -10,6 +10,7 @@ header {
     align-items: center;
     justify-content: space-between;    
     background-color: rgba(38, 37, 37, 1);
+
 }
 
 .header__nav__link i {
@@ -207,14 +208,22 @@ header {
 .content{
     background-color: white;
     height: 70vb;
+    margin: 0;
+   
 
 }
 
 footer{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #222222;
     color: white;
     padding: 45px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: xx-small;
 }
 
