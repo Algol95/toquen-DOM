@@ -2,6 +2,11 @@
     --background-image: url("../../public/img/foto_xilo.jpeg");
 }
 
+@media only screen and  (max-width: 800px){
+    :root {
+        --background-image: url("../../public/img/violin.jpg");
+    }
+}
 * {
     margin: 0;
     padding: 0;
@@ -61,7 +66,13 @@ body {
     background-position: center;
 }
 
+
+
 @media only screen and (min-width: 576px) and (max-width: 800px){
+
+    :root {
+        --background-image: url("../../public/img/violin.jpg");
+    }
 
     .header__button--open-menu, .header__nav__button--close-menu {        
         display: block;              
@@ -138,7 +149,8 @@ body {
     
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 575px) {    
+
     .header__button--open-menu, .header__nav__button--close-menu {        
         display: block;              
     }
