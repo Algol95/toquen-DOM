@@ -186,7 +186,6 @@ dd, dt {
 
   .xylophone {
     width: 100%;
-    // margin: 0 auto;
   }
 
   .base {
@@ -212,41 +211,3 @@ dd, dt {
   .xylophone__base { width: 90%; }
   .xylophone__keys { max-width: 78%; }
 }
-/* ------------------- RESPONSIVE STYLES FOR MEDIUM SCREENS ------------------- */
-
-
-// @media (min-width: 769px) and (max-width: 1024px) {
-//   main {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 1rem;
-//     padding: 0 10px;
-//   }
-
-//   .xylophone {
-//     width: 100%;
-//     margin: 0 auto;
-//   }
-
-//   .base {
-//     width: 90%;
-//   }
-
-//   .xylophone__keys {
-//     max-width: 78%;
-//   }
-
-//   .instructions h2 {
-//     font-size: 1rem;
-//   }
-
-//   .instructions strong {
-//     font-weight: bold;
-//     font-size: small;
-//   }
-
-//   .instructions p {
-//     font-size: smaller;
-//   }
-// }
-
