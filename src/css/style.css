@@ -1,8 +1,7 @@
 :root {
     --background-image: url("../../public/img/xilo_resized.jpeg");
-    --h1-font: "Italiana", serif;
+    --h1_h2_h3-font: "Italiana", serif;
     --body-font: "Inter", serif;
-
 }
 
 @media only screen and  (max-width: 800px){
@@ -24,9 +23,9 @@ header {
     background-color: rgba(38, 37, 37, 1);
 }
 
-h1 {
-    font-family: var(--h1-font);
-    font-weight: 400;
+h1, h2, h3 {
+    font-family: var(--h1_h2_h3-font);
+    font-weight: bolder;
     font-style: normal;
 }
 
@@ -73,13 +72,12 @@ body {
     background-image: var(--background-image);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     font-family: var(--body-font);
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
-
-
 
 @media only screen and (min-width: 576px) and (max-width: 800px){
 
