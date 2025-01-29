@@ -8,29 +8,28 @@
     <title>Xylophone</title>
     <script defer src="../src/js/instrument.js"></script>
 </head>
-
 <body>
     <nav>
         <h1>Xylophone Virtual Instrument</h1>
     </nav>
     <main class="container">
         <!-- Left section for instructions -->
-        <aside class="instructions">
-            <h2>Instructions</h2>
+        <section class="section--instructions">
+            <h2 class="section__title">Instructions</h2>
             <dl>
-                <dt>Mouse Click</dt>
+                <dt><strong> Mouse Click</strong></dt>
                 <dd>Click on the keys to play notes (C, D, E, F, G, A, B).</dd>
-                <dt>Keyboard Keys</dt>
+                <dt><strong>Keyboard Keys</strong></dt>
                 <dd>Press letter keys (C, D, E, F, G, A, B) for natural notes.</dd>
-                <dt>Sharp Notes</dt>
+                <dt><strong>Sharp Notes</strong></dt>
                 <dd>Hold <strong>Shift</strong> + Key (C, D, F, G, A) for sharp notes (C#, D#, F#, G#, A#).</dd>
             </dl>
             <p>Create your own melody and have fun!</p>
-        </aside>
+        </section>
 
         <!-- Right section for YouTube embedment -->
-        <section class="youtube-embed">
-            <h2>Video</h2>
+        <section class="section--youtube">
+            <h2 class="section__title">Video</h2>
             <iframe src="https://www.youtube.com/embed/your_video_id" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
@@ -38,7 +37,7 @@
 
         <!-- Second row for the xylophone -->
         <section class="xylophone">
-            <img src="../images/xylophone/base.png" class="base" alt="Xylophone Base">
+            <img src="../images/xylophone/base.png" class="xylophone__base" alt="Xylophone Base">
             <div class="xylophone__keys">
                 <div class="xylophone__key" data-key="C">
                     <img src="../images/xylophone/C.png" alt="C key">
@@ -84,7 +83,5 @@
     <footer>
         <p>&copy; 2025 Xylophone School</p>
     </footer>
-
 </body>
-
 </html>

@@ -1,4 +1,4 @@
-/* ------------------- VIBRATION ANIMATION ------------------- */
+/* ------------------- ANIMATIONS ------------------- */
 @keyframes vibration {
   0% {
     transform: translate(1px, 1px);
@@ -21,45 +21,40 @@
   }
 }
 
-/* ------------------- BASE STYLES FOR BODY ------------------- */
+/* ------------------- GENERAL STYLES ------------------- */
 body {
   display: flex;
-  z-index: 1;
   flex-direction: column;
-  justify-content: flex-start;
-  min-height: 100vh;
+  align-items: center;
+  gap: 2%;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
   background-image: url('https://images.pexels.com/photos/34221/violin-musical-instrument-music-sound.jpg?');
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
 }
 
-/* ------------------- HEADER AND FOOTER STYLES ------------------- */
 nav,
 footer {
   color: white;
   background-color: #262525;
   text-align: center;
-  max-width: 100%;
+  width: 100%;
   font-size: 1.2rem;
   font-weight: bold;
   box-sizing: border-box;
 }
 
-/* ------------------- MAIN CONTENT FLEX STYLES ------------------- */
-main {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 1rem;
-  box-sizing: border-box;
+nav {
+  margin-bottom: 3%;
 }
 
-/* ------------------- GRID - TOP ROW STYLES ------------------- */
+footer {
+  margin-top: 3%;
+}
+
+/* ------------------- GRID CONTAINER ------------------- */
 .container {
   display: grid;
   grid-template-areas:
@@ -67,215 +62,122 @@ main {
     "xylophone xylophone";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  gap: 1rem;
-  margin: 0 auto;
+  gap: 2%;
   background-size: contain;
   box-sizing: border-box;
+  width: 58%;
 }
 
-/* ------------------- INDIVIDUAL SECTION STYLES ------------------- */
-.instructions,
-.youtube-embed {
+/* ------------------- SECTIONS ------------------- */
+section {
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 1%;
-  padding: 1rem;
+  padding: 3%;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
   backdrop-filter: blur(5px);
+  padding: 8%;
 }
 
-.instructions {
-  grid-area: instructions;
+.section--instructions { grid-area: instructions; text-align: left;}
+.section--youtube { grid-area: youtube-embed; display: flex; flex-direction: column; align-items: center; }
+
+.section__title {
   text-align: center;
-}
-
-.instructions h2 {
-  margin: 0;
-  text-align: center;
-}
-
-.youtube-embed {
-  grid-area: youtube-embed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.instructions h2,
-.youtube-embed h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
 }
 
-.youtube-embed iframe {
-  width: 100%;
+.section--youtube iframe {
+  width: 80%;
   height: 100%;
   box-sizing: border-box;
 }
 
-/* ------------------- BOTTOM ROW - XYLOPHONE ------------------- */
+nav {
+  margin-bottom: 3%;
+}
+
+footer {
+  margin-top: 3%;
+}
+
+dd, dt {
+ margin-bottom: 2%;
+}
+/* ------------------- XYLOPHONE ------------------- */
 .xylophone {
   grid-area: xylophone;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 1%;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
-  display: flex;
-  box-sizing: border-box;
-  backdrop-filter: blur(5px);
-}
-
-.xylophone {
-  overflow: hidden;
+  padding: 4%;
   position: relative;
-  max-width: 100%;
-  max-height: 100%;
 }
 
-/* ------------------- BASE IMAGE FOR XYLOPHONE ------------------- */
-.base {
+.xylophone__base {
   position: relative;
   z-index: 2;
-}
-
-.base {
-  width: 65%;
-  height: auto;
+  width: 80%;
+  height: 100%;
   object-fit: contain;
-  display: block;
   box-sizing: border-box;
 }
 
-
-/* ------------------- KEY CONTAINER ------------------- */
 .xylophone__keys {
   z-index: 3;
   position: absolute;
   display: flex;
   pointer-events: auto;
-  box-sizing: border-box;
-  width: 100%;
-  height: auto;
+  width: 80%;
+  height: 100%;
   justify-content: center;
+  align-items: center;
 }
 
-/* ------------------- INDIVIDUAL KEY STYLES ------------------- */
 .xylophone__key {
-  display: inline-block;
   position: relative;
   user-select: none;
   transition: transform 0.2s ease, background-color 0.3s ease;
+  cursor: pointer;
 }
 
-/* ------------------- KEY IMAGES ------------------- */
 .xylophone__key img {
   width: 90%;
   height: auto;
-  transition: transform 0.2s ease;
-  box-sizing: border-box;
-  display: block;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* ------------------- KEY NAMES ------------------- */
+
 .xylophone__key::before {
   content: attr(data-key);
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 45%;
+  left: 25%;
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
   text-shadow: 1px 1px 2px black;
   pointer-events: none;
+  z-index: 2;
 }
 
-/* ------------------- VIBRATION EFFECT ON KEY PRESS ------------------- */
 .xylophone__key.vibrating img {
-  animation: vibration 0.2s ease-in-out;
+  animation: vibration 0.2s ease-in-out 2;
   animation-iteration-count: 2;
 }
 
-/* ------------------- MODIFIER CLASSES FOR KEY HEIGHTS ------------------- */
-.xylophone__key[data-key="C"] {
-  top: -8%;
-  height: 566% !important;
-}
-
-.xylophone__key[data-key="D"] {
-  top: -7%;
-  height: 108%;
-}
-
-.xylophone__key[data-key="E"] {
-  top: -5%;
-  height: 104%;
-}
-
-.xylophone__key[data-key="F"] {
-  top: -4%;
-  height: 100%;
-}
-
-.xylophone__key[data-key="G"] {
-  top: -3%;
-  height: 96%;
-}
-
-.xylophone__key[data-key="A"] {
-  top: -2%;
-  height: 92%;
-}
-
-.xylophone__key[data-key="B"] {
-  top: -1%;
-  height: 88%;
-}
-
-.xylophone__key[data-key="C2"] {
-  top: 0%;
-  height: 84%;
-}
-
-.xylophone__key[data-key="D2"] {
-  top: 1%;
-  height: 79%;
-}
-
-.xylophone__key[data-key="F2"] {
-  top: 2%;
-  height: 74%;
-}
-
-.xylophone__key[data-key="G2"] {
-  top: 3.5%;
-  height: 70%;
-}
-
-.xylophone__key[data-key="A2"] {
-  top: 8%;
-  height: 65.5%;
+.xylophone__key:hover img {
+  transform: scale(1.05);
+  filter:brightness(1.2)
 }
 
 /* ------------------- RESPONSIVE STYLES FOR SMALL SCREENS ------------------- */
 @media (max-width: 768px) {
   .container {
-    grid-template-areas:
-      "instructions"
-      "youtube-embed"
-      "xylophone";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-  }
-
-  main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -284,7 +186,7 @@ main {
 
   .xylophone {
     width: 100%;
-    margin: 0 auto;
+    // margin: 0 auto;
   }
 
   .base {
@@ -295,52 +197,56 @@ main {
     max-width: 78%;
   }
 
-  .instructions h2 {
+  .section__title {
     font-size: 1rem;
   }
 
-  .instructions strong {
-    font-weight: bold;
-    font-size: small;
-  }
-
-  .instructions p {
-    font-size: smaller;
+  .xylophone__key::before {
+    font-size: 1rem;
   }
 }
 
-/* ------------------- RESPONSIVE STYLES FOR MEDIUM SCREENS ------------------- */
 @media (min-width: 769px) and (max-width: 1024px) {
-  main {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0 10px;
-  }
-
-  .xylophone {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 90%;
-  }
-
-  .xylophone__keys {
-    max-width: 78%;
-  }
-
-  .instructions h2 {
-    font-size: 1rem;
-  }
-
-  .instructions strong {
-    font-weight: bold;
-    font-size: small;
-  }
-
-  .instructions p {
-    font-size: smaller;
-  }
+  .container { padding: 0 10px; }
+  .xylophone { width: 100%; }
+  .xylophone__base { width: 90%; }
+  .xylophone__keys { max-width: 78%; }
 }
+/* ------------------- RESPONSIVE STYLES FOR MEDIUM SCREENS ------------------- */
+
+
+// @media (min-width: 769px) and (max-width: 1024px) {
+//   main {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1rem;
+//     padding: 0 10px;
+//   }
+
+//   .xylophone {
+//     width: 100%;
+//     margin: 0 auto;
+//   }
+
+//   .base {
+//     width: 90%;
+//   }
+
+//   .xylophone__keys {
+//     max-width: 78%;
+//   }
+
+//   .instructions h2 {
+//     font-size: 1rem;
+//   }
+
+//   .instructions strong {
+//     font-weight: bold;
+//     font-size: small;
+//   }
+
+//   .instructions p {
+//     font-size: smaller;
+//   }
+// }
+
