@@ -94,6 +94,7 @@ header {
         margin-top: 0.5rem;        
         font-size: 2rem;
         margin-bottom: 2rem;
+        margin-right: 1rem;
     }
 
     .header__nav {
@@ -107,7 +108,7 @@ header {
         right: 0;       
         bottom: 0;
         background-color: #1c1c1c;
-        padding: 2rem;
+        padding: 0,5rem;
         box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5);              
     }
     
@@ -118,10 +119,10 @@ header {
     }
 
     .header__nav__list {       
-        margin-top: 30px;
+        margin-top: 20px;
         flex-direction: column;
         align-items: end;     
-        gap: 5rem;   
+        gap: 4rem;   
         
     }        
 
@@ -130,12 +131,12 @@ header {
         display: inline-flex;        
         align-items: center;
         margin-left: 2rem;
-        font-size: 1.5rem;
+        font-size: 1rem;
     }   
 
     .bi {
         display: block;
-        font-size:  3rem; 
+        font-size:  2rem; 
     }
 
     .header__nav__item--home {
@@ -252,16 +253,16 @@ footer{
     justify-content: center;
     background-color: #222222;
     color: white;
-    padding: 45px;
-    gap:10px;
+    padding: 15px;
+    gap:5px;
     position: absolute;
     bottom: 0;
     width: 100%;
-    font-size: small;
+    font-size: xx-small;
 }
 
-img{
-    width: 150px;
+.footer__logo {
+    width: 120px;
 }
 
 
