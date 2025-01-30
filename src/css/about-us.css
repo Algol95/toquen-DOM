@@ -30,7 +30,7 @@ h3 {
     font-family: var(--h1_h2_h3-font);
     font-weight: bolder;
     font-style: normal;
-    text-shadow: 4px 2px 0 black;
+    text-shadow: 2px 2px 0 black;
 }
 
 .header__nav__link i {
@@ -94,49 +94,42 @@ body {
 }
 
 .content__curtain {
-    width: 50%;
+    width: 60%;
     height: 100%;
     background-color: black;
     opacity: 0.6;
 }
 
-.content__curtain--left {
-}
-
-.content__curtain--right {
-}
-
-.content__slider__container {
+.content__container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;       
+    align-items: center;      
+    background-color: rgba(15, 15, 15, 0.2); 
+    
 }
 
-.content__slider__container--h1 {
+.content__container__h1 {
     margin-top: 5%;
     width: 100%;
     height: 15%;
     text-align: center;
-    color: white;
+    color: rgb(248, 242, 242);
     font-size: 50px;
-    font-weight: 800;
-    z-index: 4;
+    font-weight: normal;    
 }
 
-.content__slider__container--article {
-    width: 60%;
+.content__container__div {
+    width: 80%;
     height: 40%;
     background-color: rgb(21, 20, 20);
-    opacity: 0.5;
-    
-    
+    opacity: 0.5;    
 }
 
 /*-------------------------------- Botones--------------------------------------- */
 
-.content__slider__container__btn--left {
+.content__container__btn--left {
     position: absolute;
     transform: translateY(-50%);
     background-color: rgb(15, 15, 15);
@@ -148,12 +141,11 @@ body {
     font-size: 30px;
     text-align: center;
     justify-content: center;
-    margin-top: 20%;
-    margin-right: 52%;
-    z-index: 30;
+    margin-top: 25%;
+    margin-right: 48%;   
 }
 
-.content__slider__container__btn--right {
+.content__container__btn--right {
     position: absolute;
     transform: translateY(-50%);
     background-color: rgb(15, 15, 15);
@@ -165,9 +157,9 @@ body {
     font-size: 30px;
     text-align: center;
     justify-content: center;
-    margin-top: 20%;
-    margin-left: 52%;
-    z-index: 30;
+    margin-top: 25%;
+    margin-left: 48%; 
+    z-index: 20;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 800px) {
@@ -177,7 +169,7 @@ body {
 
     .header__button--open-menu,
     .header__nav__button--close-menu {
-        display: block;
+    display: block;
     }
 
     .header__button--open-menu {
@@ -260,16 +252,10 @@ body {
     }
 
     .content__curtain {
-        width: 50%;
+        width: 80%;
         height: 100%;
         background-color: black;
         opacity: 0.5;
-    }
-
-    .content__curtain--left {
-    }
-
-    .content__curtain--right {
     }
 
     .content__slider__container {
@@ -308,7 +294,7 @@ body {
         width: 60px;
         height: 60px;
         font-size: 20px;
-        margin-top: -30%;
+        margin-top: 50%;
         margin-right: 90%;
         z-index: 30;
     }
