@@ -48,7 +48,7 @@ body {
     display: grid;
     grid-template-columns:  1fr 2fr 1fr;  
     grid-template-rows: 1fr;    
-    flex-grow: 0 ;
+    flex-grow: 0.1 ;
 }
 
 .content__curtain {
@@ -57,9 +57,13 @@ body {
     opacity: 0.6;
     display:flex;
     align-items: center;
-    padding-right: 20px;
+    padding-right: 15px;
 }
 
+.content__curtain--right {
+    justify-self: start;
+    justify-content: start;
+}
 .content__curtain--left {
     justify-self: end;
     justify-content: flex-end;
@@ -71,7 +75,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;      
-    background-color: rgba(15, 15, 15, 0.2);     
+    background-color: rgba(15, 15, 15, 0.2);  
+       
 }
 
 .content__container__h1 {
@@ -86,7 +91,7 @@ body {
 
 .content__container__div {
     width: 80%;
-    height: 40%;
+    height: 60%;
     background-color: rgb(21, 20, 20);
     opacity: 0.5;    
 }
@@ -101,7 +106,8 @@ body {
     width: 80px;
     height: 80px;
     font-size: 30px;
-    text-align: center;        
+    text-align: center;      
+    margin-left: 10px;
 }
 
 .content__container__btn--right {    
@@ -113,6 +119,7 @@ body {
     height: 80px;
     font-size: 30px;
     text-align: center;    
+   margin-left: 15px
 }
 
 @media only screen and (min-width: 576px) and (max-width: 800px) {
@@ -130,7 +137,7 @@ body {
     }
 
     .content__curtain {
-        width: 80%;
+        width: 20%;
         height: 100%;
         background-color: black;
         opacity: 0.5;
@@ -145,7 +152,8 @@ body {
     }
 
     .content__slider__container--h1 {
-        margin-top: 10%;
+        margin-top: 80;
+        padding: 5rem;
         width: 100%;
         height: 15%;
         text-align: center;
@@ -155,8 +163,9 @@ body {
     }
 
     .content__container__div {
+        margin-top: 5rem;
         width: 90%;
-        height: 30%;
+        height:20rem;
         background-color: rgb(9, 9, 9);
         opacity: 0.5;
     }
@@ -195,7 +204,7 @@ body {
     }
 
     .content__curtain {
-        width: 50%;
+        width: 5rem;
         height: 100%;
         background-color: black;
         opacity: 0.5;
