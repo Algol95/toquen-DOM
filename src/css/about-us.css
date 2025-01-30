@@ -82,22 +82,27 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
 .content {   
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;    
+    width: 100%;      
+    display: grid;
+    grid-template-columns:  1fr 2fr 1fr;  
+    grid-template-rows: 1fr;    
+    flex: 1;
 }
 
 .content__curtain {
-    width: 60%;
-    height: 100%;
+    width: 100%; 
     background-color: black;
     opacity: 0.6;
+    display:flex;
+    align-items: center;
+
 }
 
 .content__container {
@@ -129,9 +134,7 @@ body {
 
 /*-------------------------------- Botones--------------------------------------- */
 
-.content__container__btn--left {
-    position: absolute;
-    transform: translateY(-50%);
+.content__container__btn--left {    
     background-color: rgb(15, 15, 15);
     color: white;
     border: 2px solid white;
@@ -139,15 +142,10 @@ body {
     width: 80px;
     height: 80px;
     font-size: 30px;
-    text-align: center;
-    justify-content: center;
-    margin-top: 25%;
-    margin-right: 48%;   
+    text-align: center;    
 }
 
-.content__container__btn--right {
-    position: absolute;
-    transform: translateY(-50%);
+.content__container__btn--right {    
     background-color: rgb(15, 15, 15);
     color: white;
     border: 2px solid white;
@@ -155,11 +153,7 @@ body {
     width: 80px;
     height: 80px;
     font-size: 30px;
-    text-align: center;
-    justify-content: center;
-    margin-top: 25%;
-    margin-left: 48%; 
-    z-index: 20;
+    text-align: center;    
 }
 
 @media only screen and (min-width: 576px) and (max-width: 800px) {
