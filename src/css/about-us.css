@@ -17,13 +17,6 @@
     
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(38, 37, 37, 1);
-}
-
 h1,
 h2,
 h3 {
@@ -31,46 +24,6 @@ h3 {
     font-weight: bolder;
     font-style: normal;
     text-shadow: 2px 2px 0 black;
-}
-
-.header__nav__link i {
-    padding-left: 5px;
-}
-
-.header__logo {
-    max-width: 14rem;
-    margin-left: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-.header__nav__list {
-    display: flex;
-    list-style-type: none;
-    margin-right: 2rem;
-    gap: 3rem;
-}
-
-.header__nav__link {
-    text-decoration: none;
-    color: #f0e8fb;
-}
-
-.bi {
-    display: none;
-}
-
-.header__nav__item--home {
-    display: block;
-}
-
-.header__nav__item--home {
-    display: none;
-}
-
-.header__button--open-menu,
-.header__nav__button--close-menu {
-    display: none;
 }
 
 body {
@@ -159,82 +112,7 @@ body {
 @media only screen and (min-width: 576px) and (max-width: 800px) {
     :root {
         --background-image: url("../../public/img/violin.jpg");
-    }
-
-    .header__button--open-menu,
-    .header__nav__button--close-menu {
-    display: block;
-    }
-
-    .header__button--open-menu {
-        margin-right: 2rem;
-        margin-bottom: 1rem;
-        border: 0;
-        color: #f0e8fb;
-        background-color: transparent;
-    }
-
-    #icon__open {
-        font-size: 5rem;
-    }
-
-    .header__nav__button--close-menu {
-        margin-top: 10px;
-        border: 0;
-        color: #f0e8fb;
-        background-color: transparent;
-    }
-
-    #icon__close {
-        margin-top: 0.5rem;
-        font-size: 3rem;
-        margin-bottom: 2rem;
-    }
-
-    .header__nav {
-        opacity: 0;
-        visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #1c1c1c;
-        padding: 2rem;
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-    }
-
-    .header__nav.visible {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .header__nav__list {
-        margin-top: 30px;
-        flex-direction: column;
-        align-items: end;
-        gap: 6rem;
-    }
-
-    .header__nav__link {
-        color: #ecececec;
-        display: inline-flex;
-        align-items: center;
-        margin-left: 2rem;
-        font-size: 1.5rem;
-    }
-
-    .bi {
-        display: block;
-        font-size: 3rem;
-    }
-
-    .header__nav__item--home {
-        display: block;
-    }
-
+    }   
     /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
     .content {
         /*distribute the curtains with flex*/
@@ -280,110 +158,27 @@ body {
     /*-------------------------------- Botones--------------------------------------- */
 
     .content__slider__container__btn--left {
-        transform: translateY(-50%);
-        background-color: rgb(15, 15, 15);
-        color: white;
+         color: white;
         border: 1px solid white;
         border-radius: 50%;
         width: 60px;
         height: 60px;
-        font-size: 20px;
-        margin-top: 50%;
-        margin-right: 90%;
-        z-index: 30;
+        font-size: 20px;        
     }
 
     .content__slider__container__btn--right {
-        position: absolute;
-        transform: translateY(-50%);
         background-color: rgb(15, 15, 15);
         color: white;
         border: 1px solid white;
         border-radius: 50%;
         width: 60px;
         height: 60px;
-        font-size: 20px;
-        margin-top: 32%;
-        margin-left: 45%;
-        z-index: 30;
+        font-size: 20px;      
     }
 }
 
 @media screen and (max-width: 575px) {
-    .header__button--open-menu,
-    .header__nav__button--close-menu {
-        display: block;
-    }
-
-    .header__button--open-menu {
-        margin-right: 2rem;
-        margin-bottom: 1rem;
-        border: 0;
-        color: #f0e8fb;
-        background-color: transparent;
-    }
-
-    #icon__open {
-        font-size: 5rem;
-    }
-
-    .header__nav__button--close-menu {
-        margin-top: 10px;
-        border: 0;
-        color: #f0e8fb;
-        background-color: transparent;
-    }
-
-    #icon__close {
-        margin-top: 0.5rem;
-        font-size: 3rem;
-        margin-bottom: 2rem;
-    }
-
-    .header__nav {
-        opacity: 0;
-        visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #1c1c1c;
-        padding: 2rem;
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-    }
-
-    .header__nav.visible {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .header__nav__list {
-        margin-top: 30px;
-        flex-direction: column;
-        align-items: end;
-        gap: 6rem;
-    }
-
-    .header__nav__link {
-        color: #ecececec;
-        display: inline-flex;
-        align-items: center;
-        margin-left: 2rem;
-        font-size: 1.5rem;
-    }
-
-    .bi {
-        display: block;
-        font-size: 3rem;
-    }
-
-    .header__nav__item--home {
-        display: block;
-    }
-    /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
+     /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
     .content {
         /*distribute the curtains with flex*/
         width: 100%;
@@ -434,45 +229,21 @@ body {
     /*-------------------------------- Botones--------------------------------------- */
 
     .content__slider__container__btn--left {
-        transform: translateY(-50%);
-        background-color: rgb(15, 15, 15);
         color: white;
         border: 1px solid white;
         border-radius: 50%;
         width: 60px;
         height: 60px;
-        font-size: 20px;
-        margin-top: -30%;
-        margin-right: 90%;
-        z-index: 30;
+        font-size: 20px;        
     }
 
     .content__slider__container__btn--right {
-        position: absolute;
-        transform: translateY(-50%);
         background-color: rgb(15, 15, 15);
         color: white;
         border: 1px solid white;
         border-radius: 50%;
         width: 60px;
         height: 60px;
-        font-size: 20px;
-        margin-top: 32%;
-        margin-left: 45%;
-        z-index: 30;
+        font-size: 20px;        
     }
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #222222;
-    color: white;
-    padding: 45px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    font-size: xx-small;
 }
