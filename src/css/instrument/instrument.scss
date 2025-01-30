@@ -3,8 +3,7 @@
   --h1_h2_h3-font: "Italiana", serif;
   --body-font: "Inter", serif;
   --primary-color: #222222;
-  --secondary-color: #000000;
-  --text-color: #ffffff;
+  --secondary-color: #ffffff;
 }
 
 /* ------------------- ANIMATIONS ------------------- */
@@ -30,28 +29,7 @@
   }
 }
 
-/* ------------------- GENERAL STYLES ------------------- */
-header {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--primary-color);
-  width: 100%;
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary-color);
-  color: --text-color;
-  bottom: 0;
-  width: 100%;
-  font-size: xx-small;
-}
-
+/* ------------------- FONT STYLES ------------------- */
 h1,
 h2,
 h3 {
@@ -60,6 +38,7 @@ h3 {
   font-style: normal;
 }
 
+/* ------------------- GENERAL STYLES ------------------- */
 .header__nav__link i {
   padding-left: 5px;
 }
@@ -77,24 +56,38 @@ h3 {
 
 .header__nav__link {
   text-decoration: none;
-  color: --text-color;
+  color: var(--secondary-color);
 }
 
 .bi {
   display: none;
 }
 
-.header__nav__item--home {
-  display: block;
-}
-
-.header__nav__item--home {
-  display: none;
-}
-
 .header__button--open-menu,
 .header__nav__button--close-menu {
   display: none;
+}
+
+header {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 45px;
+  bottom: 0;
+  width: 100%;
+  font-size: xx-small;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 /* ------------------- BODY CONTAINER ------------------- */
@@ -109,10 +102,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-family: var(--body-font);
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+  min-height: 100%;
 }
 
 /* ------------------- GRID CONTAINER ------------------- */
@@ -121,14 +111,14 @@ main {
   grid-template-areas:
     "instructions youtube-embed"
     "xylophone xylophone"
-    "play--songs play--songs";
+    "music music";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
   gap: 2%;
   background-size: contain;
   box-sizing: border-box;
   width: 58%;
-  
+  min-height: 100vh;
 }
 
 /* ------------------- SECTIONS ------------------- */
@@ -174,12 +164,27 @@ dt {
   margin-bottom: 2%;
 }
 
-.play--songs {
-  grid-area: play--songs;
+/* ------------------- PLAY SONGS ------------------- */
+.music {
+  grid-area: music;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4%;
+}
+
+.play-music-button {
+  background-color:var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.play-music-button i {
+  font-size: 1.5rem;
+  padding-right: 8px;
 }
 
 /* ------------------- XYLOPHONE ------------------- */
@@ -302,10 +307,6 @@ dt {
     left: 15%;
   }
 
-  .xylophone__key::before {
-    font-size: 1rem;
-  }
-
   .section--youtube {
     padding: 5%;
   }
@@ -325,7 +326,7 @@ dt {
     margin-right: 2rem;
     margin-bottom: 1rem;
     border: 0;
-    color: #f0e8fb;
+    color:var(--secondary-color);
     background-color: transparent;
   }
 
@@ -336,7 +337,7 @@ dt {
   .header__nav__button--close-menu {
     margin-top: 10px;
     border: 0;
-    color: #f0e8fb;
+    color: var(--secondary-color);
     background-color: transparent;
   }
 
@@ -356,7 +357,7 @@ dt {
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: #1c1c1c;
+    background-color: var(--primary-color);
     padding: 2rem;
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
   }
@@ -374,7 +375,6 @@ dt {
   }
 
   .header__nav__link {
-    color: #ecececec;
     display: inline-flex;
     align-items: center;
     margin-left: 2rem;
