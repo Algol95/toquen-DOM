@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instrument</title>
-    <link rel="stylesheet" href="../src/scss/instrument.css">
-    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../src/css/instrument/instrument.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,9 +17,11 @@
 <body>
     <header class="header">
         <img src="../public/img/logo_xylophone.png" class="logo-pagina header__logo">
-        <button class="header__button header__button--open-menu" id="open"><i class="bi bi-list" id="icon__open"></i></button>
+        <button class="header__button header__button--open-menu" id="open"><i class="bi bi-list"
+                id="icon__open"></i></button>
         <nav class="header__nav" id="nav">
-            <button class="header__nav__button header__nav__button--close-menu" id="close"><i class="bi bi-x-lg" id="icon__close"></i>
+            <button class="header__nav__button header__nav__button--close-menu" id="close"><i class="bi bi-x-lg"
+                    id="icon__close"></i>
             </button>
             <ul class="header__nav__list">
                 <li class="header__nav__item"><a class="header__nav__link" href="about-us.html">SOBRE NOSOTRAS <i
@@ -30,11 +31,12 @@
                 <li class="header__nav__item"><a href="../index.html" class="header__nav__link">HOME<i
                             class="bi bi-house"></i></a></li>
             </ul>
+        </nav>
     </header>
     <div id="orientation-lock">
         <p>Please switch to landscape mode for the best experience.</p>
     </div>
-    <main class="container">
+    <main class="main">
         <!-- Left section for instructions -->
         <section class="section--instructions">
             <h2 class="section__title">Instructions</h2>
@@ -98,6 +100,10 @@
                     <img src="../images/xylophone/KeyA2.png" alt="A2 key">
                 </div>
             </div>
+        </section>
+
+        <section class="play--songs">
+            <p>This section is to play pre-recorded songs.</p>
         </section>
 
     </main>

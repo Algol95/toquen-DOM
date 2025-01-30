@@ -1,64 +1,134 @@
+:root {
+  --background-image: url("../../public/img/xilo_resized.jpeg");
+  --h1_h2_h3-font: "Italiana", serif;
+  --body-font: "Inter", serif;
+  --primary-color: #222222;
+  --secondary-color: #000000;
+  --text-color: #ffffff;
+}
+
 /* ------------------- ANIMATIONS ------------------- */
 @keyframes vibration {
   0% {
     transform: translate(1px, 1px);
   }
+
   25% {
     transform: translate(-1px, -1px);
   }
+
   50% {
     transform: translate(1px, -1px);
   }
+
   75% {
     transform: translate(-1px, 1px);
   }
+
   100% {
     transform: translate(0, 0);
   }
 }
+
 /* ------------------- GENERAL STYLES ------------------- */
+header {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: --text-color;
+  bottom: 0;
+  width: 100%;
+  font-size: xx-small;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--h1_h2_h3-font);
+  font-weight: bolder;
+  font-style: normal;
+}
+
+.header__nav__link i {
+  padding-left: 5px;
+}
+
+.header__logo {
+  max-width: 8%;
+  padding: 1.5%;
+}
+
+.header__nav__list {
+  display: flex;
+  list-style-type: none;
+  gap: 3rem;
+}
+
+.header__nav__link {
+  text-decoration: none;
+  color: --text-color;
+}
+
+.bi {
+  display: none;
+}
+
+.header__nav__item--home {
+  display: block;
+}
+
+.header__nav__item--home {
+  display: none;
+}
+
+.header__button--open-menu,
+.header__nav__button--close-menu {
+  display: none;
+}
+
+/* ------------------- BODY CONTAINER ------------------- */
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2%;
-  font-family: Arial, sans-serif;
   margin: 0;
   box-sizing: border-box;
-  background-image: url("https://images.pexels.com/photos/34221/violin-musical-instrument-music-sound.jpg?");
+  background-image: var(--background-image);
   background-size: cover;
   background-position: center;
-}
-
-nav,
-footer {
-  color: white;
-  background-color: #262525;
-  text-align: center;
-  width: 100%;
-  font-size: 1.2rem;
-  font-weight: bold;
-  box-sizing: border-box;
-}
-
-nav {
-  margin-bottom: 3%;
-}
-
-footer {
-  margin-top: 3%;
+  background-attachment: fixed;
+  font-family: var(--body-font);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* ------------------- GRID CONTAINER ------------------- */
-.container {
+main {
   display: grid;
-  grid-template-areas: "instructions youtube-embed" "xylophone xylophone";
+  grid-template-areas:
+    "instructions youtube-embed"
+    "xylophone xylophone"
+    "play--songs play--songs";
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   gap: 2%;
   background-size: contain;
   box-sizing: border-box;
   width: 58%;
+  
 }
 
 /* ------------------- SECTIONS ------------------- */
@@ -71,8 +141,7 @@ section {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   padding: 8%;
 }
 
@@ -100,16 +169,17 @@ section {
   box-sizing: border-box;
 }
 
-nav {
-  margin-bottom: 3%;
-}
-
-footer {
-  margin-top: 3%;
-}
-
-dd, dt {
+dd,
+dt {
   margin-bottom: 2%;
+}
+
+.play--songs {
+  grid-area: play--songs;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4%;
 }
 
 /* ------------------- XYLOPHONE ------------------- */
@@ -127,8 +197,7 @@ dd, dt {
   z-index: 2;
   width: 80%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   box-sizing: border-box;
 }
 
@@ -145,9 +214,7 @@ dd, dt {
 
 .xylophone__key {
   position: relative;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   transition: transform 0.2s ease, background-color 0.3s ease;
   cursor: pointer;
 }
@@ -157,6 +224,7 @@ dd, dt {
   height: auto;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
+
 
 .xylophone__key::before {
   content: attr(data-key);
@@ -183,54 +251,147 @@ dd, dt {
 
 /* ------------------- RESPONSIVE STYLES FOR SMALL SCREENS ------------------- */
 @media (max-width: 768px) {
-  .container {
+  :root {
+    --background-image: url("../../public/img/violin.jpg");
+  }
+
+  main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 0 10px;
     width: 100%;
   }
+
   .xylophone {
     width: 100%;
   }
+
   .xylophone__base {
     width: 95%;
   }
+
   .xylophone__keys {
     max-width: 78%;
   }
+
   .section__title {
     font-size: 1.2rem;
   }
+
   dt {
     font-size: 0.9rem;
     font-weight: bold;
   }
+
   dd {
     font-size: 0.8rem;
     font-weight: normal;
   }
+
   p {
     font-size: 0.8rem;
     font-weight: small;
     font-style: italic;
+
   }
+
   .xylophone__key::before {
     font-size: 0.75;
     font-weight: normal;
     left: 15%;
   }
+
   .xylophone__key::before {
     font-size: 1rem;
   }
+
   .section--youtube {
     padding: 5%;
   }
+
   .section--youtube iframe {
     width: 70%;
     height: auto;
   }
+
+  
+  .header__button--open-menu,
+  .header__nav__button--close-menu {
+    display: block;
+  }
+
+  .header__button--open-menu {
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    border: 0;
+    color: #f0e8fb;
+    background-color: transparent;
+  }
+
+  #icon__open {
+    font-size: 5rem;
+  }
+
+  .header__nav__button--close-menu {
+    margin-top: 10px;
+    border: 0;
+    color: #f0e8fb;
+    background-color: transparent;
+  }
+
+  #icon__close {
+    margin-top: 0.5rem;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .header__nav {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1c1c1c;
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+  }
+
+  .header__nav.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header__nav__list {
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: end;
+    gap: 6rem;
+  }
+
+  .header__nav__link {
+    color: #ecececec;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .bi {
+    display: block;
+    font-size: 3rem;
+  }
+
+  .header__nav__item--home {
+    display: block;
+  }
+
 }
+
 /* ------------------- RESPONSIVE STYLES FOR SMALL SCREENS IN LANDSCAPE MODE ------------------- */
 @media (orientation: landscape) and (max-width: 900px) {
   .container {
@@ -241,30 +402,37 @@ dd, dt {
     width: 100%;
     box-sizing: border-box;
   }
+
   .xylophone {
     width: 100%;
     height: 100%;
   }
+
   .xylophone__base {
     width: 90%;
   }
+
   .xylophone__keys {
     max-width: 90%;
   }
+
   .section {
     width: 90%;
     margin-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
   }
+
   .section__title {
     font-size: 1.3rem;
   }
+
   .section--youtube iframe {
     width: 100%;
     height: 40vh;
   }
 }
+
 /* ------------------- POPUP FOR SMALL SCREENS ------------------- */
 #orientation-lock {
   position: fixed;
@@ -296,7 +464,8 @@ body.popup-active .xylophone__key {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
-}/*# sourceMappingURL=instrument.css.map */
+}
