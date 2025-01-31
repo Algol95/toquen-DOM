@@ -290,7 +290,11 @@ footer{
 }
 
 .footer__logo {
-    width: 120px;
+    width: 150px;
+}
+.footer__text {
+    font-size: small;
+    color:white;
 }
 
 
