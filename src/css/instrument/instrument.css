@@ -16,6 +16,8 @@
     transform: translate(0, 0);
   }
 }
+/* ------------------- GENERAL STYLES ------------------- */
+/* ------------------- GRID CONTAINER ------------------- */
 .container {
   display: grid;
   grid-template-areas: "instructions youtube-embed" "xylophone xylophone";
