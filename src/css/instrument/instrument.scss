@@ -1,9 +1,21 @@
+/* ------------------- ROOT VARIABLES ------------------- */
 :root {
-  --background-image: url("../../public/img/xilo_resized.jpeg");
+  --background-image: url("../../../public/img/xilo_resized.jpeg");
   --h1_h2_h3-font: "Italiana", serif;
   --body-font: "Inter", serif;
   --primary-color: #222222;
   --secondary-color: #ffffff;
+  --inactive-button-color: #9F4B2E;
+  --active-button-color: #DEB581;
+  --text-shadow: 1px 1px 2px black;
+  --objec-shadow: 4px 4px 4px black;
+}
+
+/* ------------------- GENERAL PROPERTIES ------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* ------------------- ANIMATIONS ------------------- */
@@ -29,6 +41,23 @@
   }
 }
 
+@keyframes rippleEffect {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    transform: scale(1.2);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0);
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
 /* ------------------- FONT STYLES ------------------- */
 h1,
 h2,
@@ -38,36 +67,7 @@ h3 {
   font-style: normal;
 }
 
-/* ------------------- GENERAL STYLES ------------------- */
-.header__nav__link i {
-  padding-left: 5px;
-}
-
-.header__logo {
-  max-width: 8%;
-  padding: 1.5%;
-}
-
-.header__nav__list {
-  display: flex;
-  list-style-type: none;
-  gap: 3rem;
-}
-
-.header__nav__link {
-  text-decoration: none;
-  color: var(--secondary-color);
-}
-
-.bi {
-  display: none;
-}
-
-.header__button--open-menu,
-.header__nav__button--close-menu {
-  display: none;
-}
-
+/* ------------------- HEADER CONTAINER ------------------- */
 header {
   display: inline-flex;
   flex-direction: row;
@@ -75,35 +75,83 @@ header {
   justify-content: space-between;
   width: 100%;
   background-color: var(--primary-color);
+  text-shadow: var(--text-shadow);
 }
 
-footer {
+/* ------------------- HEADER LOGO ------------------- */
+.header__logo {
+  width: 12%;
+  margin: 1% 0 0.5% 5%;
+}
+
+.header__logo__image {
+  max-width: 100%;
+}
+
+/* ------------------- HEADER NAV LINKS ------------------- */
+.header__nav__list {
   display: flex;
+  list-style-type: none;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header__nav__item a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  width: 100%;
+  white-space: nowrap;
+}
+
+nav ul li {
+  padding: 0 15%;
+}
+
+/* ------------------- FOOTER CONTAINER ------------------- */
+footer {
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 45px;
-  bottom: 0;
   width: 100%;
   font-size: xx-small;
+  font-weight: lighter;
+  padding-bottom: 1%;
   background-color: var(--primary-color);
   color: var(--secondary-color);
+  margin-top: 3%;
 }
 
-/* ------------------- BODY CONTAINER ------------------- */
+.footer img {
+  width: 7%;
+  padding: 0.5%;
+}
+
+/* ------------------- BODY ------------------- */
 body {
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2%;
   margin: 0;
   box-sizing: border-box;
-  background-image: var(--background-image);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   min-height: 100%;
+  position: relative;
 }
+
+/* ------------------- BACKGROUND OVERLAY ------------------- */
+.main-title {
+  font-size: 2rem;
+  font-family: var(--h1_h2_h3-font);
+  font-weight: bolder;
+  color: var(--secondary-color);
+  text-shadow: var(--text-shadow);
+  z-index: 2}
 
 /* ------------------- GRID CONTAINER ------------------- */
 main {
@@ -121,7 +169,16 @@ main {
   min-height: 100vh;
 }
 
-/* ------------------- SECTIONS ------------------- */
+.main-title {
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: var(--text-shadow);
+  font-weight: bolder;
+  color: var(--secondary-color);
+  margin: 1% 0;
+}
+
+/* ------------------- SECTIONS SETTINGS ------------------- */
 section {
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 1%;
@@ -135,22 +192,33 @@ section {
   padding: 8%;
 }
 
+.section__title {
+  text-align: center;
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+dd, dt {
+  font-family: var(--body-font)
+}
+
+/* ------------------- INSTRUCTION ------------------- */
 .section--instructions {
   grid-area: instructions;
   text-align: left;
 }
 
+.section--instructions dd,
+dt {
+  margin-bottom: 2%;
+}
+
+/* ------------------- YOUTUBE ------------------- */
 .section--youtube {
   grid-area: youtube-embed;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.section__title {
-  text-align: center;
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
 }
 
 .section--youtube iframe {
@@ -159,12 +227,7 @@ section {
   box-sizing: border-box;
 }
 
-dd,
-dt {
-  margin-bottom: 2%;
-}
-
-/* ------------------- PLAY SONGS ------------------- */
+/* ------------------- SONGS ------------------- */
 .music {
   grid-area: music;
   display: flex;
@@ -174,12 +237,26 @@ dt {
 }
 
 .play-music-button {
-  background-color:var(--primary-color);
+  box-shadow: var(--text-shadow);
+  background-color: var(--inactive-button-color);
   color: var(--secondary-color);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 1.5rem;
+  font-family: var(--h1_h2_h3-font);
+  text-shadow: var(--text-shadow);
+}
+
+.play-music-button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.play-music-button:active {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: var(--primary-color);
+  color: var(--active-button-color);
 }
 
 .play-music-button i {
@@ -197,15 +274,17 @@ dt {
   position: relative;
 }
 
+/* ------------------- BASE ------------------- */
 .xylophone__base {
   position: relative;
   z-index: 2;
-  width: 80%;
+  width: 75%;
   height: 100%;
   object-fit: contain;
   box-sizing: border-box;
 }
 
+/* ------------------- KEYS ------------------- */
 .xylophone__keys {
   z-index: 3;
   position: absolute;
@@ -230,7 +309,7 @@ dt {
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-
+/* ------------------- ANIMATIONS ------------------- */
 .xylophone__key::before {
   content: attr(data-key);
   position: absolute;
@@ -239,7 +318,7 @@ dt {
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: var(--text-shadow);
   pointer-events: none;
   z-index: 2;
 }
@@ -254,153 +333,86 @@ dt {
   filter: brightness(1.2);
 }
 
-/* ------------------- RESPONSIVE STYLES FOR SMALL SCREENS ------------------- */
-@media (max-width: 768px) {
-  :root {
-    --background-image: url("../../public/img/violin.jpg");
+.xylophone__key::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.8);
+  transform: translate(-50%, -50%) scaleY(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.xylophone__key.ripple::after {
+  animation: rippleEffect 0.3s ease-out;
+}
+
+@keyframes rippleEffect {
+  from {
+    transform: translate(-50%, -50%) scaleY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -50%) scaleY(1.5);
+    opacity: 0;
+  }
+}
+
+/* ------------------- POP-UP FOR SMALL SCREENS ------------------- */
+#orientation-lock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.99);
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5%;
+  z-index: 9;
+  display: none;
+  overflow: hidden;
+}
+
+body.popup-active main{
+  filter: blur(5%);
+}
+
+body.popup-active .xylophone__key {
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
 
+  to {
+    opacity: 1;
+  }
+}
+
+/* ------------------- RESPONSIVE STYLES - SMALL SCREENS - LANDSCAPE MODE ------------------- */
+@media (orientation: landscape) and (max-width: 900px) {
   main {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 0 10px;
-    width: 100%;
-  }
-
-  .xylophone {
-    width: 100%;
-  }
-
-  .xylophone__base {
-    width: 95%;
-  }
-
-  .xylophone__keys {
-    max-width: 78%;
-  }
-
-  .section__title {
-    font-size: 1.2rem;
-  }
-
-  dt {
-    font-size: 0.9rem;
-    font-weight: bold;
-  }
-
-  dd {
-    font-size: 0.8rem;
-    font-weight: normal;
-  }
-
-  p {
-    font-size: 0.8rem;
-    font-weight: small;
-    font-style: italic;
-
-  }
-
-  .xylophone__key::before {
-    font-size: 0.75;
-    font-weight: normal;
-    left: 15%;
-  }
-
-  .section--youtube {
-    padding: 5%;
-  }
-
-  .section--youtube iframe {
-    width: 70%;
-    height: auto;
-  }
-
-  
-  .header__button--open-menu,
-  .header__nav__button--close-menu {
-    display: block;
-  }
-
-  .header__button--open-menu {
-    margin-right: 2rem;
-    margin-bottom: 1rem;
-    border: 0;
-    color:var(--secondary-color);
-    background-color: transparent;
-  }
-
-  #icon__open {
-    font-size: 5rem;
-  }
-
-  .header__nav__button--close-menu {
-    margin-top: 10px;
-    border: 0;
-    color: var(--secondary-color);
-    background-color: transparent;
-  }
-
-  #icon__close {
-    margin-top: 0.5rem;
-    font-size: 3rem;
-    margin-bottom: 2rem;
-  }
-
-  .header__nav {
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--primary-color);
-    padding: 2rem;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
-  }
-
-  .header__nav.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .header__nav__list {
-    margin-top: 30px;
-    flex-direction: column;
-    align-items: end;
-    gap: 6rem;
-  }
-
-  .header__nav__link {
-    display: inline-flex;
-    align-items: center;
-    margin-left: 2rem;
-    font-size: 1.5rem;
-  }
-
-  .bi {
-    display: block;
-    font-size: 3rem;
-  }
-
-  .header__nav__item--home {
-    display: block;
-  }
-
-}
-
-/* ------------------- RESPONSIVE STYLES FOR SMALL SCREENS IN LANDSCAPE MODE ------------------- */
-@media (orientation: landscape) and (max-width: 900px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 2%;
     padding: 0 10px;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .xylophone,
+  .section--instructions
+  .section--youtube {
+    margin-bottom: 2%;
   }
 
   .xylophone {
@@ -417,55 +429,37 @@ dt {
   }
 
   .section {
-    width: 90%;
-    margin-bottom: 2%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    height: auto;
   }
 
   .section__title {
     font-size: 1.3rem;
+    margin-bottom: auto;
+  }
+
+  .section--instructions {
+    margin-bottom: 2%;
+    align-items: flex-start;
+    width: 100%;
+    height: 150%;
+  }
+
+  .section--youtube {
+    margin-bottom: 2%;
   }
 
   .section--youtube iframe {
-    width: 100%;
-    height: 40vh;
-  }
-}
-
-/* ------------------- POPUP FOR SMALL SCREENS ------------------- */
-#orientation-lock {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  color: rgb(255, 255, 255);
-  font-size: 1.5rem;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 9999;
-  display: none;
-  overflow: hidden;
-}
-
-body.popup-active main {
-  filter: blur(5px);
-}
-
-body.popup-active .xylophone__key {
-  pointer-events: none;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+    align-items: flex-start;
+    width: 70%;
+    height: auto;
   }
 
-  to {
-    opacity: 1;
+  .music {
+    padding: 2%;
+  }
+
+  .play-music-button {
+    font-size: 1rem;
   }
 }
