@@ -10,7 +10,6 @@ header {
     align-items: center;
     justify-content: space-between;    
     background-color: rgba(38, 37, 37, 1);
-
 }
 
 .header__nav__link i {
@@ -29,21 +28,13 @@ header {
        display: flex;
        list-style-type: none;
        margin-right: 4rem;
-       gap: 3rem;
-       
-       
-       
+       gap: 3rem;  
 }
 
 .header__nav__link {
     text-decoration: none;
     color: #f0e8fb;
-    gap: 20px;
-   
-    
-    
-
-    
+    gap: 20px;   
 }
 
 .bi {
