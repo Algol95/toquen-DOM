@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="../src/css/instrument/instrument.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script defer src="../src/js/instrument.js"></script>
 </head>
 
@@ -29,7 +27,7 @@
     <div id="orientation-lock">
         <p>Please switch to landscape mode for the best experience.</p>
     </div>
-        <h1 class="main-title">Xilófono Virtual</h1>
+    <h1 class="page-heading">Xilófono Virtual</h1>
     <main class="main">
         <!-- Left section - Instructions -->
         <section class="section--instructions">
@@ -54,52 +52,58 @@
         </section>
 
         <!-- Second row - Xylophone -->
-        <section class="xylophone">
-            <img src="../images/xylophone/XyloBase.png" class="xylophone__base" alt="Xylophone Base">
+        <section class="section--xylophone">
+            <img src="../public/img/xylophone/XyloBase.png" class="xylophone__base" alt="Xylophone Base">
             <div class="xylophone__keys">
                 <div class="xylophone__key" data-key="C">
-                    <img src="../images/xylophone/KeyC.png" alt="C key">
+                    <img src="../public/img/xylophone/KeyC.png" alt="C key">
                 </div>
                 <div class="xylophone__key" data-key="D">
-                    <img src="../images/xylophone/KeyD.png" alt="D key">
+                    <img src="../public/img/xylophone/KeyD.png" alt="D key">
                 </div>
                 <div class="xylophone__key" data-key="E">
-                    <img src="../images/xylophone/KeyE.png" alt="E key">
+                    <img src="../public/img/xylophone/KeyE.png" alt="E key">
                 </div>
                 <div class="xylophone__key" data-key="F">
-                    <img src="../images/xylophone/KeyF.png" alt="F key">
+                    <img src="../public/img/xylophone/KeyF.png" alt="F key">
                 </div>
                 <div class="xylophone__key" data-key="G">
-                    <img src="../images/xylophone/KeyG.png" alt="G key">
+                    <img src="../public/img/xylophone/KeyG.png" alt="G key">
                 </div>
                 <div class="xylophone__key" data-key="A">
-                    <img src="../images/xylophone/KeyA.png" alt="A key">
+                    <img src="../public/img/xylophone/KeyA.png" alt="A key">
                 </div>
                 <div class="xylophone__key" data-key="B">
-                    <img src="../images/xylophone/KeyB.png" alt="B key">
+                    <img src="../public/img/xylophone/KeyB.png" alt="B key">
                 </div>
                 <div class="xylophone__key" data-key="C2">
-                    <img src="../images/xylophone/KeyC2.png" alt="C2 key">
+                    <img src="../public/img/xylophone/KeyC2.png" alt="C2 key">
                 </div>
                 <div class="xylophone__key" data-key="D2">
-                    <img src="../images/xylophone/KeyD2.png" alt="D2 key">
+                    <img src="../public/img/xylophone/KeyD2.png" alt="D2 key">
                 </div>
                 <div class="xylophone__key" data-key="F2">
-                    <img src="../images/xylophone/KeyF2.png" alt="F2 key">
+                    <img src="../public/img/xylophone/KeyF2.png" alt="F2 key">
                 </div>
                 <div class="xylophone__key" data-key="G2">
-                    <img src="../images/xylophone/KeyG2.png" alt="G2 key">
+                    <img src="../public/img/xylophone/KeyG2.png" alt="G2 key">
                 </div>
                 <div class="xylophone__key" data-key="A2">
-                    <img src="../images/xylophone/KeyA2.png" alt="A2 key">
+                    <img src="../public/img/xylophone/KeyA2.png" alt="A2 key">
                 </div>
             </div>
         </section>
 
         <!-- Third row - Music Button -->
-        <section class="music">
-            <button class="play-music-button" onclick="playMusic()">
-                <i class="bi bi-play-circle-fill"></i> Play Music
+        <section class="section--music">
+            <button class="play-music-button" onclick="playMusic1()">
+                <i class="bi bi-play-circle-fill"></i> Play Song 1
+            </button>
+            <button class="play-music-button" onclick="playMusic2()">
+                <i class="bi bi-play-circle-fill"></i> Play Song 2
+            </button>
+            <button class="play-music-button" onclick="playMusic3()">
+                <i class="bi bi-play-circle-fill"></i> Play Song 3
             </button>
         </section>
 

@@ -45,21 +45,13 @@ h1, h2, h3 {
        display: flex;
        list-style-type: none;
        margin-right: 4rem;
-       gap: 3rem;
-       
-       
-       
+       gap: 3rem;      
 }
 
 .header__nav__link {
     text-decoration: none;
     color: #f0e8fb;
-    gap: 20px;
-   
-    
-    
-
-    
+    gap: 20px;   
 }
 
 .bi {
@@ -265,10 +257,6 @@ body {
     }
     
 }
-
-    
-    
-
 
 .content{    
     height: 70vb;

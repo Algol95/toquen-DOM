@@ -1,15 +1,13 @@
-/* ------------------- ROOT VARIABLES ------------------- */
-:root {
-  --background-image: url("../../../public/img/xilo_resized.jpeg");
-  --h1_h2_h3-font: "Italiana", serif;
-  --body-font: "Inter", serif;
-  --primary-color: #222222;
-  --secondary-color: #ffffff;
-  --inactive-button-color: #9F4B2E;
-  --active-button-color: #DEB581;
-  --text-shadow: 1px 1px 2px black;
-  --objec-shadow: 4px 4px 4px black;
-}
+/* ------------------- VARIABLES ------------------- */
+  $background-image: url("../../../public/img/xilo_resized.jpeg");
+  $h1_h2_h3-font: "Italiana", serif;
+  $body-font: "Inter", serif;
+  $primary-color: #222222;
+  $secondary-color: #ffffff;
+  $inactive-button-color: #9F4B2E;
+  $active-button-color: #DEB581;
+  $text-shadow: 1px 1px 2px black;
+  $object-shadow: 4px 4px 4px black;
 
 /* ------------------- GENERAL PROPERTIES ------------------- */
 * {
@@ -62,26 +60,35 @@
 h1,
 h2,
 h3 {
-  font-family: var(--h1_h2_h3-font);
+  font-family: $h1_h2_h3-font;
   font-weight: bolder;
   font-style: normal;
 }
 
 /* ------------------- HEADER CONTAINER ------------------- */
 header {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  background-color: var(--primary-color);
-  text-shadow: var(--text-shadow);
+  display: flex;
+    align-items: center;
+    justify-content: space-between;    
+    background-color: $primary-color;
+    width: 100%;
+  // display: inline-flex;
+  // flex-direction: row;
+  // align-items: center;
+  // justify-content: space-between;
+  // width: 100%;
+  // background-color: $primary-color);
+  // text-shadow: $text-shadow);
 }
 
 /* ------------------- HEADER LOGO ------------------- */
 .header__logo {
-  width: 12%;
-  margin: 1% 0 0.5% 5%;
+  max-width: 14rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  // width: 12%;
+  // margin: 1% 0 0.5% 5%;
 }
 
 .header__logo__image {
@@ -98,7 +105,7 @@ header {
 }
 
 .header__nav__item a {
-  color: var(--secondary-color);
+  color: $secondary-color;
   text-decoration: none;
   width: 100%;
   white-space: nowrap;
@@ -110,27 +117,29 @@ nav ul li {
 
 /* ------------------- FOOTER CONTAINER ------------------- */
 footer {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 15px;
+  gap: 5px;
+  bottom: 0;
   width: 100%;
   font-size: xx-small;
-  font-weight: lighter;
-  padding-bottom: 1%;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  margin-top: 3%;
+  height: 100%;
 }
 
 .footer img {
-  width: 7%;
-  padding: 0.5%;
+  width: 120px;
+  // width: 7%;
+  // padding: 0.5%;
 }
 
 /* ------------------- BODY ------------------- */
 body {
-  background-image: var(--background-image);
+  background-image: $background-image;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -144,14 +153,16 @@ body {
   position: relative;
 }
 
-/* ------------------- BACKGROUND OVERLAY ------------------- */
-.main-title {
-  font-size: 2rem;
-  font-family: var(--h1_h2_h3-font);
+/* ------------------- PAGE HEADING -------------------- */
+.page-heading {
+  margin-top: 1.5%;
+  font-size: 50px;
+  font-family: $h1_h2_h3-font;
   font-weight: bolder;
-  color: var(--secondary-color);
-  text-shadow: var(--text-shadow);
-  z-index: 2}
+  color: $secondary-color;
+  text-shadow: $text-shadow;
+  z-index: 2
+  }
 
 /* ------------------- GRID CONTAINER ------------------- */
 main {
@@ -166,16 +177,9 @@ main {
   background-size: contain;
   box-sizing: border-box;
   width: 58%;
-  min-height: 100vh;
-}
-
-.main-title {
-  text-align: center;
-  font-size: 2rem;
-  text-shadow: var(--text-shadow);
-  font-weight: bolder;
-  color: var(--secondary-color);
-  margin: 1% 0;
+  min-height: 110vh;
+  height: 100%;
+  margin: 2%;
 }
 
 /* ------------------- SECTIONS SETTINGS ------------------- */
@@ -199,9 +203,8 @@ section {
 }
 
 dd, dt {
-  font-family: var(--body-font)
+  font-family: $body-font;
 }
-
 /* ------------------- INSTRUCTION ------------------- */
 .section--instructions {
   grid-area: instructions;
@@ -218,6 +221,7 @@ dt {
   grid-area: youtube-embed;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -228,24 +232,24 @@ dt {
 }
 
 /* ------------------- SONGS ------------------- */
-.music {
+.section--music {
   grid-area: music;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 4%;
+  justify-content: space-around;
+  height: 50%;
 }
 
 .play-music-button {
-  box-shadow: var(--text-shadow);
-  background-color: var(--inactive-button-color);
-  color: var(--secondary-color);
+  box-shadow: $text-shadow;
+  background-color: $inactive-button-color;
+  color: $secondary-color;
   border: none;
-  padding: 10px 20px;
+  padding: 2% 4%;
   cursor: pointer;
   font-size: 1.5rem;
-  font-family: var(--h1_h2_h3-font);
-  text-shadow: var(--text-shadow);
+  font-family: $h1_h2_h3-font;
+  text-shadow: $text-shadow;
 }
 
 .play-music-button:hover {
@@ -255,8 +259,8 @@ dt {
 
 .play-music-button:active {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  background-color: var(--primary-color);
-  color: var(--active-button-color);
+  background-color: $primary-color;
+  color: $active-button-color;
 }
 
 .play-music-button i {
@@ -265,22 +269,25 @@ dt {
 }
 
 /* ------------------- XYLOPHONE ------------------- */
-.xylophone {
+.section--xylophone {
   grid-area: xylophone;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 4%;
+  align-items: center;
+  padding: 1.5%;
   position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* ------------------- BASE ------------------- */
 .xylophone__base {
   position: relative;
   z-index: 2;
-  width: 75%;
-  height: 100%;
-  object-fit: contain;
+  width: 92%;
+  height: 95%;
+  object-fit: fill;
   box-sizing: border-box;
 }
 
@@ -288,24 +295,33 @@ dt {
 .xylophone__keys {
   z-index: 3;
   position: absolute;
-  display: flex;
-  pointer-events: auto;
   width: 80%;
   height: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: auto;
+  object-fit: fill;
 }
 
+/* ------------------- KEY ------------------- */
 .xylophone__key {
+  width: 100%;
+  height: 100%;
   position: relative;
   user-select: none;
+  object-fit: fill;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: transform 0.2s ease, background-color 0.3s ease;
   cursor: pointer;
 }
 
 .xylophone__key img {
+  object-fit: contain;
   width: 90%;
-  height: auto;
+  height: 92%;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
@@ -318,7 +334,7 @@ dt {
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
-  text-shadow: var(--text-shadow);
+  text-shadow: $text-shadow;
   pointer-events: none;
   z-index: 2;
 }
@@ -337,10 +353,10 @@ dt {
   content: "";
   position: absolute;
   top: 50%;
-  left: 50%;
-  width: 100%;
+  left: 45%;
+  width: 80%;
   height: 80%;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.584);
   transform: translate(-50%, -50%) scaleY(0);
   opacity: 0;
   pointer-events: none;
@@ -404,24 +420,19 @@ body.popup-active .xylophone__key {
   main {
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
+    padding: 0 2%;
     width: 100%;
     box-sizing: border-box;
   }
 
-  .xylophone,
+  .section--xylophone,
   .section--instructions
   .section--youtube {
     margin-bottom: 2%;
   }
 
-  .xylophone {
-    width: 100%;
-    height: 100%;
-  }
-
   .xylophone__base {
-    width: 90%;
+    width: 92%;
   }
 
   .xylophone__keys {
@@ -433,30 +444,37 @@ body.popup-active .xylophone__key {
     height: auto;
   }
 
+  .page-heading {
+  font-size: 3rem;
+  }
+
+
   .section__title {
-    font-size: 1.3rem;
-    margin-bottom: auto;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2%;
   }
 
   .section--instructions {
     margin-bottom: 2%;
     align-items: flex-start;
     width: 100%;
-    height: 150%;
+    height: 100%;
+    padding-top: 2%;
   }
 
   .section--youtube {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    padding-bottom: 4%;
+    padding-top: 2%;
     margin-bottom: 2%;
   }
 
   .section--youtube iframe {
-    align-items: flex-start;
-    width: 70%;
-    height: auto;
-  }
-
-  .music {
-    padding: 2%;
+    width: 50%;
+    height: 150%;
   }
 
   .play-music-button {
