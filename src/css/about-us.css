@@ -33,22 +33,23 @@ body {
     font-family: var(--body-font);
     font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;    
-}
-
-body {
-    height: 100vh;
+    font-style: normal;  
+    height: 100%;
     display: flex;
     flex-direction: column;
-}
+}  
 
+main {
+    background: rgba(0, 0, 0, 0.4);
+}
 /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
-.content {   
-    width: 100%;      
+.content {      
+    width: 100%;   
+    height: 70vb;   
     display: grid;
     grid-template-columns:  1fr 2fr 1fr;  
     grid-template-rows: 1fr;    
-    flex-grow: 0.1 ;
+    flex-grow: 1 ;
 }
 
 .content__curtain {
@@ -58,6 +59,7 @@ body {
     display:flex;
     align-items: center;
     padding-right: 15px;
+    height: 70vb;
 }
 
 .content__curtain--right {
@@ -71,7 +73,7 @@ body {
 
 .content__container {
     width: 100%;
-    height: 100%;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;      
@@ -210,12 +212,6 @@ body {
         opacity: 0.5;
     }
 
-    .content__curtain--left {
-    }
-
-    .content__curtain--right {
-    }
-
     .content__slider__container {
         width: 100%;
         height: 100%;
@@ -262,3 +258,16 @@ body {
         font-size: 20px;        
     }
 }
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222222;
+    color: white;    
+    width: 100%;
+    font-size: xx-small;    
+}
+
+
