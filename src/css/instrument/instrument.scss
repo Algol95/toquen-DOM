@@ -61,24 +61,6 @@ section {
   font-size: 1.5rem;
 }
 
-dt {
-  font-size: larger;
-  padding: 0.4%;
-  font-family: var(--h1_h2_h3-font);
-}
-
-dd {
-  font-weight: 250;
-  font-style:normal;
-  padding: 0.2%;
-  font-family: var(--body-font);
-}
-
-p {
-  padding-top: 1%;
-  justify-self: center;
-  font-style: italic;
-}
 /* ------------------- INSTRUCTION ------------------- */
 .section--instructions {
   grid-area: instructions;
@@ -88,6 +70,50 @@ p {
 .section--instructions dd,
 dt {
   margin-bottom: 2%;
+}
+
+.keyboard-mapping {
+  width: auto;
+  border-collapse: collapse;
+  margin: 10px auto;
+  font-size: 14px;
+  table-layout: fixed;
+}
+
+
+dt {
+  font-size: larger;
+font-family: var(--h1_h2_h3-font);
+}
+
+dd {
+  font-weight: 250;
+  font-style: normal;
+  padding: 0.2%;
+  font-family: var(--body-font);
+}
+
+p {
+  padding-top: 0.5%;
+  justify-self: center;
+  font-style: italic;
+  font-family: var(--body-font);
+}
+
+.keyboard-mapping th,
+.keyboard-mapping td {
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  text-align: center;
+  border: 1px solid #000;
+  word-break: break-word;
+}
+
+
+.keyboard-mapping th {
+  background-color: var(--bg-header-footer);
+  font-weight: bold;
 }
 
 /* ------------------- YOUTUBE ------------------- */
