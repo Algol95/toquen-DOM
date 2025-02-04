@@ -3,3 +3,12 @@
 h1 {
     color: #f0e8fb;
 }
+
+main {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
