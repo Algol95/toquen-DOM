@@ -1,0 +1,39 @@
+/*
+    Estilos generales - AMCA 
+*/
+
+body {
+    color: var(--txt-light);
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+/* WELCOME SECTION - AMCA */
+
+.welcome {
+    margin: 0 10% 0 10%;
+    background-color: rgba(0, 0, 0, .7);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.welcome__musician {
+    width: 100%;
+}
+
+.welcome__txt__title span{
+    font-size: 1.8rem;
+}
+
+.welcome__txt__line{
+    border-top: 2px solid;
+    border-top-color: var(--txt-light);
+    width: 37.5%;
+    margin-top: 10px;
+}
