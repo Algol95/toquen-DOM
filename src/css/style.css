@@ -2,6 +2,8 @@
     --background-image: url("../../public/img/xilo_resized.jpeg");
     --h1_h2_h3-font: "Italiana", serif;
     --body-font: "Inter", serif;
+    --bg-header-footer: #262525;
+    --txt-light: #f0e8fb;
 }
 
 @media only screen and  (max-width: 800px){
@@ -20,7 +22,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;    
-    background-color: rgba(38, 37, 37, 1);
+    background-color: var(--bg-header-footer)
 }
 
 h1, h2, h3 {
@@ -49,11 +51,11 @@ h1, h2, h3 {
 
 .header__nav__link {
     text-decoration: none;
-    color: #f0e8fb;
+    color: var(--txt-light);
     gap: 20px;   
 }
 
-.bi {
+.header .bi {
     display: none;
 }
 
@@ -70,6 +72,7 @@ h1, h2, h3 {
 }
 
 body {
+    background-color: rgba(0, 0, 0, .7); 
     background-image: var(--background-image);
     background-size: cover;
     background-position: center;
@@ -78,6 +81,10 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-blend-mode: darken;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 800px){
@@ -94,7 +101,7 @@ body {
         margin-right: 2rem;
         margin-bottom: 1rem;          
         border: 0;  
-        color: #f0e8fb;
+        color: var(--txt-light);
         background-color: transparent;   
         
     }
@@ -106,7 +113,7 @@ body {
     .header__nav__button--close-menu {
         margin-top: 10px;
         border: 0;
-        color: #f0e8fb;
+        color: var(--txt-light);
         background-color: transparent;
         font-size: 20px;
         
@@ -129,7 +136,7 @@ body {
         top: 0;
         right: 0;       
         bottom: 0;
-        background-color: #1c1c1c;
+        background-color: var(--bg-header-footer);
         padding: 0,5rem;
         box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5);              
     }
@@ -149,14 +156,14 @@ body {
     }        
 
     .header__nav__link {
-        color: #ecececec;
+        color: var(--txt-light);
         display: inline-flex;        
         align-items: center;
         margin-left: 2rem;
         font-size: 1rem;
     }   
 
-    .bi {
+    .header .bi {
         display: block;
         font-size:  2rem; 
     }
@@ -178,7 +185,7 @@ body {
         margin-right: 2rem;
         margin-bottom: 1rem;          
         border: 0;  
-        color: #f0e8fb;
+        color: var(--txt-light);
         background-color: transparent;   
         
     }
@@ -190,7 +197,7 @@ body {
     .header__nav__button--close-menu {
         margin-top: 10px;
         border: 0;
-        color: #f0e8fb;
+        color: var(--txt-light);
         background-color: transparent;
         
     }    
@@ -212,7 +219,7 @@ body {
         top: 0;
         right: 0;       
         bottom: 0;
-        background-color: #1c1c1c;
+        background-color: var(--bg-header-footer);
         padding: 0,5rem;
         box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5); 
                      
@@ -235,7 +242,7 @@ body {
 }        
 
     .header__nav__link {
-        color: #ecececec;
+        color: var(--txt-light);
         display: inline-flex;        
         align-items: center;
         margin-left: 2rem;
@@ -243,7 +250,7 @@ body {
         
     }   
 
-    .bi {
+    .header .bi {
         display: block;
         font-size:  2rem; 
       
@@ -266,14 +273,13 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #222222;
-    color: white;
+    background-color: var(--bg-header-footer);
+    color: var(--txt-light);
     padding: 15px;
     gap:5px;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     font-size: xx-small;
+    margin-top: auto;
 }
 
 .footer__logo {
@@ -281,7 +287,7 @@ footer{
 }
 .footer__text {
     font-size: small;
-    color:white;
+    color:var(--txt-light);
 }
 
 
