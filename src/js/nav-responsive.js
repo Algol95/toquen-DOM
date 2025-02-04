@@ -15,8 +15,9 @@ close.addEventListener("click", () => {
 
 
 const sliderItems = document.querySelectorAll(".slider__item");
-const nextButton = document.getElementById("nextSlide");
-const backButton = document.getElementById("backSlide");
+const leftButton = document.querySelector('.content__container__btn--left');
+const rightButton = document.querySelector('.content__container__btn--right');
+
 
 let currentIndex = 0;
 
@@ -39,11 +40,11 @@ function showSlide(index) {
 }
 
 // Manejadores de eventos para los botones
-nextButton.addEventListener("click", () => {
+rightButton.addEventListener("click", () => {
   showSlide(currentIndex + 1);
 });
 
-backButton.addEventListener("click", () => {
+leftButton.addEventListener("click", () => {
   showSlide(currentIndex - 1);
 });
 
