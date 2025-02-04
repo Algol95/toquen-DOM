@@ -97,6 +97,101 @@ main {
     background-color: rgb(21, 20, 20);
     opacity: 0.5;    
 }
+/*CODIGO CARRUSEL*/
+
+section{ 
+    display: flex;
+    width: 500px;
+  }
+  
+
+
+.slider__item {
+    position: absolute; 
+    background: rgba(0,0,0,0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 35%;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    }
+  
+    .container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+    gap: 40px;
+   
+  }
+
+  .slider__item__text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+  
+  h3{
+    margin-top: 15%;
+    color: white;
+    font-size: 40px;
+  }
+  
+  h2{
+    margin-top: 20px;
+    color: white;
+    font-size: 25px;
+  }
+  p{
+    color: white;
+  }
+
+
+
+
+
+.slider__item__img{
+    width: 45%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    
+}
+
+.slider__item.active {
+    display: block;
+    
+  }
+
+  button {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    padding: 5px;
+    background-color: #fdfeff;
+    color: rgb(22, 22, 22);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5 rem;
+  }
+ #backSlide {
+    left: 10px;
+ }
+
+ #nextSlide {
+  right: 10px;
+}
+  button:hover {
+    background-color: #5a5858;
+    color: black;
+  }
+
 
 /*-------------------------------- Botones--------------------------------------- */
 
@@ -258,16 +353,4 @@ main {
         font-size: 20px;        
     }
 }
-
-footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #222222;
-    color: white;    
-    width: 100%;
-    font-size: xx-small;    
-}
-
 
