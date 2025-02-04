@@ -44,7 +44,7 @@ h1, h2, h3 {
        display: flex;
        list-style-type: none;
        margin-right: 4rem;
-       gap: 3rem;  
+       gap: 3rem;      
 }
 
 .header__nav__link {
@@ -256,10 +256,6 @@ body {
     }
     
 }
-
-    
-    
-
 
 .content{    
     height: 70vb;
