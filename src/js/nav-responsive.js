@@ -1,3 +1,4 @@
+//Codigo para que funcione el menu hamburguesa
 const nav = document.getElementById("nav");
 const open = document.getElementById("open");
 const close = document.getElementById("close");
@@ -11,12 +12,12 @@ close.addEventListener("click", () => {
     nav.classList.remove("visible");
 })
 
+
 // A partir de aquí comienza el codigo del carrusel:
-
-
 const sliderItems = document.querySelectorAll(".slider__item");
-const nextButton = document.getElementById("nextSlide");
-const backButton = document.getElementById("backSlide");
+const nextButton = document.querySelector(".content__container__btn--right");
+const backButton = document.querySelector(".content__container__btn--left");
+
 
 let currentIndex = 0;
 
