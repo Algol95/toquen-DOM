@@ -54,15 +54,10 @@ h1, h2, h3 {
 .header__nav__link {
     text-decoration: none;
     color: #f0e8fb;
-    gap: 20px;
-   
-    
-    
-
-    
+    gap: 20px;   
 }
 
-.bi {
+.header__nav  .bi {
     display: none;
 }
 
@@ -87,6 +82,9 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 800px){
@@ -278,7 +276,7 @@ footer{
     color: white;
     padding: 15px;
     gap:5px;
-    position: absolute;
+    margin: auto;    
     bottom: 0;
     width: 100%;
     font-size: xx-small;

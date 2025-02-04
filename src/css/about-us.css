@@ -13,7 +13,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
 
 h1,
@@ -26,40 +26,40 @@ h3 {
 }
 
 body {
-    background-image: var(--background-image);    
+    background-image: var(--background-image);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     font-family: var(--body-font);
     font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;  
-    height: 100%;
+    font-style: normal;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-}  
+}
 
 main {
     background: rgba(0, 0, 0, 0.4);
 }
 /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
-.content {      
-    width: 100%;   
-    height: 70vb;   
+.content {
+    width: 100%;
+    height: 70vb;
     display: grid;
-    grid-template-columns:  1fr 2fr 1fr;  
-    grid-template-rows: 1fr;    
-    flex-grow: 1 ;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    flex-grow: 1;
 }
 
 .content__curtain {
-    width: 100%; 
+    width: 100%;
     background-color: black;
     opacity: 0.6;
-    display:flex;
+    display: flex;
     align-items: center;
     padding-right: 15px;
-    height: 70vb;
+    height: 70vh;
 }
 
 .content__curtain--right {
@@ -76,9 +76,8 @@ main {
     height: 70vh;
     display: flex;
     flex-direction: column;
-    align-items: center;      
-    background-color: rgba(15, 15, 15, 0.2);  
-       
+    align-items: center;
+    background-color: rgba(15, 15, 15, 0.2);
 }
 
 .content__container__h1 {
@@ -88,114 +87,91 @@ main {
     text-align: center;
     color: rgb(248, 242, 242);
     font-size: 50px;
-    font-weight: normal;    
+    font-weight: normal;
 }
 
 .content__container__div {
     width: 80%;
     height: 60%;
-    background-color: rgb(21, 20, 20);
-    opacity: 0.5;    
+    background-color: rgb(0,0,0,0.5);    
+    display: flex;    
+    border-radius: 20px;
 }
-/*CODIGO CARRUSEL*/
+/*--------------------------------carrusel------------------------------*/
 
-section{ 
-    display: flex;
-    width: 500px;
-  }
-  
-
-
-.slider__item {
-    position: absolute; 
-    background: rgba(0,0,0,0.5);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    height: 35%;
-    display:none;
+.slider__item {      
+    width: 100%;
+    height: 100%;
+    display: none;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    }
-  
-    .container{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    padding: 5%;
-    gap: 40px;
-   
-  }
+    overflow: hidden;
+    border-radius: 20px;
+}
 
-  .slider__item__text {
+.article__container {
+    width: 100%;
+    height: 100%;    
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "img text";
+    place-items: center;
+    gap: 20px;
+    border-radius: 20px;
+}
+
+.slider__item__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+   opacity: 1;
+}
+
+.slider__item__text {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 5px;
     text-align: center;
-  }
-  
-  h3{
-    margin-top: 15%;
+    opacity: 1;
+}
+
+h3 {
+    margin-top: 40px;
     color: white;
     font-size: 40px;
-  }
-  
-  h2{
-    margin-top: 20px;
+}
+
+h2 {    
     color: white;
     font-size: 25px;
-  }
-  p{
+}
+p {
+    margin-top: -3px;
+    margin-bottom: 5px;
     color: white;
-  }
-
-
-
-
-
-.slider__item__img{
-    width: 45%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 20px;
-    
 }
 
 .slider__item.active {
     display: block;
-    
-  }
-
-  button {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    padding: 5px;
-    background-color: #fdfeff;
-    color: rgb(22, 22, 22);
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 1.5 rem;
-  }
- #backSlide {
-    left: 10px;
- }
-
- #nextSlide {
-  right: 10px;
 }
-  button:hover {
-    background-color: #5a5858;
-    color: black;
-  }
 
+.slider__item__text i {
+    color: white;
+    padding: 5px;
+    font-size: 30px;
+}
+
+.slider__item__text i:hover {
+    font-size: 40px;
+}
 
 /*-------------------------------- Botones--------------------------------------- */
 
-.content__container__btn--left {    
+.content__container__btn--left {
     background-color: rgb(15, 15, 15);
     color: white;
     border: 2px solid white;
@@ -203,11 +179,11 @@ section{
     width: 80px;
     height: 80px;
     font-size: 30px;
-    text-align: center;      
+    text-align: center;
     margin-left: 10px;
 }
 
-.content__container__btn--right {    
+.content__container__btn--right {
     background-color: rgb(15, 15, 15);
     color: white;
     border: 2px solid white;
@@ -215,14 +191,14 @@ section{
     width: 80px;
     height: 80px;
     font-size: 30px;
-    text-align: center;    
-   margin-left: 15px
+    text-align: center;
+    margin-left: 15px;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 800px) {
     :root {
         --background-image: url("../../public/img/violin.jpg");
-    }   
+    }
     /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
     .content {
         /*distribute the curtains with flex*/
@@ -262,7 +238,7 @@ section{
     .content__container__div {
         margin-top: 5rem;
         width: 90%;
-        height:20rem;
+        height: 20rem;
         background-color: rgb(9, 9, 9);
         opacity: 0.5;
     }
@@ -270,12 +246,12 @@ section{
     /*-------------------------------- Botones--------------------------------------- */
 
     .content__slider__container__btn--left {
-         color: white;
+        color: white;
         border: 1px solid white;
         border-radius: 50%;
         width: 60px;
         height: 60px;
-        font-size: 20px;        
+        font-size: 20px;
     }
 
     .content__slider__container__btn--right {
@@ -285,12 +261,12 @@ section{
         border-radius: 50%;
         width: 60px;
         height: 60px;
-        font-size: 20px;      
+        font-size: 20px;
     }
 }
 
 @media screen and (max-width: 575px) {
-     /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
+    /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
     .content {
         /*distribute the curtains with flex*/
         width: 100%;
@@ -340,7 +316,7 @@ section{
         border-radius: 50%;
         width: 60px;
         height: 60px;
-        font-size: 20px;        
+        font-size: 20px;
     }
 
     .content__slider__container__btn--right {
@@ -350,7 +326,6 @@ section{
         border-radius: 50%;
         width: 60px;
         height: 60px;
-        font-size: 20px;        
+        font-size: 20px;
     }
-}
-
+}}
