@@ -1,0 +1,255 @@
+:root {
+    --background-image: url("../../public/img/xilo_resized.jpeg");
+    --h1_h2_h3-font: "Italiana", serif;
+    --body-font: "Inter", serif;
+}
+
+@media only screen and (max-width: 800px) {
+    :root {
+        --background-image: url("../../public/img/violin.jpg");
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--h1_h2_h3-font);
+    font-weight: bolder;
+    font-style: normal;
+    text-shadow: 2px 2px 0 black;
+}
+
+body {
+    background-image: var(--background-image);    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: var(--body-font);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;    
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
+.content {   
+    width: 100%;      
+    display: grid;
+    grid-template-columns:  1fr 2fr 1fr;  
+    grid-template-rows: 1fr;    
+    flex-grow: 0 ;
+}
+
+.content__curtain {
+    width: 100%; 
+    background-color: black;
+    opacity: 0.6;
+    display:flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.content__curtain--left {
+    justify-self: end;
+    justify-content: flex-end;
+}
+
+.content__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      
+    background-color: rgba(15, 15, 15, 0.2);     
+}
+
+.content__container__h1 {
+    margin-top: 5%;
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    color: rgb(248, 242, 242);
+    font-size: 50px;
+    font-weight: normal;    
+}
+
+.content__container__div {
+    width: 80%;
+    height: 40%;
+    background-color: rgb(21, 20, 20);
+    opacity: 0.5;    
+}
+
+/*-------------------------------- Botones--------------------------------------- */
+
+.content__container__btn--left {    
+    background-color: rgb(15, 15, 15);
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+    text-align: center;        
+}
+
+.content__container__btn--right {    
+    background-color: rgb(15, 15, 15);
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+    text-align: center;    
+}
+
+@media only screen and (min-width: 576px) and (max-width: 800px) {
+    :root {
+        --background-image: url("../../public/img/violin.jpg");
+    }   
+    /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
+    .content {
+        /*distribute the curtains with flex*/
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .content__curtain {
+        width: 80%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.5;
+    }
+
+    .content__slider__container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content__slider__container--h1 {
+        margin-top: 10%;
+        width: 100%;
+        height: 15%;
+        text-align: center;
+        color: white;
+        font-size: 50px;
+        font-weight: 800;
+    }
+
+    .content__container__div {
+        width: 90%;
+        height: 30%;
+        background-color: rgb(9, 9, 9);
+        opacity: 0.5;
+    }
+
+    /*-------------------------------- Botones--------------------------------------- */
+
+    .content__slider__container__btn--left {
+         color: white;
+        border: 1px solid white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;        
+    }
+
+    .content__slider__container__btn--right {
+        background-color: rgb(15, 15, 15);
+        color: white;
+        border: 1px solid white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;      
+    }
+}
+
+@media screen and (max-width: 575px) {
+     /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
+    .content {
+        /*distribute the curtains with flex*/
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .content__curtain {
+        width: 50%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.5;
+    }
+
+    .content__curtain--left {
+    }
+
+    .content__curtain--right {
+    }
+
+    .content__slider__container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content__slider__container--h1 {
+        margin-top: 10%;
+        width: 100%;
+        height: 15%;
+        text-align: center;
+        color: white;
+        font-size: 50px;
+        font-weight: 800;
+    }
+
+    .content__slider__container--article {
+        width: 90%;
+        height: 30%;
+        background-color: rgb(9, 9, 9);
+        opacity: 0.5;
+    }
+
+    /*-------------------------------- Botones--------------------------------------- */
+
+    .content__slider__container__btn--left {
+        color: white;
+        border: 1px solid white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;        
+    }
+
+    .content__slider__container__btn--right {
+        background-color: rgb(15, 15, 15);
+        color: white;
+        border: 1px solid white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;        
+    }
+}

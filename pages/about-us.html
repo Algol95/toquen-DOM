@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABOUT US</title>
+    <link rel="stylesheet" href="../src/css/about-us.css">
     <link rel="stylesheet" href="../src/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,20 +14,24 @@
 </head>
 <body>
         <header class="header">
-            <img src="../public/img/logo_xylophone.png" class="logo-pagina header__logo">
-            <button class="header__button header__button--open-menu" id="open"><i class="bi bi-list" id="icon__open"></i></button>
-            <nav class="header__nav"  id="nav">
+                <img src="../public/img/logo_xylophone.png" class="logo-pagina header__logo">
+                <button class="header__button header__button--open-menu" id="open"><i class="bi bi-list" id="icon__open"></i></button>
+                <nav class="header__nav"  id="nav">
                 <button class="header__nav__button header__nav__button--close-menu" id="close"><i class="bi bi-x-lg" id="icon__close"></i></button>   
-                    <ul class="header__nav__list">
+                <ul class="header__nav__list">
                         <li class="header__nav__item"><a class="header__nav__link" href="instrument.html">INSTRUMENTOS<i class="bi bi-music-note-beamed"></i></a></li>
                         <li class="header__nav__item"><a class="header__nav__link" href="contact.html">CONTACTO<i class="bi bi-envelope"></i></a></li>
-                        <li class="header__nav__item"><a href="../index.html" class="header__nav__link">HOME<i class="bi bi-house"></i></a></li>
-                    </ul>
+                         <li class="header__nav__item"><a href="../index.html" class="header__nav__link">HOME<i class="bi bi-house"></i></a></li>
+                </ul>
         </header>
-            <section class="content">
-
-            </section>
-    
+        <main class="content">
+                <div class="content__curtain content__curtain--left"><button class="content__container__btn content__container__btn--left">&lt;</button></div><!---cortinilla izq------> <!--------------boton izq--------->
+                <section  class="content__container"><!------contenedor centro---------------->
+                        <h1 class="content__container__h1">¿Quiénes somos?</h1>
+                        <div class="content__container__div"></div>  <!----------- contenedor carrusel-------------->                                                          
+                </section>
+                <div class="content__curtain content__curtain--right"><button class="content__container__btn content__container__btn--right">&gt;</button></div><!------cortinilla dech--------><!--------------boton izq--------->                 
+        </main>
         <footer class="footer">
             <img src="../public/img/logo_f5_blanco.png" class="footer__logo" >
             <p class="footer__text"> &copy; Todos los derechos reservados</p>
