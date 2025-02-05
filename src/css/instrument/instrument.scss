@@ -1,165 +1,24 @@
+@import url(../style.css);
 /* ------------------- VARIABLES ------------------- */
-  $background-image: url("../../../public/img/xilo_resized.jpeg");
-  $h1_h2_h3-font: "Italiana", serif;
-  $body-font: "Inter", serif;
-  $primary-color: #222222;
-  $secondary-color: #ffffff;
   $inactive-button-color: #9F4B2E;
   $active-button-color: #DEB581;
   $text-shadow: 1px 1px 2px black;
   $object-shadow: 4px 4px 4px black;
 
-/* ------------------- GENERAL PROPERTIES ------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ------------------- ANIMATIONS ------------------- */
-@keyframes vibration {
-  0% {
-    transform: translate(1px, 1px);
-  }
-
-  25% {
-    transform: translate(-1px, -1px);
-  }
-
-  50% {
-    transform: translate(1px, -1px);
-  }
-
-  75% {
-    transform: translate(-1px, 1px);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes rippleEffect {
-  0% {
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-    transform: scale(1.2);
-  }
-  100% {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0);
-    opacity: 0;
-    transform: scale(1.5);
-  }
-}
-
-/* ------------------- FONT STYLES ------------------- */
-h1,
-h2,
-h3 {
-  font-family: $h1_h2_h3-font;
-  font-weight: bolder;
-  font-style: normal;
-}
-
-/* ------------------- HEADER CONTAINER ------------------- */
+/* ------------------- HEADER ------------------- */
 header {
-  display: flex;
-    align-items: center;
-    justify-content: space-between;    
-    background-color: $primary-color;
-    width: 100%;
-  // display: inline-flex;
-  // flex-direction: row;
-  // align-items: center;
-  // justify-content: space-between;
-  // width: 100%;
-  // background-color: $primary-color);
-  // text-shadow: $text-shadow);
-}
-
-/* ------------------- HEADER LOGO ------------------- */
-.header__logo {
-  max-width: 14rem;
-    margin-left: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  // width: 12%;
-  // margin: 1% 0 0.5% 5%;
-}
-
-.header__logo__image {
-  max-width: 100%;
-}
-
-/* ------------------- HEADER NAV LINKS ------------------- */
-.header__nav__list {
-  display: flex;
-  list-style-type: none;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.header__nav__item a {
-  color: $secondary-color;
-  text-decoration: none;
   width: 100%;
-  white-space: nowrap;
-}
-
-nav ul li {
-  padding: 0 15%;
-}
-
-/* ------------------- FOOTER CONTAINER ------------------- */
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: $primary-color;
-  color: $secondary-color;
-  padding: 15px;
-  gap: 5px;
-  bottom: 0;
-  width: 100%;
-  font-size: xx-small;
-  height: 100%;
-}
-
-.footer img {
-  width: 120px;
-  // width: 7%;
-  // padding: 0.5%;
 }
 
 /* ------------------- BODY ------------------- */
 body {
-  background-image: $background-image;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 2%;
-  margin: 0;
-  box-sizing: border-box;
-  min-height: 100%;
-  position: relative;
 }
 
 /* ------------------- PAGE HEADING -------------------- */
 .page-heading {
   margin-top: 1.5%;
-  font-size: 50px;
-  font-family: $h1_h2_h3-font;
-  font-weight: bolder;
-  color: $secondary-color;
+  color: var(--txt-light);
   text-shadow: $text-shadow;
   z-index: 2
   }
@@ -202,8 +61,23 @@ section {
   font-size: 1.5rem;
 }
 
-dd, dt {
-  font-family: $body-font;
+dt {
+  font-size: larger;
+  padding: 0.4%;
+  font-family: var(--h1_h2_h3-font);
+}
+
+dd {
+  font-weight: 250;
+  font-style:normal;
+  padding: 0.2%;
+  font-family: var(--body-font);
+}
+
+p {
+  padding-top: 1%;
+  justify-self: center;
+  font-style: italic;
 }
 /* ------------------- INSTRUCTION ------------------- */
 .section--instructions {
@@ -243,12 +117,12 @@ dt {
 .play-music-button {
   box-shadow: $text-shadow;
   background-color: $inactive-button-color;
-  color: $secondary-color;
+  color: var(--txt-light);
   border: none;
   padding: 2% 4%;
   cursor: pointer;
   font-size: 1.5rem;
-  font-family: $h1_h2_h3-font;
+  font-family: var(h1_h2_h3-font);
   text-shadow: $text-shadow;
 }
 
@@ -259,7 +133,7 @@ dt {
 
 .play-music-button:active {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  background-color: $primary-color;
+  background-color: var(--bg-header-footer);
   color: $active-button-color;
 }
 
@@ -325,13 +199,14 @@ dt {
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* ------------------- ANIMATIONS ------------------- */
+/* ------------------- KEY NAMES ------------------- */
 .xylophone__key::before {
   content: attr(data-key);
   position: absolute;
-  top: 45%;
-  left: 25%;
+  top: 48%;
+  left: 35%;
   color: white;
+  font-family: var(--body-font);
   font-size: 1.2rem;
   font-weight: bold;
   text-shadow: $text-shadow;
@@ -339,42 +214,59 @@ dt {
   z-index: 2;
 }
 
+/* ------------------- ANIMATION VIBRATION ------------------- */
+@keyframes vibration {
+  0% {
+    transform: translate(1px, 1px);
+  }
+
+  25% {
+    transform: translate(-1px, -1px);
+  }
+
+  50% {
+    transform: translate(1px, -1px);
+  }
+
+  75% {
+    transform: translate(-1px, 1px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
 .xylophone__key.vibrating img {
-  animation: vibration 0.2s ease-in-out 2;
-  animation-iteration-count: 2;
+  animation: vibration 0.2s ease-in-out 2, dimKey 0.2s ease-in-out 2 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dimKey {
+  0% {
+    filter: brightness(.5);
+  }
+
+  25% {
+    filter: brightness(.5);
+  }
+
+  50% {
+    filter: brightness(.5);
+  }
+
+  75% {
+    filter: brightness(.5);
+  }
+
+  100% {
+    filter: brightness(.5);
+  }
 }
 
 .xylophone__key:hover img {
   transform: scale(1.05);
   filter: brightness(1.2);
-}
-
-.xylophone__key::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 45%;
-  width: 80%;
-  height: 80%;
-  background: rgba(255, 255, 255, 0.584);
-  transform: translate(-50%, -50%) scaleY(0);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.xylophone__key.ripple::after {
-  animation: rippleEffect 0.3s ease-out;
-}
-
-@keyframes rippleEffect {
-  from {
-    transform: translate(-50%, -50%) scaleY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translate(-50%, -50%) scaleY(1.5);
-    opacity: 0;
-  }
 }
 
 /* ------------------- POP-UP FOR SMALL SCREENS ------------------- */
@@ -385,7 +277,7 @@ dt {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.99);
-  color: rgb(255, 255, 255);
+  color: var(--txt-light);
   font-size: 1.5rem;
   display: none;
   justify-content: center;
@@ -447,7 +339,6 @@ body.popup-active .xylophone__key {
   .page-heading {
   font-size: 3rem;
   }
-
 
   .section__title {
     padding: 0;

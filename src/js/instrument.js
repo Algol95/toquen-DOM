@@ -1,11 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Get the orientation lock element and all xylophone keys
   const orientationLock = document.getElementById("orientation-lock");
   const keys = Array.from(document.querySelectorAll(".xylophone__key"));
 
-  // Function to check the screen orientation and update the UI accordingly
   function checkOrientation() {
-    // If in portrait mode on mobile, show the orientation lock and disable keys
     if (
       window.matchMedia("(max-width: 768px) and (orientation: portrait)")
         .matches
@@ -14,19 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.add("popup-active");
       keys.forEach((key) => key.setAttribute("disabled", "true"));
     } else {
-      // Otherwise, hide the orientation lock and enable keys
       orientationLock.style.display = "none";
       document.body.classList.remove("popup-active");
       keys.forEach((key) => key.removeAttribute("disabled"));
     }
   }
 
-  // Check orientation on load and whenever the window is resized or orientation changes
   checkOrientation();
   window.addEventListener("resize", checkOrientation);
   window.addEventListener("orientationchange", checkOrientation);
 
-  // CONST NOTES AND KEYS - AMCA
   const NOTE_FREQUENCIES = {
     C: 261.63,
     D: 293.66,
@@ -66,21 +60,18 @@ document.addEventListener("DOMContentLoaded", () => {
   Crear contexto de audio - AMCA */
   const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
-  // Function to play the note when a key or key combo is pressed
   function playNote(note) {
     const keyElement = document.querySelector(
       `.xylophone__key[data-key="${note}"]`
     );
     if (keyElement) {
-      // Add animation classes to the key
-      keyElement.classList.add("vibrating", "ripple");
-      setTimeout(() => keyElement.classList.remove("vibrating", "ripple"), 300);
-      /* Al final no introduciremos audio .mp3, se emulará con JS. - AMCA
-      // Play the corresponding sound
-      const audio = new Audio(`../sounds/${note}.mp3`);
-      audio.play();*/
+      keyElement.classList.add("dimKey");
+      setTimeout(() => keyElement.classList.remove("dimKey"), 300);
+      keyElement.classList.add("vibrating");
+      setTimeout(() => keyElement.classList.remove("vibrating"), 300);
+      
       oscillator(note);
-    } else { //Introduje un else porque sino no tocaba el SI bemol (BB) - AMCA 
+    } else {
       oscillator(note);
     }
   }
@@ -114,15 +105,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to get the key combo (e.g., 'Space+A' or 'D')
   function getKeyCombo(event) {
-
-      let combo = "";
-    /* No vamos a meter combos - AMCA
-    if (event.ctrlKey) combo += 'Control+';
-    if (event.shiftKey) combo += 'Shift+';
-    if (event.altKey) combo += 'Alt+';
-    if (event.code === 'Space') combo += 'Space+';
-    */
-    combo += event.key.toUpperCase(); // Convert key to uppercase for consistency
+    let combo = "";
+    combo += event.key.toUpperCase();
     console.log(combo);
     return combo;
   }
@@ -133,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const note = KEY_NOTE[combo];
     if (note) {
       playNote(note);
-      event.preventDefault(); // Prevent default behavior for the key press
+      event.preventDefault();
     }
   });
 
@@ -166,4 +150,3 @@ window.playLaCucaracha = function(){
   });
 }
 });
-
