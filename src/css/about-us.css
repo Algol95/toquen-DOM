@@ -5,7 +5,8 @@
     --body-font: "Inter", serif;
 }
 
-@media only screen and (max-width: 800px) {/*-------------cambio de background para tablet y pantallas pequeñas-------------*/
+@media only screen and (max-width: 800px) {
+    /*-------------cambio de background para tablet y pantallas pequeñas-------------*/
     :root {
         --background-image: url("../../public/img/violin.jpg");
     }
@@ -29,7 +30,7 @@ h3 {
 body {
     background-image: var(--background-image);
     background-size: cover;
-    background-position: center;    
+    background-position: center;
     font-family: var(--body-font);
     font-optical-sizing: auto;
     font-weight: 400;
@@ -42,7 +43,7 @@ body {
 /*esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
 .content {
     width: 100%;
-    height: 70vb;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr;
@@ -51,13 +52,13 @@ body {
 
 .content__curtain {
     width: 100%;
+    height: 100%;
     background-color: black;
     opacity: 0.6;
     display: flex;
     align-items: center;
-    padding-right: 1%;
-    height: 70vh;
-    backdrop-filter: blur(5px);
+    padding-right: 1%;    
+    backdrop-filter: blur(5px);   
 }
 
 .content__curtain--right {
@@ -72,7 +73,7 @@ body {
 
 .content__container {
     width: 100%;
-    height: 70vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,16 +92,16 @@ body {
 
 .content__container__div {
     width: 80%;
-    height: 65%;
-    background-color: rgb(0,0,0,0.8);    
-    display: flex;    
+    height: 70%;
+    background-color: rgb(0, 0, 0, 0.8);
+    display: flex;
     border-radius: 20px;
 }
 /*--------------------------------carrusel------------------------------*/
 
-.slider__item {      
+.slider__item {
     width: 100%;
-    height: 100%;    
+    height: 100%;
     display: none;
     justify-content: center;
     align-items: center;
@@ -111,28 +112,28 @@ body {
 
 .article__container {
     width: 100%;
-    height: 100%;              
+    height: 100%;
     display: grid;
     padding-left: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "img text";
-    place-items: center;    
+    place-items: center;
     border-radius: 20px;
     backdrop-filter: blur(5px);
 }
 
 .slider__item__img {
     max-width: 100%;
-    max-height: 100%;    
+    max-height: 100%;
     object-fit: cover;
-    border-radius: 20px;    
+    border-radius: 20px;
     opacity: 1;
     overflow: hidden;
 }
 
 .slider__item__text {
-    padding: .5rem;
-    width: 100%;    
+    padding: 0.5rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -143,20 +144,19 @@ body {
 h3 {
     margin-top: 25%;
     color: white;
-    font-size: 2.5rem;    
+    font-size: 2.5rem;
 }
 
-h2 {      
+h2 {
     margin-top: 10%;
     color: white;
     font-size: 1.5rem;
 }
-p {   
-    margin-top: -1rem;    
+p {
+    margin-top: -1rem;
     color: white;
-    margin-bottom: .8rem;
+    margin-bottom: 0.8rem;
 }
-
 
 .slider__item.active {
     display: block;
@@ -164,16 +164,15 @@ p {
 
 .slider__item__text i {
     color: white;
-       
     padding-right: 1rem;
     padding-left: 1rem;
     font-size: 2rem;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .slider__item__text i:hover {
     font-size: 3rem;
-    transition: .5s
+    transition: 0.5s;
 }
 
 /*-------------------------------- Botones--------------------------------------- */
@@ -201,7 +200,7 @@ p {
     text-align: center;
     margin-left: 15px;
 }
-footer{
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -209,44 +208,58 @@ footer{
     background-color: #222222;
     color: white;
     padding: 15px;
-    gap:5px;
-    margin: auto;    
+    gap: 5px;
+    margin: auto;
     bottom: 0;
     width: 100%;
     font-size: xx-small;
 }
 
 .footer__logo {
-    width: 80px;
+    width: 20%;
+    height: auto;
 }
 
-
-@media only screen and (min-width: 576px) and (max-width: 800px) {
+@media only screen and (min-width: 576px) and (max-width: 900px) {
     :root {
         --background-image: url("../../public/img/violin.jpg");
     }
 
-body {    
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 
-        "header"
-        "content"
-        "footer";   
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+            "header"
+            "content"
+            "footer";
+    }
+
+    .header__nav {
+        z-index: 2000;
+    }
+
+    .header__nav  .bi {
+        display: block;
+    }
 
     /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
-   main {
-    height: 100vh;    
-   }
-   
+    main {
+        height: 100vh;
+    }
+
     .content {
         grid-area: content;
         height: 100%;
         display: grid;
         grid-template-columns: 1fr 4fr 1fr;
-        grid-template-rows: 1fr;         
+        grid-template-rows: 1fr;
     }
 
     .content__curtain {
@@ -257,181 +270,213 @@ body {
         align-items: center;
         padding-right: 15px;
         height: auto;
+        backdrop-filter: blur(5px);
     }
-    .content__container {    
+
+    .content__container {
         width: 100%;
         height: 75vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: rgba(15, 15, 15, 0.2);             
+        background-color: rgba(15, 15, 15, 0.2);
     }
 
-    .content__container__div {   
-           
+    .content__container__div {
         width: 80%;
-        height: 50%;         
+        height: 70%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
     }
-
+    
     .content__container__h1 {
-        margin-top: 20%;
-           
+        margin-top: 10%;
+        font-size: 2.5rem;
     }
 
-    .slider__item {   
+    .slider__item {
         width: 100%;
         height: 100%;
-        flex-direction: flex;   
-             
+        display: none;
+        align-items: center;
+        justify-content: center;
     }
 
     .article__container {
+        width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;         
-              
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "image"
+            "text";
+        padding: 1rem;
+        backdrop-filter: blur(5px);
     }
 
     .slider__item__img {
-        width: 45%;
-        height: 80%;
-        border-radius: 50%;        
+        width: 60%;
+        min-height: 30vw;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        display: block;
+        border-radius: 50%;
+        margin: 0 auto;
+        grid-area: image;
     }
 
     .slider__item__text {
+        max-height: 100%;
+        grid-area: text;
         display: flex;
         flex-direction: column;
-        margin-top: 0px;
         text-align: center;
-        padding: 0px;
-        gap: 10px;
     }
 
     h2 {
-        font-size: 15px;
-        padding: 0px;
-        margin-top: 30px;
-        margin-bottom: 30px;
+        font-size: 1.2rem;
     }
 
-    h3{
-        margin-top: px;
-        font-size: 20px; 
-        padding: 0px;   
-        margin: 0 0 -10px 0;    
-        
+    h3 {
+        margin-top: 2rem;
+        font-size: 1.5rem;
     }
-    
+
+    p {
+        font-size: 1rem;
+    }
+
     .slider__item__text i {
-        display: inline;
-        font-size: 20px;    
+        display: inline-block;
+        font-size: 2rem;
         color: white;
-        margin-top: 15px;   
-        padding: 10px;
+        padding: 0.5rem;
+        transition: 0.5s;
+    }
+
+    .slider__item__text i:hover {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    :root {
+        --background-image: url("../../public/img/violin.jpg");
+    }
+
+    html {
+        background: url("../../public/img/violin.jpg") no-repeat center top;
+        background-attachment: scroll;       
+    }
+
+    body {
+        background: none; /* Evita conflictos con el fondo de body */
+        min-height: 200vh; /* Asegura que haya suficiente espacio para el scroll */
+    }
+
+    .header__nav {
+        z-index: 2000;
+    }
+
+    .header__nav  .bi {
+        display: block;
+    }
+
+    /* Ocultar elementos del carrusel */
+    .content__curtain,
+    .content__container__btn--left,
+    .content__container__btn--right {
+        display: none;
+    }
+
+    /* Ajustar estructura principal */
+    .content {
+        display: block;
+        height: auto;
+        padding: 20px;
+        padding-bottom: 50px;
+    }
+
+    .content__container {
+        width: 100%;
+        height: auto;
+        background: transparent;
+        display: block;
+    }
+
+    .content__container__h1 {
+        font-size: 3rem;      
+        margin-bottom: 2rem; 
+        padding: 4%;
+        height: auto;
+        text-shadow: 1px 1px 0 black;
+    }
+
+    .content__container__div {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        background: transparent;
+        overflow: visible;
+        border-radius: 0;
+        align-items: center;
+    }
+
+    /* Modificar slider para mostrar todas las cards */
+    .slider__item {
+        display: block;
+        width: 90%;
+        height: auto;
+        margin-bottom: 20px;
+        padding: 0 15px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 15px;
+        border: 0.5px solid rgb(78, 76, 76);
+    }
+
+    .article__container {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        backdrop-filter: blur(5px);
+    }
+
+    .slider__item__img {
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    .slider__item__text {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 35px;
+    }
+
+    h2 {
         font-size: 20px;
-        transition: .5s; 
     }
+
+    p {
+        font-size: 10px;
     }
-    
-    @media screen and (max-width: 575px) {
-        :root {
-            --background-image: url("../../public/img/violin.jpg");
-        }
-    
-        body {
-            background-image: var(--background-image);
-            background-attachment: scroll;                    
-        }
-    
-        /* Ocultar elementos del carrusel */
-        .content__curtain,
-        .content__container__btn--left,
-        .content__container__btn--right {
-            display: none;
-        }
-    
-        /* Ajustar estructura principal */
-        .content {
-            display: block ;
-            height: auto;
-            padding: 20px;
-            padding-bottom: 50px;           
-        }
-    
-        .content__container {
-            width: 100%;
-            height: auto;
-            background: transparent;
-            display: block;
-        }
-    
-        .content__container__h1 {
-            font-size: 2rem;
-            margin: 20px 0;
-            padding: 0 15px;
-            height: auto;
-            text-shadow: 1px 1px 0 black;
-        }
-    
-        .content__container__div {
-            width: 100%;
-            height: auto;
-            display: flex ;
-            flex-direction: column;
-            background: transparent;
-            overflow: visible;
-            border-radius: 0;
-            align-items: center;
-        }
-    
-        /* Modificar slider para mostrar todas las cards */
-        .slider__item {
-            display: block;
-            width: 90%;
-            height: auto;
-            margin-bottom: 20px;
-            padding: 0 15px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 15px; 
-            border: .5px solid rgb(78, 76, 76)                    
-        }
-    
-        .article__container {
-            display: flex;
-            flex-direction: column;
-            padding: 15px;
-                       
-        }
-    
-        .slider__item__img {
-            width: 100%;
-            border-radius: 50%;            
-           
-        }
-    
-        .slider__item__text {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
-    
-        h3 {
-            font-size: 35px;            
-        }
-    
-        h2 {
-            font-size: 20px;
-            
-        }
-    
-        p {
-            font-size: 10px;            
-        }
-    
-        .slider__item__text i {            
-            display: inline-block;
-        }
-        
+
+    .slider__item__text i {
+        display: inline-block;
     }
+
+    .footer__logo {
+        width: 20%;
+        height: auto;
+    }
+}
