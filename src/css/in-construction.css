@@ -1,7 +1,7 @@
 @import url(./style.css);
 
 h1 {
-    color: #f0e8fb;
+    color: var(--txt-light);
 }
 
 main {
