@@ -87,6 +87,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    overflow: hidden;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 800px){
@@ -140,12 +141,16 @@ body {
         bottom: 0;
         background-color: #1c1c1c;
         padding: 0,5rem;
-        box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5);              
+        box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5); 
+        transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        transform: translateX(90px);             
+        
     }
     
     .header__nav.visible {
         opacity: 1;
         visibility: visible;
+        transform: translateX(0); 
         
     }
 
@@ -226,7 +231,8 @@ body {
         padding: 0,5rem;
         box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5); 
         transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-        transform: translateY(-90px);
+        transform: translateX(90px);
+        
                      
     }
     
@@ -288,6 +294,7 @@ footer{
     bottom: 0;
     width: 100%;
     font-size: xx-small;
+   
 }
 
 .footer__logo {
