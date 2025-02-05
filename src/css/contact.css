@@ -1,12 +1,46 @@
+body {
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: var(--body-font);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  
+}
+
 main {
-    background: rgba(0, 0, 0, 0.2);;
+    width: 100%;
+    flex-grow: 1;  
+    background: rgba(0, 0, 0, 0.2);    
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222222;
+    color: white;
+    padding: 15px;
+    gap: 5px;
+    margin: auto;    
+    width: 100%;
+    font-size: xx-small;
+    position: relative;
+    bottom: 0;
 }
 
 h1 {
+    margin-top: 2%;
+    text-shadow: 4px 2px 2px black;
     font-size: 60px;
-    text-align: center; 
-    margin-top: 20px;
-    color: white;
+    font-weight: normal;
+    color: rgb(239, 236, 236); 
+    text-align: center;
 }
 
 p {
@@ -25,6 +59,7 @@ p {
     opacity: 1;  
     transform: translateY(0); 
     transition: opacity 0.5s ease, transform 0.5s ease;
+    backdrop-filter: blur(5px);
 }
 
 .form__group {
@@ -49,7 +84,7 @@ p {
     border: none;
     border-radius: 5px;
 }
- /* esta parte de aquí es para que los label y los input esten en linea y establecer lo que ocupan unos y otros se lo pregunte a chatgpt */
+
 .form__group:last-of-type .form__label {
     width: 35%; 
 }
@@ -60,9 +95,9 @@ p {
 }
 /*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 .form__button {
-    width: 10%;
+    width: 6rem;
     padding: .4rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     background-color:  rgba(139, 69, 18, 1);
     color: white;
     cursor: pointer;
@@ -74,7 +109,19 @@ p {
     border-radius: 5px;
 }
 
-/* esta parte es para hacer que desaparezca el formulario y aparezca la pantalla de agradecimiento */
+#alertContainer {
+   position: absolute;
+   padding-top: 5.2rem;
+    padding-left: 30rem;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+    color: rgb(254, 21, 21);
+    font-size: 23px;
+    text-shadow: 4px 2px 2px black;
+    z-index: 1000;
+}
+
+
 #confirmationMessage {
     position: fixed;  
     top: 50%;         
@@ -100,4 +147,99 @@ p {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+}
+@media (max-width: 2000px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin-top: 10%;
+    }
+
+    .contact__form {
+        width: 70%;
+    }
+
+    .form__group {
+        gap: 25px;
+    }
+
+    .form__label {
+        width: 25%;
+    }
+
+    .form__input {
+        width: 65%;
+    }
+
+    .form__group:last-of-type .form__label {
+        width: 30%;
+    }
+
+    .form__group:last-of-type .form__input {
+        width: 60%;
+    }
+}
+ 
+@media screen and (max-width: 1024px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-top: 15%;
+    }
+
+    .contact__form {
+        width: 80%;
+    }
+
+    .form__group {
+        gap: 20px;
+    }
+
+    .form__label {
+        width: 30%;
+    }
+
+    .form__input {
+        width: 65%;
+    }
+
+    .form__group:last-of-type .form__label {
+        width: 40%;
+    }
+
+    .form__group:last-of-type .form__input {
+        width: 50%;
+    }
+}
+
+
+@media (max-width: 650px) {
+    .contact__form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .form__group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form__label, .form__input, .form__select {
+        width: 100%;
+    }
+
+    .form__button {
+        width: 40%;
+    }
+
+    #alertContainer {
+        padding-left: 1rem;
+        margin-left: 0;
+    }
 }

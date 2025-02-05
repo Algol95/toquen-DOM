@@ -8,24 +8,27 @@ const confirmationMessage = document.querySelector("#confirmationMessage");
 const contactForm = document.querySelector("#contactForm");
 const closeMessageButton = document.querySelector("#closeMessageButton");
 
+
+
+
 //funcion que escucha los eventos del boton y comprueba que los datos que introduce el usuario sean los esperados en cada apartado
 btn.addEventListener("click", () => {
     if (!/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(nameInput.value)) {
-        alert(
+        alertContainer.textContent=
             "Por favor, introduce un nombre válido (solo letras y espacios)."
-        );
+        ;
         return;
     }
 
     if (!/^\d+$/.test(phone.value)) {
-        alert(
+        alertContainer.textContent=
             "Por favor, introduce un número de teléfono válido (solo números)."
-        );
+        ;
         return;
     }
 
     if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(mail.value)) {
-        alert("Por favor, introduce un correo electrónico válido.");
+        alertContainer.textContent = "Por favor, introduce un correo electrónico válido.";
         return;
     }
 
@@ -56,13 +59,21 @@ btn.addEventListener("click", () => {
     });
 });
 
+
 // esta parte es para cerrar la ventana de agradecimiento manualmente
 closeMessageButton.addEventListener("click", function () {
     gsap.to(confirmationMessage, {
         opacity: 0,
         duration: 0.5,
         onComplete: function () {
-            confirmationMessage.style.display = "none";
+            confirmationMessage.style.display = "none"; // Ocultar el mensaje de confirmación
+
+            // esta parte es la que se encarga de que volvamos al formulario una vez que cerramos la ventana de agradecimiento
+            gsap.to(form, {
+                opacity: 1, // Hacerlo visible
+                transform: "translateY(0)", // Restaurar su posición original
+                duration: 0.5,
+            });
         },
     });
 });
