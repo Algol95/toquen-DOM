@@ -201,6 +201,7 @@ body {
         border: 0;
         color: #f0e8fb;
         background-color: transparent;
+    
         
     }    
 
@@ -224,6 +225,8 @@ body {
         background-color: #1c1c1c;
         padding: 0,5rem;
         box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5); 
+        transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        transform: translateY(-90px);
                      
     }
     
@@ -231,6 +234,11 @@ body {
     .header__nav.visible {
         opacity: 1;
         visibility: visible;
+        transform: translateY(0);   
+
+    } 
+           
+        
        
     }
 

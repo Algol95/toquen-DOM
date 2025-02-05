@@ -11,6 +11,7 @@ close.addEventListener("click", () => {
     nav.classList.remove("visible");
 })
 
+
 // A partir de aquí comienza el codigo del carrusel:
 
 
