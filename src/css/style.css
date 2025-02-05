@@ -46,7 +46,7 @@ h1, h2, h3 {
        display: flex;
        list-style-type: none;
        margin-right: 4rem;
-       gap: 3rem;      
+       gap: 3rem;       
 }
 
 .header__nav__link {
@@ -55,7 +55,7 @@ h1, h2, h3 {
     gap: 20px;   
 }
 
-.header .bi {
+.header__nav  .bi {
     display: none;
 }
 
@@ -262,7 +262,6 @@ body {
         display: block;    
       
     }
-
 .content{    
     height: 70vb;
 }
@@ -276,6 +275,8 @@ footer{
     color: var(--txt-light);
     padding: 15px;
     gap:5px;
+    margin: auto;    
+    bottom: 0;
     width: 100%;
     font-size: xx-small;
     margin-top: auto;
