@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTACTO</title>
     <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../src/css/contact.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -23,10 +24,46 @@
                         <li class="header__nav__item"><a href="../index.html" class="header__nav__link">HOME<i class="bi bi-house"></i></a></li>
                     </ul>
         </header>
-            <section class="content">
-
+        <main>
+            <h1>Medios de contacto</h1>            
+            <section class="contact__form">                
+                <form id="contactForm">
+                    <p>Si quieres matricularte o recibir información rellena este formulario:</p>
+                    
+                    <article class="form__group">
+                        <label class="form__label" for="nombre">Nombre y apellidos:</label>
+                        <input class="form__input form__input--nombre" type="text" id="nombre" name="nombre" placeholder="Ingresa aquí tu nombre y apellidos" required>
+                    </article>
+                    
+                    <article class="form__group">
+                        <label class="form__label" for="telefono">Teléfono de contacto:</label>
+                        <input class="form__input form__input--telefono" type="tel" id="telefono" name="telefono" placeholder="Ingresa aquí tu teléfono" required>
+                    </article>
+                
+                    <article class="form__group">
+                        <label class="form__label" for="correo">Correo electrónico:</label>
+                        <input class="form__input form__input--email" type="email" id="correo" name="correo" placeholder="Ingresa aquí tu correlo electrónico" required>
+                    </article>
+                
+                    <article class="form__group">
+                        <label class="form__label" for="actividad">Actividad en la que estás interasado/a :</label>
+                        <select class="form__select" type="dropdown" id="actividad" name="actividad" required>
+                            <option class="form__select__option" >&nbsp;&nbsp; Clases de guitarra</option>
+                            <option  class="form__select__option">&nbsp;&nbsp; Clases de piano</option>
+                            <option class="form__select__option">&nbsp;&nbsp; Clases de xilófono</option>
+                            <option class="form__select__option">&nbsp;&nbsp; Lectura musical</option>
+                        <!--select se utiliza para un menu de opciones desplegable, y las options son las opciones-->
+                        </select>
+                    </article>                    
+                    <button class="form__button" type="submit">Enviar</button>
+                </form>                
             </section>
-            <script src="../src/js/nav-responsive.js"></script>  
+            <!--parte para que salga el mensaje en la pantalla de agradecimiento por el envio del formulario-->
+            <section id="confirmationMessage" style="display: none;">
+                <p>Formulario enviado. Nos pondremos en contacto contigo pronto. ¡Gracias!</p>
+                <button id="closeMessageButton">Cerrar</button>
+            </section>
+        </main>            
         <footer class="footer">
             <img src="../public/img/logo_f5_blanco.png" class="footer__logo">
             <p class="footer__text"> &copy; Todos los derechos reservados</p>

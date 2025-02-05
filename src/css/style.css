@@ -21,6 +21,7 @@ header {
     align-items: center;
     justify-content: space-between;    
     background-color: rgba(38, 37, 37, 1);
+
 }
 
 h1, h2, h3 {
@@ -44,7 +45,7 @@ h1, h2, h3 {
        display: flex;
        list-style-type: none;
        margin-right: 4rem;
-       gap: 3rem;  
+       gap: 3rem;       
 }
 
 .header__nav__link {
@@ -53,7 +54,7 @@ h1, h2, h3 {
     gap: 20px;   
 }
 
-.bi {
+.header__nav  .bi {
     display: none;
 }
 
@@ -78,6 +79,9 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 800px){
@@ -256,11 +260,6 @@ body {
     }
     
 }
-
-    
-    
-
-
 .content{    
     height: 70vb;
 }
@@ -274,18 +273,14 @@ footer{
     color: white;
     padding: 15px;
     gap:5px;
-    position: absolute;
+    margin: auto;    
     bottom: 0;
     width: 100%;
     font-size: xx-small;
 }
 
 .footer__logo {
-    width: 150px;
-}
-.footer__text {
-    font-size: small;
-    color:white;
+    width: 120px;
 }
 
 
