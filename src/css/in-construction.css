@@ -6,9 +6,21 @@ h1 {
 
 main {
     background-color: rgba(0, 0, 0, 0.7);
-    margin: 2rem;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* --------------- SMALL SCREEN --------------- */
+@media (max-width: 600px) {
+    main {
+        min-height: 90vh;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: medium;
+    }
 }
