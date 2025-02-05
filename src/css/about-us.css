@@ -1,3 +1,4 @@
+/*----------variables para no tener que tocar el código si se quiere cambiar el background o la fuente---------------*/
 :root {
     --background-image: url("../../public/img/xilo_resized.jpeg");
     --h1_h2_h3-font: "Italiana", serif;
@@ -5,6 +6,7 @@
 }
 
 @media only screen and (max-width: 800px) {
+    /*-------------cambio de background para tablet y pantallas pequeñas-------------*/
     :root {
         --background-image: url("../../public/img/violin.jpg");
     }
@@ -13,60 +15,55 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
 
-h1,
-h2,
-h3 {
-    font-family: var(--h1_h2_h3-font);
-    font-weight: bolder;
-    font-style: normal;
-    text-shadow: 2px 2px 0 black;
-}
 
 body {
-    background-image: var(--background-image);    
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    
     font-family: var(--body-font);
     font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;  
-    height: 100%;
+    font-style: normal;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     
 }  
 
 main {
     background: rgba(0, 0, 0, 0.4);
+=======
+>>>>>>> 45fb1eec03f37753c51d5c2e923e03487b4c2f6f
 }
-/*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
-.content {      
-    width: 100%;   
-    height: 70vb;   
+
+/*esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
+.content {
+    width: 100%;
+    height: 100vh;
     display: grid;
-    grid-template-columns:  1fr 2fr 1fr;  
-    grid-template-rows: 1fr;    
-    flex-grow: 1 ;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    flex-grow: 1;
 }
 
 .content__curtain {
-    width: 100%; 
+    width: 100%;
+    height: 100%;
     background-color: black;
     opacity: 0.6;
-    display:flex;
+    display: flex;
     align-items: center;
-    padding-right: 15px;
-    height: 70vb;
+    padding-right: 1%;    
+    backdrop-filter: blur(5px);   
 }
 
 .content__curtain--right {
     justify-self: start;
     justify-content: start;
 }
+
 .content__curtain--left {
     justify-self: end;
     justify-content: flex-end;
@@ -74,106 +71,126 @@ main {
 
 .content__container {
     width: 100%;
-    height: 70vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;      
-    background-color: rgba(15, 15, 15, 0.2);  
-       
+    align-items: center;
+    background-color: rgba(15, 15, 15, 0.2);
 }
 
 .content__container__h1 {
-    margin-top: 5%;
+    margin-top: 4%;
     width: 100%;
     height: 15%;
-    text-align: center;
-    color: rgb(248, 242, 242);
-    font-size: 50px;
-    font-weight: normal;    
+    text-align: center; 
+          
+}
+
+h1 {
+    text-shadow: 4px 2px 2px black;
+    font-size: 60px;
+    font-weight: normal;
+    color: rgb(239, 236, 236); 
 }
 
 .content__container__div {
+    margin-top: 5%;
     width: 80%;
     height: 60%;
-    background-color: rgb(21, 20, 20);
-    opacity: 0.5;    
-}
-/*CODIGO CARRUSEL*/
-
-section{ 
+    background-color: rgb(0, 0, 0, 0.8);
     display: flex;
-    width: 500px;
-  }
-  
-
+    border-radius: 20px;    
+}
+/*--------------------------------carrusel------------------------------*/
 
 .slider__item {
-    position: absolute; 
-    background: rgba(0,0,0,0.5);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    height: 35%;
-    display:none;
+    width: 100%;
+    height: 100%;   
+    display: none;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    }
-  
-    .container{
+    overflow: hidden;
+    border-radius: 20px;      
+    border: 0.5px solid rgb(78, 76, 76);
+    
+}
+
+.article__container {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    padding: 5%;
-    gap: 40px;
-   
-  }
+    height: 100%;    
+    display: grid;    
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "img text";
+    place-items: center;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
 
-  .slider__item__text {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    text-align: center;
-  }
-  
-  h3{
-    margin-top: 15%;
-    color: white;
-    font-size: 40px;
-  }
-  
-  h2{
-    margin-top: 20px;
-    color: white;
-    font-size: 25px;
-  }
-  p{
-    color: white;
-  }
-
-
-
-
-
-.slider__item__img{
-    width: 45%;
-    height: auto;
+.slider__item__img {
+    width: 90%;
+    height: 90%;
     object-fit: cover;
     border-radius: 20px;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.slider__item__text {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    text-align: center;
+    opacity: 1;   
+    
+}
+
+h3{
+    margin-top: 2rem;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.slider__item__text--paragraph {
+    margin-top: 1rem;
+    color: white;
+    font-size: 1.3rem;
+}
+.slider__item__text--charge {
+    margin-top: -1rem;
+    color: white;
     
 }
 
 .slider__item.active {
     display: block;
+<<<<<<< HEAD
     
   }
 
   
+=======
+}
+
+.slider__item__text i {
+    color: white;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-size: 2rem;
+    transition: 0.5s;
+}
+
+.slider__item__text i:hover {
+    font-size: 3rem;
+    transition: 0.5s;
+}
+>>>>>>> 45fb1eec03f37753c51d5c2e923e03487b4c2f6f
 
 /*-------------------------------- Botones--------------------------------------- */
 
-.content__container__btn--left {    
+.content__container__btn--left {
     background-color: rgb(15, 15, 15);
     color: white;
     border: 2px solid white;
@@ -181,11 +198,12 @@ section{
     width: 80px;
     height: 80px;
     font-size: 30px;
-    text-align: center;      
+    text-align: center;
     margin-left: 10px;
+    margin-top: 30%;
 }
 
-.content__container__btn--right {    
+.content__container__btn--right {
     background-color: rgb(15, 15, 15);
     color: white;
     border: 2px solid white;
@@ -193,142 +211,301 @@ section{
     width: 80px;
     height: 80px;
     font-size: 30px;
-    text-align: center;    
-   margin-left: 15px
+    text-align: center;
+    margin-left: 15px;
+    margin-top: 30%;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222222;
+    color: white;
+    padding: 15px;
+    gap: 5px;
+    margin: auto;
+    bottom: 0;
+    width: 100%;
+    font-size: xx-small;
 }
 
-@media only screen and (min-width: 576px) and (max-width: 800px) {
+.footer__logo {
+    width: 20%;
+    height: auto;
+}
+
+@media only screen and (min-width: 650px) and (max-width: 1200px) {
     :root {
         --background-image: url("../../public/img/violin.jpg");
-    }   
-    /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
-    .content {
-        /*distribute the curtains with flex*/
-        width: 100%;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+            "header"
+            "content"
+            "footer";
+    }
+
+    .header__nav {
+        z-index: 2000;
+    }
+
+    .header__nav  .bi {
+        display: block;
+    }    
+
+    /*esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
+    main {
         height: 100vh;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+    }
+
+    .content {
+        grid-area: content;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr;
+        grid-template-rows: 1fr;
     }
 
     .content__curtain {
-        width: 20%;
-        height: 100%;
+        width: 100%;
         background-color: black;
-        opacity: 0.5;
+        opacity: 0.6;
+        display: flex;
+        align-items: center;
+        padding-right: 15px;
+        height: auto;
+        backdrop-filter: blur(5px);
     }
 
-    .content__slider__container {
+    .content__container {
         width: 100%;
-        height: 100%;
+        height: 75vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .content__slider__container--h1 {
-        margin-top: 80;
-        padding: 5rem;
-        width: 100%;
-        height: 15%;
-        text-align: center;
-        color: white;
-        font-size: 50px;
-        font-weight: 800;
+        background-color: rgba(15, 15, 15, 0.2);
     }
 
     .content__container__div {
-        margin-top: 5rem;
-        width: 90%;
-        height:20rem;
-        background-color: rgb(9, 9, 9);
-        opacity: 0.5;
-    }
-
-    /*-------------------------------- Botones--------------------------------------- */
-
-    .content__slider__container__btn--left {
-         color: white;
-        border: 1px solid white;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        font-size: 20px;        
-    }
-
-    .content__slider__container__btn--right {
-        background-color: rgb(15, 15, 15);
-        color: white;
-        border: 1px solid white;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        font-size: 20px;      
-    }
-}
-
-@media screen and (max-width: 575px) {
-     /*Esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
-    .content {
-        /*distribute the curtains with flex*/
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .content__curtain {
-        width: 5rem;
-        height: 100%;
-        background-color: black;
-        opacity: 0.5;
-    }
-
-    .content__slider__container {
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        height: 70%;
+        background-color: rgba(0, 0, 0, 0.8);
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+    }
+    
+    .content__container__h1 {
+        margin-top: 10%;        
     }
 
-    .content__slider__container--h1 {
-        margin-top: 10%;
+    h1 {
+        font-family: 50px;
+    }
+
+    .slider__item {
         width: 100%;
-        height: 15%;
+        height: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .article__container {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "image"
+            "text";
+        padding: 1rem;
+        backdrop-filter: blur(5px);
+    }
+
+    .slider__item__img {
+        width: 55%;
+        min-height: 30vw;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        display: block;
+        border-radius: 50%;
+        margin: 0 auto;
+        grid-area: image;
+    }
+
+    .slider__item__text {
+        max-height: 100%;
+        grid-area: text;
+        display: flex;
+        flex-direction: column;
         text-align: center;
-        color: white;
-        font-size: 50px;
-        font-weight: 800;
     }
 
-    .content__slider__container--article {
-        width: 90%;
-        height: 30%;
-        background-color: rgb(9, 9, 9);
-        opacity: 0.5;
+    h3{
+        margin-top: 1.5rem;
+        color: white;
+        font-size: 2rem;
+    }
+    
+    .slider__item__text--paragraph {
+        margin-top: 2rem;
+        color: white;
+        font-size: 1rem;
+    }
+    .slider__item__text--charge {
+        margin-top: -1rem;
+        color: white;
+        margin-bottom: 0.4rem;
     }
 
-    /*-------------------------------- Botones--------------------------------------- */
-
-    .content__slider__container__btn--left {
+    .slider__item__text i {
+        display: inline-block;
+        font-size: 2rem;
         color: white;
-        border: 1px solid white;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        font-size: 20px;        
+        padding: 0.5rem;
+        transition: 0.5s;
     }
 
-    .content__slider__container__btn--right {
-        background-color: rgb(15, 15, 15);
-        color: white;
-        border: 1px solid white;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        font-size: 20px;        
+    .slider__item__text i:hover {
+        font-size: 2.5rem;
     }
 }
 
+@media screen and (max-width: 650px) {
+    :root {
+        --background-image: url("../../public/img/violin.jpg");
+    }
+
+    html {
+        background: url("../../public/img/violin.jpg") no-repeat center top;
+        background-attachment: scroll;       
+    }
+
+    body {
+        background: none; /* evita conflictos con el fondo de body */
+        min-height: 200vh; /* asegura que haya suficiente espacio para el scroll */
+    }
+
+    .header__nav {
+        z-index: 2000;
+    }
+
+    .header__nav  .bi {
+        display: block;
+    }
+
+    /* Ocultar elementos del carrusel */
+    .content__curtain,
+    .content__container__btn--left,
+    .content__container__btn--right {
+        display: none;
+    }
+
+    /* Ajustar estructura principal */
+    .content {
+        display: block;
+        height: auto;
+        padding: 20px;
+        padding-bottom: 50px;
+    }
+
+    .content__container {
+        width: 100%;
+        height: auto;
+        background: transparent;
+        display: block;
+    }
+
+    .content__container__h1 {
+            
+        margin-bottom: 2rem; 
+        padding: 4%;
+        height: auto;
+        text-shadow: 1px 1px 0 black;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .content__container__div {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        background: transparent;
+        overflow: visible;
+        border-radius: 0;
+        align-items: center;
+    }
+
+    /* modificar slider para mostrar todas las cards */
+    .slider__item {
+        display: block;
+        width: 90%;
+        height: auto;
+        margin-bottom: 20px;
+        padding: 0 15px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 15px;        
+    }
+
+    .article__container {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        backdrop-filter: blur(5px);
+    }
+
+    .slider__item__img {
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    .slider__item__text {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    h3{
+        margin-top: 2rem;
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    .slider__item__text--paragraph {
+        margin-top: .5rem;
+        color: white;
+        font-size: 1rem;
+    }
+    .slider__item__text--charge {
+        margin-top: -1rem;
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+    .slider__item__text i {
+        display: inline-block;
+    }
+
+    .footer__logo {
+        width: 20%;
+        height: auto;
+    }
+}

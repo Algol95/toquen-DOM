@@ -3,67 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABOUT US</title>    
+    <title>ABOUT US</title>
     <link rel="stylesheet" href="../src/css/style.css">
     <link rel="stylesheet" href="../src/css/about-us.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italiana&display=swap" rel="stylesheet">
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <body>
-        <header class="header">
-                <img src="../public/img/logo_xylophone.png" class="logo-pagina header__logo">
-                <button class="header__button header__button--open-menu" id="open"><i class="bi bi-list" id="icon__open"></i></button>
-                <nav class="header__nav"  id="nav">
-                <button class="header__nav__button header__nav__button--close-menu" id="close"><i class="bi bi-x-lg" id="icon__close"></i></button>   
-                <ul class="header__nav__list">
-                        <li class="header__nav__item"><a class="header__nav__link" href="instrument.html">INSTRUMENTOS<i class="bi bi-music-note-beamed"></i></a></li>
-                        <li class="header__nav__item"><a class="header__nav__link" href="contact.html">CONTACTO<i class="bi bi-envelope"></i></a></li>
-                         <li class="header__nav__item"><a href="../index.html" class="header__nav__link">HOME<i class="bi bi-house"></i></a></li>
-                </ul>
-        </header>
-        <main class="content">
-                <div class="content__curtain content__curtain--left"><button class="content__container__btn content__container__btn--left">&lt;</button></div><!---cortinilla izq------> <!--------------boton izq--------->
-                <section  class="content__container"><!------contenedor centro---------------->
-                        <h1 class="content__container__h1">¿Quiénes somos?</h1>
-                        <div class="content__container__div">
-                                <article class="slider__item active">
-                                        <div class="container">
-                                          <img
-                                            class="slider__item__img"
-                                            src="../public/img/Angelito.jpg" id="member1"/>
-                                          <div class="slider__item__text">
-                                            <h2>"Me tienen que meter en una máquina de triturar la carne pa' salir guapa."</h2>
-                                            <h3>Ángel Aragón</h3>
-                                            <p>-Scrum Master-</p>
-                                          </div>
+    <header class="header">
+        <img src="../public/img/logo_xylophone.png" class="logo-pagina header__logo" />
+        <button class="header__button header__button--open-menu" id="open"><i class="bi bi-list"
+            id="icon__open"></i></button>
+        <nav class="header__nav" id="nav">
+            <button class="header__nav__button header__nav__button--close-menu" id="close"><i class="bi bi-x-lg"
+                id="icon__close"></i></button>
+            <ul class="header__nav__list">
+            <li class="header__nav__item"><a class="header__nav__link" href="instrument.html">INSTRUMENTOS<i
+                    class="bi bi-music-note-beamed"></i></a></li>
+            <li class="header__nav__item"><a class="header__nav__link" href="contact.html">CONTACTO<i
+                    class="bi bi-envelope"></i></a></li>
+            <li class="header__nav__item"><a href="../index.html" class="header__nav__link">HOME<i
+                    class="bi bi-house"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+            <div class="content__curtain content__curtain--left"><button
+                class="content__container__btn content__container__btn--left">&lt;</button></div><!---cortinilla izq------>
+            <!--------------boton izq--------->
+            <section class="content__container"><!------contenedor centro---------------->
+                    <h1 class="content__container__h1">¿Quiénes somos?</h1>
+                    <div class="content__container__div">
+                        <article class="slider__item active">
+                            <div class="article__container">
+                                <img class="slider__item__img active" src="../public/img/Angelito.png" />
+                                <div class="slider__item__text">
+                                        <p class="slider__item__text--paragraph">"Me tienen que meter en una máquina de triturar la carne pa' salir guapa."</p>
+                                        <h3>Ángel Aragón</h3>
+                                        <p class="slider__item__text--charge">-Scrum Master-</p>
+                                        <div class="slider__item__text__networks">
+                                            <a href="https://www.linkedin.com/in/ángel-miguel-cubino-aragón-b66b9b18b/"><i class="bi bi-linkedin"></i></a><a href="https://github.com/Algol95/Algol95"><i class="bi bi-github"></i></a>
                                         </div>
-                            
-                                      </article>
-                                      <article class="slider__item">
-                                        <img
-                                          class="slider__item__img"
-                                          src="../public/img/Ana.png" id="member2"/>
-                                       </article>
-                                      <article class="slider__item">
-                                        <img
-                                          class="slider__item__img"
-                                          src="../public/img/hema.jpg" id="member3"/>
-                                        </article>
-                                      <article class="slider__item">
-                                        <img
-                                          class="slider__item__img"
-                                          src="../public/img/Sergio.jpg" id="member4"/>
-                                      </article>                                
-                        </div>  <!----------- contenedor carrusel-------------->                                                          
-                </section>
-                <div class="content__curtain content__curtain--right"><button class="content__container__btn content__container__btn--right">&gt;</button></div><!------cortinilla dech--------><!--------------boton izq--------->                 
-        </main>
-        <footer class="footer">
-            <img src="../public/img/logo_f5_blanco.png">
-            <p> &copy; Todos los derechos reservados</p>
-            </footer> 
-            <script src="../src/js/nav-responsive.js"></script> 
+                                </div>
+                            </div>
+                        </article>
+                        <article class="slider__item">
+                            <div class="article__container">
+                                <img class="slider__item__img" src="../public/img/hema.png" />
+                                <div class="slider__item__text">
+                                        <p class="slider__item__text--paragraph">"Can we fix it? Yes, we can! - Bob the Builder."</p>
+                                        <h3>Hema Priya</h3>
+                                        <p class="slider__item__text--charge">-Product owner--</p>
+                                        <div class="slider__item__text__networks">
+                                            <a href="https://www.linkedin.com/in/hemaps/"><i class="bi bi-linkedin"></i></a><a href="https://github.com/void-craft"><i class="bi bi-github"></i></a>
+                                        </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="slider__item">
+                            <div class="article__container">
+                                <img class="slider__item__img" src="../public/img/sergio.png" />
+                                <div class="slider__item__text">
+                                        <p class="slider__item__text--paragraph">"Siempre que toco un Do suena un Fa.....what a fuck...!!!"</p>
+                                        <h3>Sergio Jorquera</h3>
+                                        <p class="slider__item__text--charge">-Developer-</p>
+                                        <div class="slider__item__text__networks">
+                                            <a href="https://www.linkedin.com/in/sergio-jorquera-gimeno-48472934a/"><i class="bi bi-linkedin"></i></a><a href="https://github.com/sergio-jorquera"><i class="bi bi-github"></i></a>
+                                        </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="slider__item">
+                            <div class="article__container">
+                                <img class="slider__item__img" src="../public/img/any.png" />
+                                <div class="slider__item__text">
+                                        <p class="slider__item__text--paragraph">"Voy sin rumbo...pero disfrutando del camino! Qué me quitén lo bailao!!"</p>
+                                        <h3>Ana Castro</h3>
+                                        <p class="slider__item__text--charge">-Developer-</p>
+                                        <div class="slider__item__text__networks">
+                                            <a href="https://www.linkedin.com/in/ana-castro-a476b8346/"><i class="bi bi-linkedin"></i></a><a href="https://github.com/cuyssi"><i class="bi bi-github"></i></a>
+                                        </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div> <!----------- contenedor carrusel-------------->
+            </section>
+            <div class="content__curtain content__curtain--right"><button
+                class="content__container__btn content__container__btn--right">&gt;</button></div>
+            <!------cortinilla dech--------><!--------------boton izq--------->
+    </main>
+    <footer class="footer">
+      <img src="../public/img/logo_f5_blanco.png">
+      <p> &copy; Todos los derechos reservados</p>
+    </footer>
+<script src="../src/js/nav-responsive.js"></script>
 </body>
+
 </html>

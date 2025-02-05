@@ -45,24 +45,16 @@ h1, h2, h3 {
        display: flex;
        list-style-type: none;
        margin-right: 4rem;
-       gap: 3rem;
-       
-       
-       
+       gap: 3rem;       
 }
 
 .header__nav__link {
     text-decoration: none;
     color: #f0e8fb;
-    gap: 20px;
-   
-    
-    
-
-    
+    gap: 20px;   
 }
 
-.bi {
+.header__nav  .bi {
     display: none;
 }
 
@@ -87,7 +79,13 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+<<<<<<< HEAD
     overflow: hidden;
+=======
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+>>>>>>> 45fb1eec03f37753c51d5c2e923e03487b4c2f6f
 }
 
 @media only screen and (min-width: 576px) and (max-width: 800px){
@@ -290,7 +288,7 @@ footer{
     color: white;
     padding: 15px;
     gap:5px;
-    position: absolute;
+    margin: auto;    
     bottom: 0;
     width: 100%;
     font-size: xx-small;
