@@ -53,7 +53,7 @@ h1 {
     
 }
 
-/* GSAP ANIMATION */
+/* GSAP ANIMATION - AMCA*/
 
 .welcome__txt__gsap{
     padding-top: 3rem;
@@ -92,6 +92,7 @@ h1 {
 .instruments__title {
     color: var(--txt-dark);
     text-align: end;
+    font-weight: 600;
 }
 
 .instruments__line {
@@ -101,28 +102,39 @@ h1 {
     margin-left: auto;
 }
 
+.instruments__txt{
+    color: var(--txt-dark);
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    text-align: end;
+}
+
 .instruments__nav{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Me permite una grid responsiva chula chula - AMCA*/
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); /* Me permite una grid responsiva chula chula - AMCA*/
     gap: 2rem;
     padding: 2rem 0 0 0;
 }
 
 .instruments__nav__a{
-    cursor: grab;
+    cursor: pointer;
 }
 
 .instruments__nav__a img{
     width: 100%;
     height: 400px;
-    cursor: grab;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.5s;
     object-fit: cover;
+    border-radius: 10px;
+}
+
+.instruments__nav :nth-child(1) img{
+    object-position: 100%;
 }
 
 .instruments__nav__a img:hover {
-    transform: scale(1.05); /* Hace que la imagen crezca un 5% */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Añade una sombra para resaltar el efecto */
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   }
 
 /* MEDIA QUERY - AMCA */
@@ -141,6 +153,10 @@ h1 {
     .welcome {
         margin: 0 10% 0 10%;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .instruments {
+        margin: 0 10% 0 10%;    
     }
 
     .welcome__txt__gsap{
@@ -167,14 +183,12 @@ h1 {
 
     .welcome__musician{
         display: none;
-    }
-
-    
+    } 
 }
 
 /* MOVILE SCREEN - AMCA*/
 @media only screen and  (max-width: 575px){
-    .welcome{
+    .welcome, .instruments{
         margin: 0;
     }
 
