@@ -1,8 +1,12 @@
 @import url(../style.css);
 /* ------------------- VARIABLES ------------------- */
-/* ------------------- HEADER ------------------- */
+/* ------------------- HEADER & FOOTER ------------------- */
 header {
   width: 100%;
+}
+
+footer {
+  margin-top: 2%;
 }
 
 /* ------------------- BODY ------------------- */
@@ -15,6 +19,7 @@ body {
   margin-top: 1.5%;
   color: var(--txt-light);
   text-shadow: 1px 1px 2px black;
+  font-size: 3rem;
   z-index: 2;
 }
 
@@ -28,8 +33,7 @@ main {
   background-size: contain;
   box-sizing: border-box;
   width: 58%;
-  min-height: 110vh;
-  height: 100%;
+  min-height: 100vh;
   margin: 2%;
 }
 
@@ -45,7 +49,6 @@ section {
   box-sizing: border-box;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  padding: 8%;
 }
 
 .section__title {
@@ -60,17 +63,32 @@ section {
   text-align: left;
 }
 
-.section--instructions dd,
-dt {
-  margin-bottom: 2%;
-}
-
 .keyboard-mapping {
   width: auto;
   border-collapse: collapse;
   margin: 10px auto;
   font-size: 14px;
   table-layout: fixed;
+}
+
+.keyboard-mapping th,
+.keyboard-mapping td {
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  text-align: center;
+  border: 1px solid #000;
+  word-break: break-word;
+}
+
+.keyboard-mapping th {
+  background-color: var(--bg-header-footer);
+  font-weight: bold;
+}
+
+.section--instructions dd,
+dt {
+  margin-bottom: 2%;
 }
 
 dt {
@@ -90,21 +108,6 @@ p {
   justify-self: center;
   font-style: italic;
   font-family: var(--body-font);
-}
-
-.keyboard-mapping th,
-.keyboard-mapping td {
-  width: 40px;
-  height: 40px;
-  padding: 4px;
-  text-align: center;
-  border: 1px solid #000;
-  word-break: break-word;
-}
-
-.keyboard-mapping th {
-  background-color: var(--bg-header-footer);
-  font-weight: bold;
 }
 
 /* ------------------- YOUTUBE ------------------- */
@@ -128,14 +131,13 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 50%;
+  height: auto;
 }
 
 .play-music-button {
   box-shadow: 1px 1px 2px black;
   background-color: #9F4B2E;
   color: var(--txt-light);
-  margin: 2%;
   padding: 2% 2.5%;
   cursor: pointer;
   font-size: 1.3rem;
@@ -238,46 +240,12 @@ p {
   z-index: 2;
 }
 
-/* ------------------- ANIMATION VIBRATION ------------------- */
-@keyframes vibration {
-  0% {
-    transform: translate(1px, 1px);
-  }
-  25% {
-    transform: translate(-1px, -1px);
-  }
-  50% {
-    transform: translate(1px, -1px);
-  }
-  75% {
-    transform: translate(-1px, 1px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
+/* ------------------- ANIMATION ------------------- */
 .xylophone__key.vibrating img {
   animation: vibration 0.2s ease-in-out 2, dimKey 0.2s ease-in-out 2 0.1s;
   animation-fill-mode: forwards;
 }
 
-@keyframes dimKey {
-  0% {
-    filter: brightness(0.5);
-  }
-  25% {
-    filter: brightness(0.5);
-  }
-  50% {
-    filter: brightness(0.5);
-  }
-  75% {
-    filter: brightness(0.5);
-  }
-  100% {
-    filter: brightness(0.5);
-  }
-}
 .xylophone__key:hover img {
   transform: scale(1.05);
   filter: brightness(1.2);
@@ -311,6 +279,41 @@ body.popup-active .xylophone__key {
   pointer-events: none;
 }
 
+/* ------------------- KEYFRAMES ------------------- */
+@keyframes vibration {
+  0% {
+    transform: translate(1px, 1px);
+  }
+  25% {
+    transform: translate(-1px, -1px);
+  }
+  50% {
+    transform: translate(1px, -1px);
+  }
+  75% {
+    transform: translate(-1px, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes dimKey {
+  0% {
+    filter: brightness(0.5);
+  }
+  25% {
+    filter: brightness(0.5);
+  }
+  50% {
+    filter: brightness(0.5);
+  }
+  75% {
+    filter: brightness(0.5);
+  }
+  100% {
+    filter: brightness(0.5);
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -329,7 +332,8 @@ body.popup-active .xylophone__key {
     box-sizing: border-box;
   }
   .section--xylophone,
-  .section--instructions .section--youtube {
+  .section--instructions,
+  .section--youtube {
     margin-bottom: 2%;
   }
   .xylophone__base {
@@ -351,7 +355,6 @@ body.popup-active .xylophone__key {
     margin-bottom: 2%;
   }
   .section--instructions {
-    margin-bottom: 2%;
     align-items: flex-start;
     width: 100%;
     height: 100%;
@@ -363,13 +366,24 @@ body.popup-active .xylophone__key {
     flex: 1;
     padding-bottom: 4%;
     padding-top: 2%;
-    margin-bottom: 2%;
   }
   .section--youtube iframe {
-    width: 50%;
-    height: 150%;
+    width: 70%;
+    aspect-ratio: 4/3;
   }
   .play-music-button {
     font-size: 1rem;
   }
-}/*# sourceMappingURL=instrument.css.map */
+  .section--music {
+    padding: 3%;
+  }
+  .play-music-button {
+    padding: 1.5% 4%;
+    font-size: 1rem;
+    height: auto;
+  }
+  footer {
+    margin-top: 0;
+  }
+}
+/* ------------------- END OF CODE ------------------- *//*# sourceMappingURL=instrument.css.map */
