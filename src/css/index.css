@@ -1,6 +1,10 @@
 /*
-    Estilos generales - AMCA 
+    Estilos generales y variables - AMCA 
 */
+:root{
+    --txt-dark: #1B1B1B;
+    scroll-behavior: smooth;
+}
 
 body {
     color: var(--txt-light);
@@ -22,11 +26,11 @@ h1 {
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
     backdrop-filter: blur(5px);
+    z-index: -1;
 }
 
 .welcome__musician {
-    max-width: 350px;
-    width: 100%;
+    max-width: 100%;
     height: 850px;
     object-fit: cover;
 }
@@ -49,19 +53,20 @@ h1 {
     
 }
 
+/* GSAP ANIMATION - AMCA*/
+
 .welcome__txt__gsap{
     padding-top: 3rem;
-    max-height: 360px;
+    max-height: 50%;
     max-width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     gap: 8rem;
     background-image: url(../../public/img/partitura.png);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: 0 70%;
-    position: relative;
-    y: -20%;
+    background-position: 50% 70%;
+
 }
 
 .welcome__txt__gsap img{
@@ -72,9 +77,68 @@ h1 {
     transform: rotate(10deg);
     max-width: 100px;
     max-height: 200px;
-    --move-note: -30;
+
 }
 
+/* INSTRUMENTS SECTION - AMCA */
+.instruments{
+    margin: 0 18% 0 18%;
+    background-color: rgba(217,217, 217, .7);
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+    z-index: 0;
+}
+
+.instruments__title {
+    color: var(--txt-dark);
+    text-align: end;
+    font-weight: 600;
+}
+
+.instruments__line {
+    border-top: 2px solid;
+    border-top-color: var(--txt-dark);
+    width: 70%;
+    margin-left: auto;
+}
+
+.instruments__txt{
+    color: var(--txt-dark);
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    text-align: end;
+}
+
+.instruments__nav{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); /* Me permite una grid responsiva chula chula - AMCA*/
+    gap: 2rem;
+    padding: 2rem 0 0 0;
+}
+
+.instruments__nav__a{
+    cursor: pointer;
+}
+
+.instruments__nav__a img{
+    width: 100%;
+    height: 400px;
+    transition: 0.5s;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.instruments__nav :nth-child(1) img{
+    object-position: 100%;
+}
+
+.instruments__nav__a img:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+
+/* MEDIA QUERY - AMCA */
+/* SCREEN L - AMCA*/
 @media only screen and  (min-width: 1441px){
     .welcome__txt__gsap{
         padding-top: 3rem;
@@ -84,10 +148,15 @@ h1 {
     }
 }
 
+/* SCREEN M - AMCA*/
 @media only screen and  (max-width: 1100px){
     .welcome {
         margin: 0 10% 0 10%;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .instruments {
+        margin: 0 10% 0 10%;    
     }
 
     .welcome__txt__gsap{
@@ -95,20 +164,18 @@ h1 {
     }
 
     .welcome__txt__gsap img{
-        max-width: 150px;
-        height: 200px;
+        height: 300px;
     }
     
     .welcome__txt__gsap :nth-child(2){
         padding-top: 20px;
         transform: rotate(10deg);
-        max-width: 60px;
-        max-height: 150px;
-        --move-note: -10;
+        max-width: 60px;        max-height: 150px;
     }
     
 }
 
+/* TABLET SCREEN - AMCA */
 @media only screen and  (max-width: 800px){
     .welcome{
         display: block;
@@ -116,15 +183,31 @@ h1 {
 
     .welcome__musician{
         display: none;
-    }
+    } 
 }
 
+/* MOVILE SCREEN - AMCA*/
 @media only screen and  (max-width: 575px){
-    .welcome{
+    .welcome, .instruments{
         margin: 0;
     }
 
     .welcome__musician{
         display: none;
+    }
+
+    .welcome_txt_gsap{
+        justify-content: center;
+    }
+
+    .welcome__txt__gsap img{
+        height: 150px;
+    }
+    
+    .welcome__txt__gsap :nth-child(2){
+        padding-top: 20px;
+        transform: rotate(10deg);
+        max-width: 40px;
+        max-height: 100px;
     }
 }
