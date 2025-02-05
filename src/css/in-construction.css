@@ -10,17 +10,29 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.construction-icon {
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 1%;
+    color: var(--txt-light);
 }
 
 /* --------------- SMALL SCREEN --------------- */
 @media (max-width: 600px) {
     main {
         min-height: 90vh;
-        flex-direction: column;
-        text-align: center;
     }
 
     h1 {
         font-size: medium;
     }
+
+    .construction-icon {
+    font-size: larger;
+    margin-bottom: 4%;
+}
 }
