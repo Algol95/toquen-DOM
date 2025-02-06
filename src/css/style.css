@@ -142,13 +142,13 @@ body {
         box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5);    
         transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
         transform: translateX(100%);
+        z-index: 10;  
     }
     
     .header__nav.visible {
         opacity: 1;
         visibility: visible;
         transform: translateX(0);
-        
     }
 
     .header__nav__list {       
@@ -228,7 +228,7 @@ body {
         box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5); 
         transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
         transform: translateX(100%);
-                     
+        z-index: 10;    
     }
     
     
