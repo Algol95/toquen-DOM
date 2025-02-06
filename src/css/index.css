@@ -174,7 +174,7 @@ h1 {
 }
 
 /* TABLET SCREEN - AMCA */
-@media only screen and  (max-width: 800px){
+@media only screen and (max-width: 800px){
     .welcome{
         display: block;
     }
@@ -185,13 +185,9 @@ h1 {
 }
 
 /* MOVILE SCREEN - AMCA*/
-@media only screen and  (max-width: 575px){
+@media only screen and (max-width: 575px){
     .welcome, .instruments{
         margin: 0;
-    }
-
-    .welcome__musician{
-        display: none;
     }
 
     .welcome_txt_gsap{
