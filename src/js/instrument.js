@@ -133,19 +133,21 @@ document.addEventListener("DOMContentLoaded", () => {
 // TODO: Usar array bidimensional u objeto para ajustar cada nota a su tempo (y torturarme un poco más) - AMCA
 window.playLaCucaracha = function(){
   const melody = [
-      "C", "C", "C", "F", "A",
-      "C", "C", "C", "F", "A",
-      "F", "F", "E", "E", "D", "D", "C",
-      "C", "C", "C", "E", "G",
-      "C", "C", "C", "E", "G",
+      "C", "C", "C", "F", "", "A",
+      "C", "C", "C", "F", "", "A", "", "",
+      "F", "F", "E", "E", "D", "D", "C", "", "",
+      "C", "C", "C", "E", "", "G",
+      "C", "C", "C", "E", "", "G", "",
       "C2", "D2", "C2", "BB", "A", "G", "F"
 
   ];
-  const tempo = 350;
+  const tempo = 300;
 
   melody.forEach((note, index) => {
       setTimeout(() => {
+      
           playNote(note);
+       
       }, index * tempo);
   });
 }
