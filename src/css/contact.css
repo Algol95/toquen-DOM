@@ -1,4 +1,4 @@
-/*---------------------------variables para el contenedor de la alerta sacadas de bootstrap--------------------------------*/
+/*---------------------------variables para el contenedor de la alerta sacadas de bootstrap-AC--------------------------------*/
 :root {
     --alert-color: #fff;
     --alert-bg: #dc3545;
@@ -38,7 +38,7 @@
     font-size: 1.2rem;
 }
 
-/*------------------------------------------estilo base web-------------------------------------------------*/
+/*------------------------------------------estilo base web-AC-------------------------------------------------*/
 main {
     width: 100%;
     flex-grow: 1;
@@ -70,7 +70,7 @@ h1 {
     text-align: center;
 }
 
-/*------------------------------------------estilo formulario-----------------------------------------------*/
+/*------------------------------------------estilo formulario-AC-----------------------------------------------*/
 .contact__form__txt {
     margin-bottom: 2rem;
     text-align: center;
@@ -115,29 +115,6 @@ h1 {
     border-radius: 5px;
 }
 
-.form__button {
-    font-size: 20px;
-    margin-left: 45%;
-    width: 8rem;
-    height: 3rem;
-    padding: 0.4rem;
-    margin-top: 1rem;
-    background-color: #DEB581;
-    cursor: pointer;
-    border-radius: 30px;
-    color: black;
-    border: none;
-    transition: all 0.3s ease; /* Transición suave para todos los cambios */
-    
-  }  
-   
-  /* Efecto al hacer clic */
-  .form__button:active {
-    background-color: #43331e; /* Color aún más oscuro para indicar pulsación */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.7); /* Sombra reducida al pulsar */
-    transform: translateY(0); /* Vuelve a la posición original */
-  }
-
 .form__label--select {
     color: white;
 }
@@ -148,7 +125,7 @@ h1 {
     border-radius: 5px;
 }
 
-/*------------------------estilo para ventana de agradecimiento, una vez enviado el form----------------------*/
+/*------------------------estilo para ventana de agradecimiento, una vez enviado el form- AC----------------------*/
 #confirmationMessage {
     position: fixed;
     top: 50%;
@@ -176,7 +153,7 @@ h1 {
     border-radius: 5px;
 }
 
-/*------------------------------------query media para pantallas grandes-------------------------------------------*/
+/*------------------------------------query media para pantallas grandes-AC-------------------------------------------*/
 @media only screen and (min-width: 1441px) and (max-width: 3000px) {
     h1 {
         font-size: 80px;
@@ -218,7 +195,7 @@ h1 {
     }
 }
 
-/*------------------------------------------------------------query media para tablets------------------------------------*/
+/*----------------------------------------------------query media para tablets-AC------------------------------------*/
 @media only screen and (min-width: 651px) and (max-width: 899px) {
   
     h1 {
@@ -262,7 +239,7 @@ h1 {
     }
 }
 
-/*----------------------------------------------------query media para moviles-------------------------------------------------*/
+/*----------------------------------------------------query media para moviles-AC------------------------------------------------*/
 @media (max-width: 650px) {
     h1 {
         font-size: 43px;
