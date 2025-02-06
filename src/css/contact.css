@@ -116,14 +116,27 @@ h1 {
 }
 
 .form__button {
+    font-size: 20px;
     margin-left: 45%;
-    width: 6rem;
+    width: 8rem;
+    height: 3rem;
     padding: 0.4rem;
     margin-top: 1rem;
     background-color: #DEB581;
-    color: white;
     cursor: pointer;
-}
+    border-radius: 30px;
+    color: black;
+    border: none;
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+    
+  }  
+   
+  /* Efecto al hacer clic */
+  .form__button:active {
+    background-color: #43331e; /* Color aún más oscuro para indicar pulsación */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.7); /* Sombra reducida al pulsar */
+    transform: translateY(0); /* Vuelve a la posición original */
+  }
 
 .form__label--select {
     color: white;
