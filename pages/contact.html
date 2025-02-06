@@ -25,11 +25,10 @@
                     </ul>
         </header>
         <main>
-            <h1>Medios de contacto</h1>
-            <div id="alertContainer"></div>              
+            <h1>Medios de contacto</h1>                          
             <section class="contact__form">                           
                 <form id="contactForm">                   
-                    <p>Si quieres matricularte o recibir información rellena este formulario:</p>                    
+                    <p class="contact__form__txt">Si quieres matricularte o recibir información rellena este formulario:</p>                    
                     <article class="form__group">
                         <label class="form__label" for="name">Nombre y apellidos:</label>
                         <input class="form__input form__input--nombre" id="name" placeholder="Ingresa aquí tu nombre y apellidos">
@@ -56,7 +55,8 @@
                         </select>
                     </article>                    
                     <button type="button" class="form__button" id="btn">Enviar</button>                    
-                </form>                
+                </form>      
+                <div class="alert" id="alertContainer"></div>          
             </section>
             <!--parte para que salga el mensaje en la pantalla de agradecimiento por el envio del formulario-->
             <section id="confirmationMessage" style="display: none;">
