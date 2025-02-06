@@ -85,7 +85,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-blend-mode: darken;
-    overflow: hidden;
+   
 }
 
 @media only screen and (min-width: 576px) and (max-width: 800px){
@@ -243,7 +243,7 @@ body {
         margin-top: 20px;
         flex-direction: column;
         align-items: end;     
-        gap: 5rem;  
+        gap: 4rem;  
     }    
         
 }        
