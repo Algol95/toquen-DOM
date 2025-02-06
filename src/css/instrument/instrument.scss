@@ -117,6 +117,7 @@ p {
   font-style: italic;
   font-family: var(--body-font);
 }
+
 /* ------------------- YOUTUBE ------------------- */
 .section--youtube {
   grid-area: youtube-embed;
@@ -251,7 +252,7 @@ p {
   filter: brightness(1.2);
 }
 
-/* ------------------- POP-UP FOR SMALL SCREENS ------------------- */
+/* ------------------- POPUP FOR ORIENTATION ------------------- */
 #orientation-lock {
   position: fixed;
   top: 0;
@@ -261,22 +262,37 @@ p {
   background: rgba(0, 0, 0, 0.99);
   color: var(--txt-light);
   font-size: 1.5rem;
-  display: none;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 5%;
   z-index: 9;
-  display: none;
   overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 body.popup-active main {
-  filter: blur(5%);
+  filter: blur(5px);
+  transition: filter 0.5s ease;
 }
 
 body.popup-active .xylophone__key {
   pointer-events: none;
+}
+
+.rotate-icon {
+  width: 20%;
+  height: auto;
+  animation: rotate 2s infinite linear;
+}
+
+#orientation-lock p {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.3);
+  animation: glow 1.5s infinite alternate ease-in-out;
 }
 
 /* ------------------- KEYFRAMES ------------------- */
@@ -331,6 +347,40 @@ body.popup-active .xylophone__key {
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes rotate {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   }
 }
 
