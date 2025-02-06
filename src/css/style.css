@@ -85,6 +85,12 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-blend-mode: darken;
+}
+
+/* Solución del bloqueo del scroll, y que cuando se abra el menu dejar la pantala fija.
+Sí Ana, es un condicional en css. - AMCA*/
+
+body:has(.header__nav.visible){
     overflow: hidden;
 }
 
@@ -236,7 +242,6 @@ body {
         opacity: 1;
         visibility: visible;
         transform: translateX(0);
-       
     }
 
     .header__nav__list {       
