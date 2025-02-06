@@ -28,15 +28,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-    
 }  
-
-main {
-    background: rgba(0, 0, 0, 0.4);
-=======
->>>>>>> 45fb1eec03f37753c51d5c2e923e03487b4c2f6f
-}
 
 /*esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
 .content {
@@ -166,13 +158,8 @@ h3{
 
 .slider__item.active {
     display: block;
-<<<<<<< HEAD
     
   }
-
-  
-=======
-}
 
 .slider__item__text i {
     color: white;
@@ -186,7 +173,6 @@ h3{
     font-size: 3rem;
     transition: 0.5s;
 }
->>>>>>> 45fb1eec03f37753c51d5c2e923e03487b4c2f6f
 
 /*-------------------------------- Botones--------------------------------------- */
 
