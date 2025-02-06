@@ -107,6 +107,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -180,7 +181,8 @@ body:has(.header__nav.visible){
     .header__nav.visible {
         opacity: 1;
         visibility: visible;
-        transform: translateX(0);
+        transform: translateX(0); 
+        
     }
 
     .header__nav__list {       
@@ -235,6 +237,7 @@ body:has(.header__nav.visible){
         border: 0;
         color: var(--txt-light);
         background-color: transparent;
+    
         
     }    
 
