@@ -140,8 +140,7 @@ body {
     
     .header__nav.visible {
         opacity: 1;
-        visibility: visible;
-        
+        visibility: visible;        
     }
 
     .header__nav__list {       

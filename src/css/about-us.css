@@ -19,8 +19,7 @@
 }
 
 
-body {
-    
+body {    
     font-family: var(--body-font);
     font-optical-sizing: auto;
     font-weight: 400;
@@ -231,15 +230,7 @@ footer {
         box-sizing: border-box;
     }
 
-    body {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-areas:
-            "header"
-            "content"
-            "footer";
-    }
+    
 
     .header__nav {
         z-index: 2000;
@@ -250,10 +241,7 @@ footer {
     }    
 
     /*esta parte ajusta las posiciones de las cortinillas de los lados y de la base del carrusel.*/
-    main {
-        height: 100vh;
-    }
-
+   
     .content {
         grid-area: content;
         height: 100%;
@@ -374,16 +362,6 @@ footer {
 @media screen and (max-width: 650px) {
     :root {
         --background-image: url("../../public/img/violin.jpg");
-    }
-
-    html {
-        background: url("../../public/img/violin.jpg") no-repeat center top;
-        background-attachment: scroll;       
-    }
-
-    body {
-        background: none; /* evita conflictos con el fondo de body */
-        min-height: 200vh; /* asegura que haya suficiente espacio para el scroll */
     }
 
     .header__nav {
