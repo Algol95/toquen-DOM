@@ -125,6 +125,32 @@ h1 {
     border-radius: 5px;
 }
 
+/*---------------------variable btn para aplicar al código-AC---------------------------------*/
+.btn {
+    font-size: 20px;
+    margin-left: 45%;
+    width: 8rem;
+    height: 3rem;
+    padding: 0.4rem;
+    margin-top: 1rem;
+    background-color: #DEB581;
+    cursor: pointer;
+    border-radius: 30px;
+    color: black;
+    border: none;
+    transition: all 0.3s ease; 
+    
+  }  
+   
+  /* efecto al hacer clic */
+  .btn:active {
+    background-color: #43331e; 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.7); 
+    transform: translateY(0); 
+    color :white;
+  }
+/*---------------------------------------------------------------------------------------------------*/
+
 /*------------------------estilo para ventana de agradecimiento, una vez enviado el form- AC----------------------*/
 #confirmationMessage {
     position: fixed;
