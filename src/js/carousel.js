@@ -3,7 +3,7 @@
 // CODIGO CARRUSEL
 
 
-const sliderItems = document.querySelectorAll(".slider__item");
+const sliderItems = document.querySelectorAll(".content__container__div__article");
 const leftButton = document.querySelector('.content__container__btn--left');
 const rightButton = document.querySelector('.content__container__btn--right');
 
