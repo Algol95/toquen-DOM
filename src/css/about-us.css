@@ -127,7 +127,7 @@ h1 {
 
 .slider__item__img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     border-radius: 10%;  
 }
@@ -230,8 +230,14 @@ footer {
 }
 
 /* -------------------------- MEDIA QUERY -------------------------- */
+@media screen and (min-width: 901px) and  (max-width: 1200px) {
+    h1 {
+        font-size: 60px;
+    }
+}
 
-@media only screen and (min-width: 576px) and (max-width: 900px) {
+
+@media only screen and (min-width: 591px) and (max-width: 900px) {
     :root {
         --background-image: url("../../public/img/violin.jpg");
     }
@@ -259,7 +265,7 @@ footer {
     }        
 
     h1 {
-        font-size: 60px;
+        font-size: 50px;
     }
 
     .header__nav {
@@ -357,7 +363,7 @@ footer {
 }
 
 /* -------------------------- SMALL SCREEN -------------------------- */
-@media screen and (max-width: 575px) {
+@media only screen and (max-width: 590px) {
 
     body {
         /* background: none; */
