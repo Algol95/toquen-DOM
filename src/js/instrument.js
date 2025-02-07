@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const orientationLock = document.getElementById("orientation-lock");
+  const orientationLock = document.querySelector(".orientation-lock");
   const keys = Array.from(document.querySelectorAll(".xylophone__key"));
 
   function checkOrientation() {

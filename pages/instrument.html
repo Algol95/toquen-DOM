@@ -16,7 +16,7 @@
     <script defer src="../src/js/instrument.js"></script>
 </head>
 
-<body>
+<body class="body">
     <header class="header">
         <img src="../public/img/logo_xylophone.png" class="logo-pagina header__logo">
         <button class="header__button header__button--open-menu" id="open"><i class="bi bi-list"
@@ -27,31 +27,29 @@
             <ul class="header__nav__list">
                 <li class="header__nav__item"><a class="header__nav__link" href="./about-us.html">SOBRE NOSOTRAS <i
                             class="bi bi-people-fill"></i></a></li>
-                <li class="header__nav__item">
-                    <a class="header__nav__link" href="../index.html#instruments" id="nav-instruments">INSTRUMENTOS<i class="bi bi-music-note-beamed"></i></a>
-                </li>
                 <li class="header__nav__item"><a class="header__nav__link" href="./contact.html">CONTACTO<i
                             class="bi bi-envelope"></i></a></li>
                 <li class="header__nav__item"><a href="../index.html" class="header__nav__link">HOME<i
                             class="bi bi-house"></i></a></li>
             </ul>
     </header>
-    <div id="orientation-lock">
-        <img src="../public/img/rotate_phone.png" alt="Rotate your screen" class="rotate-icon">
-        <p>Cambia la orientación para ver la pagina.</p>
+    <div class="orientation-lock">
+        <img class="orientation-lock__icon" src="../public/img/rotate_phone.png" alt="Rotate your screen">
+        <p class="orientation-lock__text">Cambia la orientación para ver la pagina.</p>
     </div>
-    <h1 class="page-heading">Xilófono Virtual</h1>
+    <h1 class="body__page-title">Xilófono Virtual</h1>
     <main class="main">
         <!-- Left section - Instructions -->
-        <section class="section--instructions">
-            <h2 class="section__title">Instrucciones</h2>
-            <dl>
-                <dt><strong>🎶 Hazle Click 🖱️🎶</strong></dt>
-                <dd>Haz click con raton en las teclas del xilófono para tocar sus notas.</dd>
-                <dt><strong>🎶 Usa tu Teclado ⌨️🎶</strong></dt>
-                <dd>
-                    <table class="keyboard-mapping">
-                        <tr>
+        <section class="instructions">
+            <h2 class="instructions__title">Instrucciones</h2>
+            <dl class="instructions__list">
+                <dt class="instructions__term"><strong>🎶 Hazle Click 🖱️🎶</strong></dt>
+                <dd class="instructions__description">Haz click con raton en las teclas del xilófono para tocar sus
+                    notas.</dd>
+                <dt class="instructions__term"><strong>🎶 Usa tu Teclado ⌨️🎶</strong></dt>
+                <dd class="instructions__description">
+                    <table class="instructions__keyboard-mapping">
+                        <tr class="instructions__keyboard-mapping-row">
                             <th>C</th>
                             <th>D</th>
                             <th>E</th>
@@ -65,7 +63,7 @@
                             <th>G2</th>
                             <th>A2</th>
                         </tr>
-                        <tr>
+                        <tr class="instructions__keyboard-mapping-row">
                             <td>1</td>
                             <td>2</td>
                             <td>3</td>
@@ -82,69 +80,69 @@
                     </table>
                 </dd>
             </dl>
-            <p>🎶 ¡Crea tu propia melodía y diviértete! 🎶</p>
+            <p class="instructions__footer">🎶 ¡Crea tu propia melodía y diviértete! 🎶</p>
         </section>
 
         <!-- Right section - YouTube Embedment Section -->
-        <section class="section--youtube">
-            <h2 class="section__title">Video</h2>
-            <iframe src="https://www.youtube.com/embed/your_video_id" frameborder="0"
+        <section class="youtube">
+            <h2 class="youtube__title">Video</h2>
+            <iframe class="youtube__iframe" src="https://www.youtube.com/embed/your_video_id" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
         </section>
 
         <!-- Second row - Xylophone -->
-        <section class="section--xylophone">
+        <section class="xylophone">
             <img src="../public/img/xylophone/XyloBase.png" class="xylophone__base" alt="Xylophone Base">
             <div class="xylophone__keys">
                 <div class="xylophone__key" data-key="C">
-                    <img src="../public/img/xylophone/KeyC.png" alt="C key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyC.png" alt="C key">
                 </div>
                 <div class="xylophone__key" data-key="D">
-                    <img src="../public/img/xylophone/KeyD.png" alt="D key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyD.png" alt="D key">
                 </div>
                 <div class="xylophone__key" data-key="E">
-                    <img src="../public/img/xylophone/KeyE.png" alt="E key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyE.png" alt="E key">
                 </div>
                 <div class="xylophone__key" data-key="F">
-                    <img src="../public/img/xylophone/KeyF.png" alt="F key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyF.png" alt="F key">
                 </div>
                 <div class="xylophone__key" data-key="G">
-                    <img src="../public/img/xylophone/KeyG.png" alt="G key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyG.png" alt="G key">
                 </div>
                 <div class="xylophone__key" data-key="A">
-                    <img src="../public/img/xylophone/KeyA.png" alt="A key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyA.png" alt="A key">
                 </div>
                 <div class="xylophone__key" data-key="B">
-                    <img src="../public/img/xylophone/KeyB.png" alt="B key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyB.png" alt="B key">
                 </div>
                 <div class="xylophone__key" data-key="C2">
-                    <img src="../public/img/xylophone/KeyC2.png" alt="C2 key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyC2.png" alt="C2 key">
                 </div>
                 <div class="xylophone__key" data-key="D2">
-                    <img src="../public/img/xylophone/KeyD2.png" alt="D2 key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyD2.png" alt="D2 key">
                 </div>
                 <div class="xylophone__key" data-key="F2">
-                    <img src="../public/img/xylophone/KeyF2.png" alt="F2 key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyF2.png" alt="F2 key">
                 </div>
                 <div class="xylophone__key" data-key="G2">
-                    <img src="../public/img/xylophone/KeyG2.png" alt="G2 key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyG2.png" alt="G2 key">
                 </div>
                 <div class="xylophone__key" data-key="A2">
-                    <img src="../public/img/xylophone/KeyA2.png" alt="A2 key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyA2.png" alt="A2 key">
                 </div>
             </div>
         </section>
 
         <!-- Third row - Music Button -->
-        <section class="section--music">
-            <button class="play-music-button" onclick="playLaCucaracha()">
-                <i class="bi bi-play-fill"></i>La cucaracha
+        <section class="music">
+            <button class="music__play-button" onclick="playLaCucaracha()">
+                <i class="bi bi-play-circle-fill"></i>La Cucaracha
             </button>
-            <button class="play-music-button" onclick="playMusic2()">
+            <button class="music__play-button" onclick="playMusic2()">
                 <i class="bi bi-play-circle-fill"></i> Play Song 2
             </button>
-            <button class="play-music-button" onclick="playMusic3()">
+            <button class="music__play-button" onclick="playMusic3()">
                 <i class="bi bi-play-circle-fill"></i> Play Song 3
             </button>
         </section>
@@ -154,8 +152,7 @@
         <img src="../public/img/logo_f5_blanco.png" class="footer__logo">
         <p class="footer__text"> &copy; Todos los derechos reservados</p>
     </footer>
-    <script src="../src/js/nav-responsive.js"></script> 
-        <script src="../src/js/carousel.js"></script>
+    <script src="../src/js/nav-responsive.js" defer></script>
 </body>
 
 </html>
