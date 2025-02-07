@@ -121,6 +121,21 @@ body:has(.header__nav.visible){
    overflow: hidden;
 }
 
+/* Al meter los iconos se bugea el nav y deja ser respondive,
+esta MQ lo soluciona - AMCA */
+@media screen and (min-width: 801px) and (max-width: 950px){
+    .header__nav__list{
+        gap: .1rem; 
+    }
+
+    /* !important es porque sino me cogía el font-size por defecto,
+    no lo useais si no es ESTRICTAMENTE necesario,
+    NO es buena práctica - AMCA*/
+    .header__nav__link{
+        font-size: .8rem !important;
+    }
+}
+
 @media only screen and (min-width: 576px) and (max-width: 800px){
 
     :root {
