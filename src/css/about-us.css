@@ -68,24 +68,28 @@ body {
 }
 
 .content__container__h1 {
-    margin-top: 5%;
+    margin-top: 60px;
+    margin-bottom: .5rem;
     width: 100%;
     height: 15%;
     text-align: center;
-    color: rgb(248, 242, 242);
-    font-size: 50px;
-    font-weight: normal;
+    color: rgb(248, 242, 242);    
+    font-weight: normal;    
+}
+
+h1 {
+    font-size: 80px;
 }
 
 .content__container__div {
     width: 80%;
-    height: 65%;
+    height: auto;
     background-color: rgb(0, 0, 0, 0.8);
     display: flex;
-    border-radius: 40px;
+    border-radius: 30px;
     padding: 1rem;
     overflow: auto;
-    box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.2);    
 }
 
 /*-------------------------------- CAROUSEL ------------------------------*/
@@ -96,45 +100,45 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    overflow: hidden;
-    border-radius: 40px;
+    overflow: hidden;           
 }
 
 .article__container {
+    gap: 20px;
     width: 100%;
-    height: 100%;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "img text";
     place-items: center;
     border-radius: 20px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);        
 }
 
 /* -------------------------- IMAGE DIVISION -------------------------- */
 .image-container {
-    width: 90%;
-    height: 100%;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;    
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 40px 40px 40px 40px;
-    position: relative;
+    justify-content: center;     
+    position: relative;   
+    padding: 5px; 
 }
 
 .slider__item__img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
-    overflow: hidden;
+    border-radius: 50%;  
 }
 
 /* -------------------------- TEXT DIVISION -------------------------- */
 .slider__item__text {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
     text-align: center;
     opacity: 1;
@@ -146,9 +150,10 @@ h3 {
     margin-top: 40px;    
 }
 
-.slider__item__text--paragraph {
+.slider__item__text--paragraph {    
+    margin-top: 10px;
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 .slider__item__text--charge {       
@@ -247,6 +252,16 @@ footer {
             "footer";
     }
 
+    .content__container__h1 {
+        margin-top: 10%;
+        width: 100%;
+        height: 10%;               
+    }        
+
+    h1 {
+        font-size: 60px;
+    }
+
     .header__nav {
         z-index: 2000;
     }
@@ -290,22 +305,16 @@ footer {
 
     .content__container__div {
         width: 70%;
-        height: 80%;
+        height: auto;
         display: flex;
         flex-direction: column;
         margin-bottom: 5%;
         margin-top: 5%;
-    }
-
-    .content__container__h1 {
-        margin-top: 5%;
-        font-size: 2.5rem;
-        height: fit-content;
-    }
+    } 
 
     .slider__item {
         width: 100%;
-        height: 100%;
+        height: auto;
         display: none;
         align-items: center;
         justify-content: center;
@@ -319,22 +328,21 @@ footer {
     }
 
     .article__container {
-        display: flex;
+                display: flex;
         flex-direction: column;
     }
 
     .slider__item__img {
-        width: 230px;
+        width: 250px;
+        height: 250px;
     }    
 
     .slider__item__text {
-        max-height: 100%;
-        padding: 0;
-        margin: 0;
+        height: auto;        
     }
 
     h3 {
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 
     .slider__item__text--paragraph {
@@ -388,10 +396,9 @@ footer {
     }
 
     .content__container__h1 {
-        font-size: 2rem;
-        padding: 4%;
-        height: auto;
-        text-shadow: 1px 1px 0 black;
+        margin-top: 20px;
+        font-size: 45px;
+        margin-bottom: 20px;
     }
 
     .content__container__div {
@@ -425,20 +432,25 @@ footer {
         backdrop-filter: blur(5px);
     }
 
+    .image-containe{
+        width: 200px;
+        height: 200px;
+    }
+
     .slider__item__img {
-        width: 100%;
+        width: 250px;
+        height: 250px;
         border-radius: 50%;
     }
 
-    .slider__item__text {
-        margin-top: 40px;
+    .slider__item__text {        
         display: flex;
         flex-direction: column;
         text-align: center;
     }
 
     h3 {
-        margin-top: 2rem;
+        margin-top: 1rem;
         color: white;
         font-size: 1.5rem;
     }
