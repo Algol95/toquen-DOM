@@ -27,6 +27,9 @@
             <ul class="header__nav__list">
                 <li class="header__nav__item"><a class="header__nav__link" href="./about-us.html">SOBRE NOSOTRAS <i
                             class="bi bi-people-fill"></i></a></li>
+                <li class="header__nav__item">
+                    <a class="header__nav__link" href="../index.html#instruments" id="nav-instruments">INSTRUMENTOS<i class="bi bi-music-note-beamed"></i></a>
+                </li>
                 <li class="header__nav__item"><a class="header__nav__link" href="./contact.html">CONTACTO<i
                             class="bi bi-envelope"></i></a></li>
                 <li class="header__nav__item"><a href="../index.html" class="header__nav__link">HOME<i
@@ -59,9 +62,9 @@
                             <th>B</th>
                             <th>C2</th>
                             <th>D2</th>
+                            <th>E2</th>
                             <th>F2</th>
                             <th>G2</th>
-                            <th>A2</th>
                         </tr>
                         <tr class="instructions__keyboard-mapping-row">
                             <td>1</td>
@@ -92,6 +95,7 @@
         </section>
 
         <!-- Second row - Xylophone -->
+        <!-- Cambie el nombre de las teclas que se nos comimos una nota - AMCA-->
         <section class="xylophone">
             <img src="../public/img/xylophone/XyloBase.png" class="xylophone__base" alt="Xylophone Base">
             <div class="xylophone__keys">
@@ -122,14 +126,14 @@
                 <div class="xylophone__key" data-key="D2">
                     <img class="xylophone__key-image" src="../public/img/xylophone/KeyD2.png" alt="D2 key">
                 </div>
+                <div class="xylophone__key" data-key="E2">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyF2.png" alt="E2 key">
+                </div>
                 <div class="xylophone__key" data-key="F2">
-                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyF2.png" alt="F2 key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyG2.png" alt="F2 key">
                 </div>
                 <div class="xylophone__key" data-key="G2">
-                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyG2.png" alt="G2 key">
-                </div>
-                <div class="xylophone__key" data-key="A2">
-                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyA2.png" alt="A2 key">
+                    <img class="xylophone__key-image" src="../public/img/xylophone/KeyA2.png" alt="G2 key">
                 </div>
             </div>
         </section>
@@ -137,7 +141,7 @@
         <!-- Third row - Music Button -->
         <section class="music">
             <button class="music__play-button" onclick="playLaCucaracha()">
-                <i class="bi bi-play-circle-fill"></i>La Cucaracha
+                <i class="bi bi-play-circle-fill"></i> La Cucaracha
             </button>
             <button class="music__play-button" onclick="playMusic2()">
                 <i class="bi bi-play-circle-fill"></i> Play Song 2

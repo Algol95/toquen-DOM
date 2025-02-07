@@ -34,8 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     D2: 587.33,
     E2: 659.26,
     F2: 698.46,
-    G2: 783.99,
-    A2: 880
+    G2: 783.99
   };
 
   /* Edité las viejas asignaciones de keys-notas y cambie el nombre del parametro por la nomenclatura de constante - AMCA*/
@@ -51,9 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     7: "B",
     Y: "C2",
     U: "D2",
-    I: "F2",
-    O: "G2",
-    P: "A2",
+    I: "E2",
+    O: "F2",
+    P: "G2",
   };
 
   /* SOUND GENERATOR - AUDIOCONTEXT (Quiero llorar) 
