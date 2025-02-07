@@ -130,14 +130,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // BTN MUSIC - AMCA
   // Función para tocar "La Cucaracha" extendida - AMCA
-  // Hotfix: Editado para que se deshabiliten los botones mientras toque una canción, que además reciba cualquier botion y según su ID toque una canción u otra: - AMCA
+  // Hotfix: Editado para que se deshabiliten los botones mientras toque una canción, que además se reutilice pasando un valor por parametro: - AMCA
 window.playMusic = function(melodyName){
   const btns = document.querySelectorAll(".music__play-button");
   btns.forEach(btn => {
     btn.disabled=true;
   });
 
-  //La lógica es: según el melodyName pasado por parámetro
+  //La lógica es: según el melodyName pasado por parámetro la melody hazquiere un valor u otro.
   let melody;
   switch (melodyName) {
     case "laCucaracha":

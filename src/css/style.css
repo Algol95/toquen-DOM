@@ -69,6 +69,7 @@ h1, h2, h3 {
 
 .header__button--open-menu, .header__nav__button--close-menu {    
      display: none;    
+     cursor: pointer;
 }
 
 body {
