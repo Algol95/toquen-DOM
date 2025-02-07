@@ -46,6 +46,7 @@ Viaja hasta la carpeta del proyecto con tu interfaz de navegador o desde tu **te
 
 ### 3. Usa *"Go live"*
 ![GoLive](https://i.imgur.com/NncXY2Q.png)
+
 Ejecutalo con la extensión de **Go Live** y ¡cacharrea lo que quieras!
     
 ## Agradecimientos 😋
