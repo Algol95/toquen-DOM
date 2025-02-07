@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     4: "F",
     5: "G",
     6: "A",
-    BB: "BB", //No existe en nuestro teclado - AMCA
+    BB: "BB",
     7: "B",
     Y: "C2",
     U: "D2",
