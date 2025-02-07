@@ -129,7 +129,7 @@ h1 {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 50%;  
+    border-radius: 10%;  
 }
 
 /* -------------------------- TEXT DIVISION -------------------------- */
@@ -333,8 +333,9 @@ footer {
     }
 
     .slider__item__img {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
     }    
 
     .slider__item__text {
@@ -345,8 +346,7 @@ footer {
         margin-top: 2rem;
     }
 
-    .slider__item__text--paragraph {
-        margin-top: 2rem;
+    .slider__item__text--paragraph {        
         color: white;
         font-size: 1.5rem;
     }
@@ -437,8 +437,8 @@ footer {
     }
 
     .slider__item__img {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
     }
 
