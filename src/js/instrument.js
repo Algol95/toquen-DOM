@@ -128,26 +128,66 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // BTN MUSIC - AMCA
   // Función para tocar "La Cucaracha" extendida - AMCA
-// TODO: Usar array bidimensional u objeto para ajustar cada nota a su tempo (y torturarme un poco más) - AMCA
-window.playLaCucaracha = function(){
-  const melody = [
-      "C", "C", "C", "F", "", "A",
-      "C", "C", "C", "F", "", "A", "", "",
-      "F", "F", "E", "E", "D", "D", "C", "", "",
-      "C", "C", "C", "E", "", "G",
-      "C", "C", "C", "E", "", "G", "",
-      "C2", "D2", "C2", "BB", "A", "G", "F"
+  // Hotfix: Editado para que se deshabiliten los botones mientras toque una canción, que además reciba cualquier botion y según su ID toque una canción u otra: - AMCA
+window.playMusic = function(melodyName){
+  const btns = document.querySelectorAll(".music__play-button");
+  btns.forEach(btn => {
+    btn.disabled=true;
+  });
 
-  ];
+  //La lógica es: según el melodyName pasado por parámetro
+  let melody;
+  switch (melodyName) {
+    case "laCucaracha":
+      melody = [
+        "C", "C", "C", "F", "", "A",
+        "C", "C", "C", "F", "", "A", "", "",
+        "F", "F", "E", "E", "D", "D", "C", "", "",
+        "C", "C", "C", "E", "", "G",
+        "C", "C", "C", "E", "", "G", "",
+        "C2", "D2", "C2", "BB", "A", "G", "F"
+      ];
+      break;
+    case "StarWars":
+      melody = ["C", " ",  "G",  " ",
+                "F", "E", "D", "C2", " ", "G", " ",
+                "F", "E", "D", "C2", " ", "G", " ",
+                "F", "E", "F", "D", " ",
+                "C" ," ", "G", " ",
+                "F" ,"E", "D", "C2", " ", "G", " ",
+                "F", "E", "D", "C2", "  ", "G" ," ",
+                "F", "E,", "F", "D"
+      ];
+      break;
+    case "OHSUSANA":
+      melody = ["C",  "D", "E", "G", "G", "A", "G", "E",
+                "C", "D", "E", "E", "D", "C", "D", "",
+                "C", "D", "E", "G", "G", "A", "G", "E",
+                "C", "D", "E", "E", "D", "D", "C", "",
+                "F", "F", "A", "A", "",  "A", "G", "A", "G", "E", "D", "",
+                "C", "D", "E", "G", "G", "A", "G", "E",
+                "C", "D", "E", "E", "D", "D", "C"
+      ];
+    default:
+      console.error("No existe la canción");
+      break;
+  }
+
+  
   const tempo = 300;
-
+  const totalDuration = tempo * melody.length;
   melody.forEach((note, index) => {
       setTimeout(() => {
-      
           playNote(note);
-       
       }, index * tempo);
   });
+
+  setTimeout(() => {
+    btns.forEach(btn => {
+      btn.disabled=false;
+    });
+  }, totalDuration);
 }
 });

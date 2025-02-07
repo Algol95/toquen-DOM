@@ -45,8 +45,7 @@ section {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .instructions__title,
@@ -138,8 +137,11 @@ section {
   border-radius: 30px;
   border: none;
   transition: transform 0.2s ease, filter 0.2s ease;
+  /*Applies hover when the button is not disabled. - AMCA*/
+  /*&:hover <= Original - AMCA*/
+  /* I add the disabled function to add styles to the disabled button while a song is playing. - AMCA*/
 }
-.music__play-button:hover {
+.music__play-button:not(:disabled):hover {
   transform: scale(1.05);
   filter: brightness(1.2);
 }
@@ -153,6 +155,10 @@ section {
   font-size: 1.5rem;
   padding-right: 8px;
 }
+.music__play-button:disabled {
+  background-color: var(--bg-header-footer);
+  color: #747474;
+}
 
 /* ------------------- XYLOPHONE ------------------- */
 .xylophone {
@@ -164,8 +170,7 @@ section {
   position: relative;
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-bottom: 2%;
 }
 .xylophone__base {
@@ -173,8 +178,7 @@ section {
   z-index: 2;
   width: 92%;
   height: 95%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
   box-sizing: border-box;
 }
 .xylophone__keys {
@@ -186,18 +190,14 @@ section {
   justify-content: center;
   align-items: center;
   pointer-events: auto;
-  -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
 }
 .xylophone__key {
   width: 100%;
   height: 100%;
   position: relative;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  -o-object-fit: fill;
-     object-fit: fill;
+  user-select: none;
+  object-fit: fill;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -209,8 +209,7 @@ section {
   animation-fill-mode: forwards;
 }
 .xylophone__key-image {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   width: 90%;
   height: 92%;
   transition: transform 0.2s ease, filter 0.2s ease;
@@ -404,4 +403,6 @@ body.popup-active .xylophone__key {
     margin-top: 0;
   }
 }
-/* ------------------- END OF CODE ------------------- *//*# sourceMappingURL=instrument.css.map */
+/* ------------------- END OF CODE ------------------- */
+
+/*# sourceMappingURL=instrument.css.map */

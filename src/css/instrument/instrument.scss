@@ -5,6 +5,7 @@ $active-button-color: #DEB581;
 $text-shadow: 1px 1px 2px black;
 $object-shadow: 4px 4px 4px black;
 $button-radius: 30px;
+$disable-button-color: #747474;
 
 /* ------------------- HEADER & FOOTER ------------------- */
 header {
@@ -157,7 +158,9 @@ section {
     border: none;
     transition: transform 0.2s ease, filter 0.2s ease;
 
-    &:hover {
+    /*Applies hover when the button is not disabled. - AMCA*/
+    /*&:hover <= Original - AMCA*/
+    &:not(:disabled):hover {
       transform: scale(1.05);
       filter: brightness(1.2);
     }
@@ -172,6 +175,12 @@ section {
     &__icon {
       font-size: 1.5rem;
       padding-right: 8px;
+    }
+
+    /* I add the disabled function to add styles to the disabled button while a song is playing. - AMCA*/
+    &:disabled {
+      background-color: var(--bg-header-footer);
+      color: $disable-button-color;
     }
   }
 }
