@@ -6,10 +6,6 @@
     --txt-light: #f0e8fb;
 }
 
-html{
-    overflow-x: hidden;
-}
-
 @media only screen and  (max-width: 800px){
     :root {
         --background-image: url("../../public/img/violin.jpg");
@@ -37,10 +33,6 @@ h1, h2, h3 {
     font-family: var(--h1_h2_h3-font);
     font-weight: bolder;
     font-style: normal;
-}
-
-.header__nav{
-    overflow-x: hidden;
 }
 
 .header__nav__link i {
@@ -101,12 +93,14 @@ body {
     
 }
 
-/* Solución del bloqueo del scroll-en-y, y que cuando se abra el menu, dejar la pantala fija.
-Sí Ana, es un condicional en css. - AMCA*/
+/* Fized 2: Por la correción del overflow en x, ocasionado por header__nav en movil, esta parte ya no es necesaria
+/* Fixed 1: Solución del bloqueo del scroll-en-y, y que cuando se abra el menu, dejar la pantala fija.
+Sí Ana, es un condicional en css. - AMCA
 
 body:has(.header__nav.visible){
    overflow: hidden;
 }
+*/
 
 /* Al meter los iconos se bugea el nav y deja ser respondive,
 esta MQ lo soluciona - AMCA */
@@ -166,7 +160,7 @@ esta MQ lo soluciona - AMCA */
         display: flex;
         flex-direction: column;
         align-items: end;     
-        position: absolute;
+        position: fixed; /* Arregla problema scroll horizontal y se baja con el scroll-y - AMCA */
         top: 0;
         right: 0;       
         bottom: 0;
@@ -249,12 +243,14 @@ esta MQ lo soluciona - AMCA */
 
     .header__nav {
         opacity: 0;
+        display: flex;
         flex-direction: column;
         align-items: end;        
-        position: absolute;
+        position: fixed;
         top: 0;
-        right: 0;       
-        bottom: 0;
+        right: 0;    
+        bottom: 0;   
+        height: auto;
         background-color: var(--bg-header-footer);
         padding: 0,5rem;
         box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5); 
@@ -316,8 +312,7 @@ footer{
     color: var(--txt-light);
     padding: 15px;
     gap:5px;
-    margin: auto;    
-    margin: auto;    
+    margin: auto;       
     bottom: 0;
     width: 100%;
     font-size: xx-small;

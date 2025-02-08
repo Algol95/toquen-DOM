@@ -190,6 +190,10 @@ h1 {
         margin: 0;
     }
 
+    .welcome__txt__title{
+        font-size: 3rem;
+    }
+
     .welcome_txt_gsap{
         justify-content: center;
     }
