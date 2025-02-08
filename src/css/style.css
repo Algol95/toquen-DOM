@@ -6,6 +6,10 @@
     --txt-light: #f0e8fb;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 @media only screen and  (max-width: 800px){
     :root {
         --background-image: url("../../public/img/violin.jpg");
@@ -16,6 +20,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box ;          
+}
+
+html, body {
+    overflow-x: hidden;
 }
 
 header {
@@ -29,6 +37,10 @@ h1, h2, h3 {
     font-family: var(--h1_h2_h3-font);
     font-weight: bolder;
     font-style: normal;
+}
+
+.header__nav{
+    overflow-x: hidden;
 }
 
 .header__nav__link i {
@@ -86,10 +98,10 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-blend-mode: darken;
-    overflow-x: hidden
+    
 }
 
-/* Solución del bloqueo del scroll, y que cuando se abra el menu dejar la pantala fija.
+/* Solución del bloqueo del scroll-en-y, y que cuando se abra el menu, dejar la pantala fija.
 Sí Ana, es un condicional en css. - AMCA*/
 
 body:has(.header__nav.visible){
@@ -151,7 +163,6 @@ esta MQ lo soluciona - AMCA */
 
     .header__nav {
         opacity: 0;
-        visibility: hidden ;
         display: flex;
         flex-direction: column;
         align-items: end;     
@@ -163,13 +174,12 @@ esta MQ lo soluciona - AMCA */
         padding: 0,5rem;
         box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5);    
         transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
-        transform: translateX(100%);
+        transform: translateX(110%);
         z-index: 10;  
     }
     
     .header__nav.visible {
         opacity: 1;
-        visibility: visible;
         transform: translateX(0); 
         
     }
@@ -239,8 +249,6 @@ esta MQ lo soluciona - AMCA */
 
     .header__nav {
         opacity: 0;
-        visibility: hidden ;
-        display: flex;
         flex-direction: column;
         align-items: end;        
         position: absolute;
@@ -251,7 +259,8 @@ esta MQ lo soluciona - AMCA */
         padding: 0,5rem;
         box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5); 
         transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
-        transform: translateX(100%);
+        transform: translateX(110%);
+        visibility: hidden ;
         z-index: 10;    
     }
     
