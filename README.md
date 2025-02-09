@@ -9,8 +9,8 @@ Proyecto interactivo para **Factoria F5** que simula la pagina web de una escuel
 
 - [**Hema Priya** - *@void-craft*](https://github.com/void-craft) - **Product Owner**
 - [**Ángel Miguel Aragón** - *@Algol95*](https://github.com/Algol95) - **Scrum Master**
-- [**Ana Castro** - *@cuyssi*](https://github.com/Algol95) - **Developer**
-- [**Sergio Jorquera** - *@sergio-jorquera*](https://github.com/Algol95) - **Developer**
+- [**Ana Castro** - *@cuyssi*](https://github.com/cuyssi) - **Developer**
+- [**Sergio Jorquera** - *@sergio-jorquera*](https://github.com/sergio-jorquera) - **Developer**
 
 Todo el equipo contribuye de forma activa en el *diseño y desarrollo* del proyecto.
 
